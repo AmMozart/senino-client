@@ -7,7 +7,7 @@ export class Camera {
 
   constructor(private canvas: HTMLCanvasElement, private scene: BABYLON.Scene) {
 
-    this.camera = new BABYLON.ArcRotateCamera("myCamera", 0, 0, 0, new BABYLON.Vector3(0, 10, -10), this.scene);
+    this.camera = new BABYLON.ArcRotateCamera("myCamera", 0, 0, 0, new BABYLON.Vector3(-30, 20, -10), this.scene);
     this.camera.attachControl(this.canvas, true);
     this.camera.setTarget(BABYLON.Vector3.Zero());
 

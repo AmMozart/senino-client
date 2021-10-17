@@ -1,0 +1,3 @@
+export enum BusEvent {
+  CHANGE_SELECTED_FLOOR = 'CHANGE_SELECTED_FLOOR'
+}
