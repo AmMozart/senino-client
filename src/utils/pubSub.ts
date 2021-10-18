@@ -1,3 +1,5 @@
+import { EventTypes } from './EventTypes';
+
 type Callback = (payload: any) => void
 
 interface Channel {
@@ -5,11 +7,7 @@ interface Channel {
 }
 
 class EventBus {
-  private channel: Channel
-
-  constructor() {
-    this.channel = {}
-  }
+  private channel: Channel = {}
 
   public subscribe(eventName: string, callback: Callback): void {
     if (!this.channel[eventName]) {
@@ -18,7 +16,7 @@ class EventBus {
     this.channel[eventName].push(callback)
   }
 
-  public publish(eventName: string, payload: any): void {
+  public publish(eventName: EventTypes, payload: any): void {
     const callbacks = this.channel[eventName]
     if (!callbacks || !callbacks.length) {
       return

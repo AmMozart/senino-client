@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useAppSelector } from '../../app/hooks'
+import { EventTypes } from '../../utils/EventTypes'
 import pubSub from '../../utils/pubSub'
+import { selectTitle } from '../floorPanelButtons/floorButton/floorButtonSlice'
 
 const Floor: React.FC = () => {
-  const [selectedFloor, setSelectedFloor] = useState('garden')
+  const title = useAppSelector(selectTitle)
 
   useEffect(() => {
-    // if (selectedFloor === 'garden')
-    //   false
-  }, [selectedFloor])
+    pubSub.publish(EventTypes.CHANGE_SELECTED_FLOOR, title)
+  }, [title])
 
   return null
 }

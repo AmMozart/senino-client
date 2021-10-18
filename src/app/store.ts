@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
+import floorReducer from '../features/floorPanelButtons/floorButton/floorButtonSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    floor: floorReducer
   },
 });
 
