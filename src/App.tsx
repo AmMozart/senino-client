@@ -1,30 +1,53 @@
-import React, { useEffect, useRef } from 'react'
-import { World3D } from './3d/World3D'
-import style from './App.module.css'
-import Assets3D from './features/Assets3D/Assets3D'
-import { FloorPanelButtons } from './features/floorPanelButtons/FloorPanelButtons'
+import React, { useEffect, useRef, useState } from 'react';
+import { Route, Routes} from 'react-router-dom';
 
+import { ControlPanel } from './features/controlPanel/ControlPanel';
+import MeteoDetails from './features/meteo/MeteoDetails';
+import { Header } from './features/header/Header';
+import Assets3D from './features/Assets3D/Assets3D';
+import { World3D } from './3d/World3D';
+import style from './App.module.css';
 
-function App() {
+function App(): JSX.Element {
+  const [world3DReady, setWorld3DReady] = useState<boolean>(false);
 
-  const canvas = React.useRef<HTMLCanvasElement | null>(null)
-  const world3D = useRef<World3D | null>(null)
+  const canvas = React.useRef<HTMLCanvasElement | null>(null);
+  const world3D = useRef<World3D | null>(null);
 
   useEffect(() => {
-    if (canvas.current) {
-      world3D.current = new World3D(canvas.current)
+    function prepare3D() {
+      if (canvas.current) {
+        world3D.current = new World3D(canvas.current);
+
+        world3D.current.init().then(() => {
+          setWorld3DReady(true);
+        });
+      }
     }
-  }, [])
+    prepare3D();
+  }, []);
 
   return (
     <>
       <div className={style.canvasWrapper}>
-        <canvas ref={canvas} className={style.renderCanvas}>You're browser don't support canvas tag</canvas>
+        <canvas ref={canvas} className={style.canvas}>You are browser do not support canvas tag</canvas>
       </div>
-      <FloorPanelButtons />
-      <Assets3D />
+      {world3DReady && <Assets3D />}
+
+      <Routes>
+        <Route path='/' element={<ControlPanel />}/>
+      </Routes>
+      
+      <div className={style.wrapper}>
+        <Header />
+        
+        <Routes>
+          <Route path="/" ></Route>
+          <Route path='/Meteo' element={<MeteoDetails />}/>
+        </Routes>
+      </div>
     </>
   );
 }
 
-export default App
+export default App;

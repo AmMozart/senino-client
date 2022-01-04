@@ -1,19 +1,22 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
-import floorReducer from '../features/floorPanelButtons/floorButton/floorButtonSlice';
+
+import controller from '../features/controller/controllerSlice';
+import meteo from '../features/meteo/meteoSlice';
+import area from '../features/area/areaSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
-    floor: floorReducer
+    area,
+    controller,
+    meteo,
   },
 });
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
   unknown,
   Action<string>
->;
+>

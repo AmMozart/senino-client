@@ -1,12 +1,15 @@
-import React from 'react'
-import Floor from './Floor'
+import * as React from 'react';
 
-function Assets3D() {
+import Area from './Area';
+import ElectricGroup from './ElectricGroup';
+
+function Assets3D(): JSX.Element {
   return (
     <>
-      <Floor />
+      <Area />
+      <ElectricGroup />
     </>
-  )
+  );
 }
 
-export default Assets3D
+export default Assets3D;

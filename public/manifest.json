@@ -1,6 +1,12 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Мой Дом",
+  "short_name": "Мой Дом",
+  "theme_color": "#FFF",
+  "background_color": "#FFF",
+  "display": "fullscreen",
+  "orientation": "any",
+  "scope": ".",
+  "start_url": ".",
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,9 +23,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }

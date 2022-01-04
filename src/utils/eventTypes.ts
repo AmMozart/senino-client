@@ -1,3 +1,0 @@
-export enum EventTypes {
-  CHANGE_SELECTED_FLOOR = 'CHANGE_SELECTED_FLOOR'
-}
