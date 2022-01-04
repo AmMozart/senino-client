@@ -1,57 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useEffect, useRef, useState } from 'react';
+import { Route, Routes} from 'react-router-dom';
 
-function App() {
+import { ControlPanel } from './features/controlPanel/ControlPanel';
+import MeteoDetails from './features/meteo/MeteoDetails';
+import { Header } from './features/header/Header';
+import Assets3D from './features/Assets3D/Assets3D';
+import { World3D } from './3d/World3D';
+import style from './App.module.css';
+
+function App(): JSX.Element {
+  const [world3DReady, setWorld3DReady] = useState<boolean>(false);
+
+  const canvas = React.useRef<HTMLCanvasElement | null>(null);
+  const world3D = useRef<World3D | null>(null);
+
+  useEffect(() => {
+    function prepare3D() {
+      if (canvas.current) {
+        world3D.current = new World3D(canvas.current);
+
+        world3D.current.init().then(() => {
+          setWorld3DReady(true);
+        });
+      }
+    }
+    prepare3D();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+      <div className={style.canvasWrapper}>
+        <canvas ref={canvas} className={style.canvas}>You are browser do not support canvas tag</canvas>
+      </div>
+      {world3DReady && <Assets3D />}
+
+      <Routes>
+        <Route path='/' element={<ControlPanel />}/>
+      </Routes>
+      
+      <div className={style.wrapper}>
+        <Header />
+        
+        <Routes>
+          <Route path="/" ></Route>
+          <Route path='/Meteo' element={<MeteoDetails />}/>
+        </Routes>
+      </div>
+    </>
   );
 }
 

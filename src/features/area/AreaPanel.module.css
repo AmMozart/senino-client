@@ -1,0 +1,30 @@
+.areaPanel {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.container {
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .container {
+    display: none;
+  }
+}
+.show {
+  display: block;
+}
+@media (max-width: 768px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 1200px) {
+}

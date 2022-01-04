@@ -1,0 +1,30 @@
+@import "/src/var.css";
+
+.button {
+  display: block;
+  width: 100px;
+  height: 80px;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  font-family: inherit;
+  text-decoration: none;
+  text-shadow: 0 2px #000;
+  border-radius: 50px 0 0 50px;
+  transition: all 0.3s ease-out;
+  color: var(--btn-text-color);
+  border: 1px solid var(--btn-border-color);
+  background-color: var(--btn-back-color);
+  box-shadow: inset 0px 0px 16px black;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.active {
+  width: 150px;
+  color: var(--btn-text-color-active);
+  border: 1px solid var(--btn-border-color-active);
+  background-color: var(--btn-back-color-active);
+  box-shadow: inset 0px 0px 16px black;
+}
