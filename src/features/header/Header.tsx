@@ -5,6 +5,7 @@ import { Meteo } from '../meteo/Meteo';
 import { Home } from './Home';
 import style from './Header.module.css';
 import Water from '../water/Water';
+import Menu from '../menu/Menu';
 
 export const Header: React.FunctionComponent = () => {
 
@@ -21,6 +22,7 @@ export const Header: React.FunctionComponent = () => {
       </div>
       <div className={style.right}>
         <Water value={false}/>
+        <Menu />
       </div>
     </div>
   );
