@@ -1,31 +1,40 @@
-.size {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
+@import "/src/var.css";
 
-.control {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.name {
-  position: relative;
-  width: 100%;
-  height: 15%;
-  font-size: 1.5em;
-}
-
-.toggle {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
+.water {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  font-weight: bold;
+  color: var(--light-blue-color);
+  margin: 0 10px;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  background: var(--btn-back-color);
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.55),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6), 0 2px 0 rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+}
+
+.problem {
+  animation: connection 1.5s infinite ease;
+}
+
+.normal {
+  color: var(--light-blue-color);
+}
+
+@keyframes connection {
+  from {
+    color: rgb(199, 21, 21);
+  }
+  50% {
+    color: rgb(37, 37, 37);
+  }
+  to {
+    color: rgb(199, 21, 21);
+  }
 }

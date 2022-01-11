@@ -6,6 +6,8 @@ import { selectMeteo, updateData } from './meteoSlice';
 import Temp from './Temp';
 import Icon from './Icon';
 
+import style from './Meteo.module.css';
+
 const UPDATE_TIME = 600_000; // update meteo every 10 min
 
 export const Meteo: React.FC = () => {
@@ -33,7 +35,7 @@ export const Meteo: React.FC = () => {
   }
 
   return (
-    <div onClick={openDetails}>
+    <div className={style.meteo} onClick={openDetails}>
       <Temp temp={temperature}/>
       <Icon name={iconName}/>
     </div >

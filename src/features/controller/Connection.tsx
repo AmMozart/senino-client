@@ -10,7 +10,8 @@ interface IConnectionProps {
 export const Connection: React.FunctionComponent<IConnectionProps> = ({ isConnect }) => {
 
   const statusStyle = classNames({
-    'fa fa-wifi connection': true,
+    'fa fa-wifi': true,
+    [style.connection]: true,
     [style.connect]: isConnect,
     [style.disconnect]: !isConnect,
   });

@@ -1,4 +1,4 @@
 .temp {
-  color: rgb(95 171 224);
+  color: var(--light-blue-color);
   font-size: 0.8em;
 }

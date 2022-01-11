@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import style from './Home.module.css';
+
 export const Home: React.FunctionComponent = () => {
   const navigate = useNavigate();
 
@@ -8,5 +10,7 @@ export const Home: React.FunctionComponent = () => {
     navigate('/');
   }
 
-  return <div className="fa fa-home" aria-hidden="true" onClick={goHome}></div>;
+  const classes = style.home + ' fa fa-home';
+
+  return <div className={classes} aria-hidden="true" onClick={goHome}></div>;
 };
