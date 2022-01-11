@@ -2,29 +2,26 @@
 
 .areaMenu {
   display: none;
-  width: 150px;
-  height: 80px;
-  margin: 10px 0;
-  text-decoration: none;
-  text-shadow: 0 2px #000;
-  border-radius: 50px 0 0 50px;
-  transition: all 0.3s ease-out;
-  color: #fff;
-  border: 1px solid var(--btn-border-color);
-  background-color: var(--btn-back-color);
-  box-shadow: inset 0px 0px 16px black;
-}
-
-.areaMenu:hover {
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--light-blue-color);
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  background: var(--btn-back-color);
   cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.55),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6), 0 2px 0 rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
 }
 
 @media (max-width: 576px) {
   .areaMenu {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
   }
 }
 

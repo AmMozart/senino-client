@@ -1,40 +1,26 @@
 @import "/src/var.css";
 
-.connection {
+.meteo {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  border-radius: 50px;
   color: var(--btn-text-color);
   margin: 0 10px;
   padding: 10px;
-  width: 60px;
+  width: 150px;
   height: 60px;
   background: var(--btn-back-color);
   cursor: pointer;
-  border-radius: 50%;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.55),
     inset 0 2px 0 rgba(255, 255, 255, 0.6), 0 2px 0 rgba(0, 0, 0, 0.1),
     inset 0 0 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s linear;
 }
 
-.disconnect {
-  animation: connection 1.5s infinite ease;
-}
-
-.connect {
-  color: #009800;
-}
-
-@keyframes connection {
-  from {
-    color: rgb(199, 21, 21);
-  }
-  50% {
-    color: rgb(37, 37, 37);
-  }
-  to {
-    color: rgb(199, 21, 21);
+@media (max-width: 576px) {
+  .meteo {
+    display: none;
   }
 }

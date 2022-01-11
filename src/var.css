@@ -1,8 +1,11 @@
 :root {
-  --btn-back-color: #333333;
+  --btn-back-color: #e0e0e0;
   --btn-back-color-active: #505050;
   --btn-text-color: #909090;
   --btn-text-color-active: #ffffff;
   --btn-border-color: #535353;
   --btn-border-color-active: #8b8b8b;
+
+  --background-color: #e0e0e0;
+  --light-blue-color: #5a83ad;
 }

@@ -1,20 +1,21 @@
+import classNames from 'classnames';
 import React from 'react';
 
-import on from '../../img/w1.svg';
-import off from '../../img/w1.svg';
 import style from './Water.module.css';
 
 interface WaterProps {
-  value: boolean;
+  value?: boolean;
 }
 
-const Water: React.FunctionComponent<WaterProps> = ({value}) => (
-  <div className={style.toggle}>
-    <div className={style.control}>
-      <img className={`${style.size}`} src={value ? on : off} alt="Индикатор" />
-    </div>
-    <div className={style.name}>name</div>
-  </div>
-);
+const Water: React.FunctionComponent<WaterProps> = ({value = false}) => {
+  const classes = classNames({
+    'fa fa-tint': true,
+    [style.water]: true,
+    [style.normal]: !value,
+    [style.problem]: value,
+  });
+  
+  return <div className={classes} aria-hidden="true"></div>;
+};
 
 export default React.memo(Water);
