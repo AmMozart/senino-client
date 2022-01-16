@@ -1,16 +1,23 @@
-import React from 'react';
-import classNames from 'classnames';
+import React, { useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import style from './Menu.module.css';
+import MenuButton from './MenuButton';
 
 const Menu: React.FC = () => {
-  const classes = classNames({
-    'fa fa-bars': true,
-    [style.menu]: true,
-  });
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = useCallback( () => {
+    setOpen(!open);
+    toggleMenu();
+  }, [open]);
+
+  const toggleMenu = () => {
+    navigate(!open ? '/Menu' : '/');
+  };
 
   return (
-    <i className={classes}></i>
+    <MenuButton isOpen={open} onClick={handleClick}/>
   );
 };
 
