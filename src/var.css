@@ -1,11 +1,41 @@
 :root {
-  --btn-back-color: #e0e0e0;
-  --btn-back-color-active: #505050;
+  --btn-back-color: linear-gradient(
+    0deg,
+    #b1b1b1 0%,
+    #f3f3f3 50%,
+    #ffffff 50%,
+    #ffffff 50%,
+    #cccccc 100%
+  );
+  --btn-back-color-active: linear-gradient(
+    0deg,
+    #dfdfdf 0%,
+    #f3f3f3 50%,
+    #ffffff 50%,
+    #ffffff 50%,
+    #dadada 100%
+  );
+  --square-btn-back-color: linear-gradient(
+    8deg,
+    #b1b1b1 0%,
+    #f3f3f3 50%,
+    #ffffff 50%,
+    #ffffff 50%,
+    #acacac 100%
+  );
+  --square-btn-back-color-active: linear-gradient(
+    8deg,
+    #dfdfdf 0%,
+    #f3f3f3 50%,
+    #ffffff 50%,
+    #ffffff 50%,
+    #dadada 100%
+  );
   --btn-text-color: #909090;
   --btn-text-color-active: #ffffff;
   --btn-border-color: #535353;
   --btn-border-color-active: #8b8b8b;
 
   --background-color: #e0e0e0;
-  --light-blue-color: #5a83ad;
+  --metallic-color: #5f7286;
 }
