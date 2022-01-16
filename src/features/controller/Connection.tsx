@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWifi } from '@fortawesome/free-solid-svg-icons';
 
 import style from './Connection.module.css';
 
@@ -10,11 +12,14 @@ interface IConnectionProps {
 export const Connection: React.FunctionComponent<IConnectionProps> = ({ isConnect }) => {
 
   const statusStyle = classNames({
-    'fa fa-wifi': true,
     [style.connection]: true,
     [style.connect]: isConnect,
     [style.disconnect]: !isConnect,
   });
 
-  return <div className={statusStyle}></div>;
+  return (
+    <div className={statusStyle}>
+      <FontAwesomeIcon icon={faWifi}/>
+    </div>
+  );
 };

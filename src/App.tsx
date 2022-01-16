@@ -7,6 +7,8 @@ import { Header } from './features/header/Header';
 import Assets3D from './features/Assets3D/Assets3D';
 import { World3D } from './3d/World3D';
 import style from './App.module.css';
+import MenuList from './features/menu/MenuList';
+import Video from './features/video/Video';
 
 function App(): JSX.Element {
   const [world3DReady, setWorld3DReady] = useState<boolean>(false);
@@ -37,14 +39,17 @@ function App(): JSX.Element {
       <Routes>
         <Route path='/' element={<ControlPanel />}/>
       </Routes>
-      
+
       <div className={style.wrapper}>
         <Header />
-        
+
         <Routes>
           <Route path="/" ></Route>
           <Route path='/Meteo' element={<MeteoDetails />}/>
+          <Route path='/Menu' element={<MenuList />}/>
         </Routes>
+
+        <Video />
       </div>
     </>
   );
