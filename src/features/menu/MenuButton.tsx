@@ -11,7 +11,7 @@ interface MenuProps {
 
 const MenuButton: React.FC<MenuProps> = ({isOpen = false, onClick}) => {
 
-  const component = isOpen 
+  const component = isOpen
     ? <FontAwesomeIcon icon={faTimes}/>
     : <FontAwesomeIcon icon={faBars}/>;
 

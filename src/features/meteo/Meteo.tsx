@@ -5,10 +5,9 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectMeteo, updateData } from './meteoSlice';
 import Temp from './Temp';
 import Icon from './Icon';
+import { UPDATE_METEO_TIME } from '../../config/var';
 
 import style from './Meteo.module.css';
-
-const UPDATE_TIME = 600_000; // update meteo every 10 min
 
 export const Meteo: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -23,7 +22,7 @@ export const Meteo: React.FC = () => {
       dispatch(updateData());
       return getMeteoData;
     }
-    const interval = setInterval(getMeteoData(), UPDATE_TIME);
+    const interval = setInterval(getMeteoData(), UPDATE_METEO_TIME);
 
     return () => {
       clearInterval(interval);

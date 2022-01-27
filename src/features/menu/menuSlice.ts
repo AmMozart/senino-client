@@ -4,10 +4,12 @@ import { RootState } from '../../app/store';
 
 interface MenuState {
   name: string;
+  isOpen: boolean;
 }
 
 const menuState: MenuState = {
-  name: ''
+  name: '',
+  isOpen: false,
 };
 
 const menuSlice = createSlice({
@@ -17,10 +19,17 @@ const menuSlice = createSlice({
     changeMenuItem: (state, action: PayloadAction<string>) => {
       state.name = action.payload;
     },
+    openMenu: (state) => {
+      state.isOpen = true;
+    },
+    closeMenu: (state) => {
+      state.isOpen = false;
+    },
   }
 });
 
-export const { changeMenuItem } = menuSlice.actions;
+export const { changeMenuItem, openMenu, closeMenu } = menuSlice.actions;
 export const menuName = (state: RootState): string => state.menu.name; 
+export const isOpen = (state: RootState): boolean => state.menu.isOpen;
 
 export default menuSlice.reducer; 

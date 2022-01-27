@@ -4,11 +4,8 @@ import AreaPanel from '../area/AreaPanel';
 import AreaName from '../area/AreaName';
 
 export const ControlPanel = (): JSX.Element => {
-  const areas = Object.values(AreaName);
-  
-  return (
-    <>
-      <AreaPanel areas={areas} />
-    </>
-  );
+  let areas = Object.values(AreaName);
+  areas = areas.filter(area => area !== AreaName.Empty);
+
+  return <AreaPanel areas={areas} />;
 };

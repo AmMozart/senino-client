@@ -1,22 +1,24 @@
-import React from 'react';
-import { useAppSelector } from '../../app/hooks';
-import { menuName } from '../menu/menuSlice';
+import React, { useEffect, useRef } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
-import MenuItemName from '../menu/MenuItemName';
-import style from './Video.module.css';
+import Camera from './Camera';
+import { change, selectName } from '../area/areaSlice';
+import AreaName from '../area/AreaName';
 
 const Video: React.FC = () => {
-  const menu = useAppSelector(menuName);
+  const currentArea = useAppSelector(selectName);
+  const dispatch = useAppDispatch();
 
-  if(menu !== MenuItemName.Video) {
-    return null;
-  } 
+  const memoryCurrentArea = useRef<AreaName>(currentArea);
 
-  return (
-    <div className={style.video}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </div>
-  );
+  useEffect(() => {
+    dispatch(change(AreaName.Empty));
+    return () => {
+      dispatch(change(memoryCurrentArea.current));
+    };
+  }, []);
+
+  return <Camera />;
 };
 
 export default Video;

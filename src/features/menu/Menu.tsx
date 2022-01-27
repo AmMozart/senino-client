@@ -1,24 +1,27 @@
-import React, { useCallback, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import MenuButton from './MenuButton';
 
 const Menu: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect( () => {
+    setIsOpen( location.pathname === '/Menu' );
+  }, [location.pathname]);
 
   const handleClick = useCallback( () => {
-    setOpen(!open);
-    toggleMenu();
-  }, [open]);
+    if(location.pathname === '/Menu') {
+      navigate('/');
+    } else {
+      navigate('/Menu');
+    }
+  }, [location.pathname]);
 
-  const toggleMenu = () => {
-    navigate(!open ? '/Menu' : '/');
-  };
-
-  return (
-    <MenuButton isOpen={open} onClick={handleClick}/>
-  );
+  return <MenuButton isOpen={isOpen} onClick={handleClick}/>;
 };
 
 export default Menu;
