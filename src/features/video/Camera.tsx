@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
+import { loadPlayer } from 'rtsp-relay/browser';
+
+import { IP_VIDEO_REGISTRATOR } from '../../config/var';
 import { useAppSelector } from '../../app/hooks';
 import { menuName } from '../menu/menuSlice';
-
-import { loadPlayer } from 'rtsp-relay/browser';
 import style from './Video.module.css';
-import { IP_VIDEO_REGISTRATOR } from '../../config/var';
 
 const Camera: React.FC = () => {
   const menu = useAppSelector(menuName);
@@ -15,12 +15,13 @@ const Camera: React.FC = () => {
       url: `wss://${IP_VIDEO_REGISTRATOR}/api/stream`,
       canvas: canvas.current,
     });
-
   }, [menu]);
 
   return (
     <div className={style.cam}>
-      <canvas className={style.canvas} ref={canvas}>You are browser do not support canvas tag!</canvas>
+      <canvas className={style.canvas} ref={canvas}>
+        You are browser do not support canvas tag!
+      </canvas>
     </div>
   );
 };
