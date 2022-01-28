@@ -1,6 +1,5 @@
 p {
   font-size: 1.5em;
-  color: rgb(255, 119, 0);
 }
 
 .icon {
@@ -8,10 +7,10 @@ p {
 }
 
 @media (max-width: 576px) {
-  p span{
+  p span {
     display: none;
   }
-  
+
   .icon {
     display: none;
   }
@@ -23,13 +22,10 @@ p {
 }
 
 @media (max-width: 768px) {
-
 }
 
 @media (max-width: 992px) {
-
 }
 
 @media (max-width: 1200px) {
-
 }
