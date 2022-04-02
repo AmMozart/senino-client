@@ -4,6 +4,7 @@ import controller from '../features/controller/controllerSlice';
 import meteo from '../features/meteo/meteoSlice';
 import area from '../features/area/areaSlice';
 import menu from '../features/menu/menuSlice';
+import timers from '../features/timer/timerSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     controller,
     meteo,
     menu,
+    timers,
   },
 });
 

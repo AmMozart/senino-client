@@ -1,20 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import React, { useEffect } from 'react';
 
+import pubSub from '../../utils/pubSub';
+import EventName from '../../utils/EventName';
 import Camera from './Camera';
-import { change, selectName } from '../area/areaSlice';
-import AreaName from '../area/AreaName';
 
 const Video: React.FC = () => {
-  const currentArea = useAppSelector(selectName);
-  const dispatch = useAppDispatch();
-
-  const memoryCurrentArea = useRef<AreaName>(currentArea);
 
   useEffect(() => {
-    dispatch(change(AreaName.Empty));
+    pubSub.publish(EventName.Stop3DRender);
     return () => {
-      dispatch(change(memoryCurrentArea.current));
+      pubSub.publish(EventName.Start3DRender);
     };
   }, []);
 

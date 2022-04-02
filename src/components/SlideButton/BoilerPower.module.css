@@ -1,0 +1,53 @@
+@import "/src/var.css";
+
+.background {
+  --size: 120px;
+  position: relative;
+  width: calc(var(--size) * 2);
+  height: var(--size);
+  border-radius: calc(var(--size) / 2);
+  transition: all 0.5s linear;
+}
+
+.button {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background: var(--btn-back-color);
+  border: 2px solid var(--background-color);
+  border-radius: 50%;
+  color: #505050;
+  font-size: 1.2em;
+  transition: all 0.5s ease-out;
+}
+
+.onBackground {
+  background: #5591eb;
+}
+
+.offBackground {
+  background: #a1a1a1;
+}
+
+.onButton {
+  left: var(--size);
+}
+
+.offButton {
+  left: 0;
+}
+
+@media (max-height: 576px) {
+  .background {
+    --size: 40px;
+  }
+}
+
+@media (max-height: 768px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 1200px) {
+}

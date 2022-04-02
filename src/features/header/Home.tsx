@@ -5,13 +5,12 @@ import { useNavigate } from 'react-router-dom';
 
 import style from './Home.module.css';
 
-
-export const Home: React.FunctionComponent = () => {
+const Home: React.FunctionComponent = () => {
   const navigate = useNavigate();
 
-  function goHome() {
+  const goHome = () => {
     navigate('/');
-  }
+  };
 
   return (
     <div className={style.home} onClick={goHome}>
@@ -19,3 +18,5 @@ export const Home: React.FunctionComponent = () => {
     </div>
   );
 };
+
+export default Home;

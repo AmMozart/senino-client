@@ -3,6 +3,7 @@ enum MenuItemName {
   Boiler = 'Отопительный котел',
   Water = 'Вода',
   Climate = 'Климат',
+  Septic = 'Септик',
   Settings = 'Настройки',
 }
 

@@ -1,0 +1,19 @@
+@import "/src/var.css";
+
+.mode {
+  font: 1.8em bold;
+  color: rgb(145, 145, 145);
+}
+
+.mode span {
+  padding: 5px;
+}
+
+.mode span:first-child {
+  border-right: 2px solid rgb(145, 145, 145);
+}
+
+.mode span:last-child {
+  color: var(--metallic-color);
+  font-weight: bold;
+}

@@ -3,7 +3,8 @@ import { faCamera,
   faFaucet,
   faThermometerEmpty,
   faCogs,
-  faShower } from '@fortawesome/free-solid-svg-icons';
+  faShower, 
+  faBatteryHalf} from '@fortawesome/free-solid-svg-icons';
 
 import MenuItem from './MenuItem';
 import style from './MenuList.module.css';
@@ -17,6 +18,7 @@ const MenuList: React.FC = () => {
       <MenuItem name={MenuItemName.Boiler} faIcon={faShower}/>
       <MenuItem name={MenuItemName.Water} faIcon={faFaucet}/>
       <MenuItem name={MenuItemName.Climate} faIcon={faThermometerEmpty}/>
+      <MenuItem name={MenuItemName.Septic} faIcon={faBatteryHalf}/>
       <MenuItem name={MenuItemName.Settings} faIcon={faCogs}/>
     </div>
   );

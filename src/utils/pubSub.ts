@@ -16,7 +16,7 @@ class EventBus {
     this.channel[eventName].push(callback);
   }
 
-  public publish(eventName: EventName, payload: any): void {
+  public publish(eventName: EventName, payload?: any): void {
     const callbacks = this.channel[eventName];
     if (!callbacks || !callbacks.length) {
       return;

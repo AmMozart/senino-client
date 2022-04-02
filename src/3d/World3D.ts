@@ -1,5 +1,7 @@
 import * as BABYLON from 'babylonjs';
 
+import pubSub from '../utils/pubSub';
+import EventName from '../utils/EventName';
 import AreaName from '../features/area/AreaName';
 import { lightGroup } from '../config/config';
 import { Light } from './house/electricGroup/Light';
@@ -26,19 +28,20 @@ export class World3D {
     this.area = [];
     this.lights = [];
 
-    this.scene.actionManager = new BABYLON.ActionManager(this.scene);
-    this.scene.actionManager.registerAction(
-      new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnLeftPickTrigger,
-        () => {
-          console.log('dfd');
-        }
-      )
-    );
+    const startRender = () => {
+      engine.runRenderLoop(() => {
+        this.scene.render();
+      });
+    };
 
-    engine.runRenderLoop(() => {
-      this.scene.render();
-    });
+    const stopRender = () => {
+      engine.stopRenderLoop();
+    };
 
+    pubSub.subscribe(EventName.Start3DRender, startRender);
+    pubSub.subscribe(EventName.Stop3DRender, stopRender);
+
+    startRender();
     window.addEventListener('resize', function () {
       engine.resize();
     });

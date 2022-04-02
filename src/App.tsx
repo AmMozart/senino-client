@@ -9,16 +9,14 @@ import style from './App.module.css';
 import MenuList from './features/menu/MenuList';
 import Video from './features/video/Video';
 import Sleep from './features/sleep/Sleep';
+import Boiler from './features/boiler/Boiler';
+import Septic from './features/septic/Septic';
 
 function App(): JSX.Element {
 
   return (
     <>
       <Canvas3D />
-
-      {/* <Routes>
-        <Route path='/' element={<ControlPanel />}/>
-      </Routes> */}
 
       <div className={style.wrapper}>
         <Header />
@@ -27,7 +25,8 @@ function App(): JSX.Element {
           <Route path='Meteo' element={<MeteoDetails />}/>
           <Route path='Menu' element={<MenuList />}/>
           <Route path='Video' element={<Video />}/>
-          
+          <Route path='Boiler' element={<Boiler />}/>
+          <Route path='Septic' element={<Septic />}/>
         </Routes>
       </div>
       

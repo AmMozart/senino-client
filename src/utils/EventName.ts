@@ -2,8 +2,10 @@ enum EventName {
   ChangeArea,
   ChangeSystem,
   ChangeRoom,
+  ChangeState,
   ClickOnElectricGroup,
-  ChangeState
+  Stop3DRender,
+  Start3DRender,
 }
 
 export default EventName;

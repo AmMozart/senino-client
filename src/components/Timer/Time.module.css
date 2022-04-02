@@ -1,0 +1,23 @@
+@import "/src/var.css";
+
+.time {
+  z-index: 2;
+}
+
+.time label {
+  font: 2em Arial italic;
+}
+
+.time input {
+  background: rgba(0, 0, 0, 0);
+  color: var(--metallic-color);
+  font: 3em Arial italic;
+}
+
+.time input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-width: thin;
+}
