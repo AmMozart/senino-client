@@ -9,11 +9,13 @@ export type ElectricGroupsState = {
 interface InitialState {
   isConnect: boolean;
   electricGroupsState: ElectricGroupsState;
+  currentElectricGroupCommand: ElectricGroupsState
 }
 
 const controllerState: InitialState = {
   isConnect: false,
-  electricGroupsState: {}
+  electricGroupsState: {},
+  currentElectricGroupCommand: {}
 };
 
 const controllerSlice = createSlice({
@@ -28,18 +30,23 @@ const controllerSlice = createSlice({
       state.electricGroupsState = action.payload;
     },
 
+    setCurrentCommand: (state, action: PayloadAction<ElectricGroupsState>) => {
+      state.currentElectricGroupCommand = action.payload;
+    },
+
     setToggleValue: (state, action: PayloadAction<{ name: string }>) => {
-      state.electricGroupsState[action.payload.name] =
+      state.currentElectricGroupCommand =
         state.electricGroupsState[action.payload.name]
-          ? 0
-          : 255;
+          ? {[action.payload.name]: 0}
+          : {[action.payload.name]: 255};
     }
   },
 });
 
-export const { setConnectionState, setElectricGroupsState, setToggleValue } = controllerSlice.actions;
+export const {setCurrentCommand, setConnectionState, setElectricGroupsState, setToggleValue } = controllerSlice.actions;
 
 export const electricGroupsState = (state: RootState): ElectricGroupsState => state.controller.electricGroupsState;
 export const isConnect = (state: RootState): boolean => state.controller.isConnect;
+export const currentElectricGroupCommand = (state: RootState): ElectricGroupsState => state.controller.currentElectricGroupCommand;
 
 export default controllerSlice.reducer;

@@ -6,7 +6,7 @@ import { faStopwatch } from '@fortawesome/free-solid-svg-icons';
 import Days from './Days';
 import Time from './Time';
 import Mode from './Mode';
-import { deleteTimer, TimerState } from '../../features/timer/timerSlice';
+import { deleteTimer, Timer as TimerState } from '../../features/timer/timerSlice';
 import { useAppDispatch } from '../../app/hooks';
 
 interface TimerProps {
@@ -25,8 +25,8 @@ const Timer: React.FC<TimerProps> = ({timer}) => {
       <div className={style.wrapper}>
         <div className={style.timer}>
           <h2>Таймер</h2>
-          <Time />
-          <Mode />
+          <Time time={timer.time} timerId={timer.id}/>
+          <Mode mode={timer.mode} timerId={timer.id}/>
           <Days days={timer.weekDays} timerId={timer.id}/>
           <FontAwesomeIcon className={style.timerIcon} icon={faStopwatch}/>
         </div>

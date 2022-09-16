@@ -4,10 +4,11 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import SwitchButton from '../../components/SwitchButton';
 import Timer from '../../components/Timer/Timer';
 import { addTimer, timers } from '../timer/timerSlice';
-import style from './Boiler.module.css';
 import getID from '../../utils/getID';
 import TimerMode from '../timer/TimerMode';
 import AddTimerButton from '../../components/Timer/AddTimerButton';
+
+import style from './Boiler.module.css';
 
 const Boiler: React.FC = () => {
   const groupName = 'Boiler';

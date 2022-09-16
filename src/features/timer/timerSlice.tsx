@@ -3,12 +3,12 @@ import { RootState } from '../../app/store';
 import TimerMode from './TimerMode';
 import WeekDay from './WeekDay';
 
-interface Time {
+export interface Time {
   hour: number;
   minute: number;
 }
 
-export interface TimerState {
+export interface Timer {
   id: number;
   electricGroupName: string;
   mode: TimerMode;
@@ -16,70 +16,76 @@ export interface TimerState {
   weekDays: WeekDay[];
 }
 
-const initialState: TimerState[] = [
-  {
-    id: 0,
-    electricGroupName: 'Boiler',
-    mode: TimerMode.Off,
-    time: {
-      hour: 0,
-      minute: 0
-    },
-    weekDays: [],
-  }
-];
+export interface TimerState {
+ timers: Timer[];
+ currentTimersCommand: Timer[];
+}
+
+const initialState: TimerState = {
+  timers: [],
+  currentTimersCommand: []
+};
 
 const timerSlice = createSlice({
   name: 'timer',
-  initialState: initialState,
+  initialState,
   reducers: {
+    setAllTimers: (state, action: PayloadAction<Timer[]>) => {
+      state.timers = action.payload;
+    },
 
-    addTimer: (state, action: PayloadAction<TimerState>) => {
-      state.push({...action.payload});
+    addTimer: (state, action: PayloadAction<Timer>) => {
+      state.currentTimersCommand = [...state.timers, action.payload];
     },
 
     deleteTimer: (state, action: PayloadAction<number>) => {
-      const index = state.findIndex(timer => timer.id === action.payload);
+      const index = state.timers.findIndex(timer => timer.id === action.payload);
       if (index !== -1) {
-        state.splice(index, 1);
+        state.timers.splice(index, 1);
+        state.currentTimersCommand = state.timers;
       }
     },
 
     setMode: (state, action: PayloadAction<{id: number, mode: TimerMode}>) => {
-      const index = state.findIndex(timer => timer.id === action.payload.id);
+      const index = state.timers.findIndex(timer => timer.id === action.payload.id);
       if (index !== -1) {
-        state[index].mode = action.payload.mode;
+        state.timers[index].mode = action.payload.mode;
+        state.currentTimersCommand = state.timers;
       }
     },
 
     setTime: (state, action: PayloadAction<{id: number, time: Time}>) => {
-      const index = state.findIndex(timer => timer.id === action.payload.id);
+      const index = state.timers.findIndex(timer => timer.id === action.payload.id);
       if (index !== -1) {
-        state[index].time = action.payload.time;
+        state.timers[index].time = action.payload.time;
+        state.currentTimersCommand = state.timers;
       }
     },
 
     addWeekDay: (state, action: PayloadAction<{id: number, day: WeekDay}>) => {
-      const index = state.findIndex(timer => timer.id === action.payload.id);
+      const index = state.timers.findIndex(timer => timer.id === action.payload.id);
       if (index !== -1) {
-        if(state[index].weekDays.includes(action.payload.day)) {
+        if(state.timers[index].weekDays.includes(action.payload.day)) {
           return;
         }
-        state[index].weekDays.push(action.payload.day);
+        state.timers[index].weekDays.push(action.payload.day);
+        state.currentTimersCommand = state.timers;
       }
     },
 
     deleteWeekDay: (state, action: PayloadAction<{id: number, day: WeekDay}>) => {
-      const index = state.findIndex(timer => timer.id === action.payload.id);
+      const index = state.timers.findIndex(timer => timer.id === action.payload.id);
       if (index !== -1) {
-        state[index].weekDays = state[index].weekDays.filter(day => day !== action.payload.day);
+        state.timers[index].weekDays = state.timers[index].weekDays.filter(day => day !== action.payload.day);
+        state.currentTimersCommand = state.timers;
       }
     },
 
   }
 });
 
-export const { addTimer, deleteTimer, setTime, setMode, addWeekDay, deleteWeekDay } = timerSlice.actions;
-export const timers = (state: RootState): TimerState[] => state.timers;
+export const {setAllTimers, addTimer, deleteTimer, setTime, setMode, addWeekDay, deleteWeekDay } = timerSlice.actions;
+export const timers = (state: RootState): Timer[] => state.timers.timers;
+export const currentTimerCommand = (state: RootState): Timer[] => state.timers.currentTimersCommand;
 
 export default timerSlice.reducer;

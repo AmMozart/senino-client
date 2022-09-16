@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { loadPlayer, Player } from 'rtsp-relay/browser';
 
-import { IP_VIDEO_REGISTRATOR } from '../../config/var';
+import { IP_VIDEO_REGISTRATOR, PORT } from '../../config/var';
 import style from './Video.module.css';
 
-const ffmpegServerStreamURL = `wss://${IP_VIDEO_REGISTRATOR}/api/stream`;
+const ffmpegServerStreamURL = `wss://${IP_VIDEO_REGISTRATOR}:${PORT}/api/stream`;
 
 const Camera: React.FC = () => {
   const canvas = React.useRef<HTMLCanvasElement | null>(null);
@@ -16,6 +16,8 @@ const Camera: React.FC = () => {
       loadPlayer({
         url: ffmpegServerStreamURL,
         canvas: canvas.current,
+        disableGl: true,
+
       })
         .then(plr => player = plr)
         .catch((error: Error)  => console.log(error.message));
