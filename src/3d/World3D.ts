@@ -3,18 +3,21 @@ import * as BABYLON from 'babylonjs';
 import pubSub from '../utils/pubSub';
 import EventName from '../utils/EventName';
 import AreaName from '../features/area/AreaName';
-import { lightGroup } from '../config/config';
+import { blindGroup, lightGroup } from '../config/config';
 import { Light } from './house/electricGroup/Light';
 import { ModelImporter } from './ModelImporter';
 import { Area } from './house/Area';
 import { Camera } from './Camera';
+import { Gate } from './house/electricGroup/Gate';
 
+const TIME_FOR_OPEN_GATE_MS = 25_000;
 export class World3D {
   private scene: BABYLON.Scene;
   private camera: Camera;
   private light: BABYLON.HemisphericLight;
   private area: Area[];
   private lights: Light[];
+  private blinds: Gate[];
 
   public constructor(canvas: HTMLCanvasElement) {
     const engine = new BABYLON.Engine(canvas);
@@ -27,6 +30,7 @@ export class World3D {
 
     this.area = [];
     this.lights = [];
+    this.blinds = [];
 
     const startRender = () => {
       engine.runRenderLoop(() => {
@@ -54,6 +58,10 @@ export class World3D {
 
       Object.values(lightGroup).forEach((array) => {
         this.lights = array.map(name => new Light(name, this.scene));
+      });
+
+      Object.values(blindGroup).forEach((array) => {
+        this.blinds = array.map(name => new Gate(name, TIME_FOR_OPEN_GATE_MS, this.scene));
       });
     });
   }

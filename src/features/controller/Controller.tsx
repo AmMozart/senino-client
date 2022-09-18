@@ -3,11 +3,10 @@ import React, { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import ControllerCommand from './ControllerCommand';
 import { Connection } from './Connection';
-import { currentTimerCommand, setAllTimers, timers } from '../timer/timerSlice';
+import { currentTimerCommand, setAllTimers} from '../timer/timerSlice';
 import { isConnect,
   setConnectionState,
   setElectricGroupsState,
-  electricGroupsState,
   ElectricGroupsState,
   currentElectricGroupCommand
 } from './controllerSlice';
@@ -17,9 +16,7 @@ export const Controller: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const connect = useAppSelector(isConnect);
-  // const groupsState = useAppSelector(electricGroupsState);
   const myCurrentelectricGroupCommand = useAppSelector(currentElectricGroupCommand);
-  const allTimers = useAppSelector(timers);
   const myCurrentTimerCommand = useAppSelector(currentTimerCommand);
 
   const socket = useRef<WebSocket>();
