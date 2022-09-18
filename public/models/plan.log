@@ -1,0 +1,501 @@
+Exporter version: 2.93.0, Blender version: 2.93.0
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used :
+		Inline textures     :  false
+		Material Type       :  PBR
+		Positions Precision :  4
+		Normals Precision   :  3
+		UVs Precision       :  3
+		Vert Color Precision:  3
+		Mat Weight Precision:  2
+		Keep Z-up r-handed  :  no
+		Texture directory   :  E:\Share\
+	Python World class constructor completed
+	WARNING: No active camera has been assigned, or is not in a currently enabled collection
+	processing begun of mesh:  2 Этаж
+		processing begun of material:  ground_1.003
+		processing begun of material:  wall_1_2.002
+		processing begun of material:  wall_1_3.002
+		processing begun of material:  wall_2_8
+		processing begun of material:  wall_2_9.001
+		processing begun of material:  wall_5_26.001
+		processing begun of material:  wall_6_32
+		processing begun of material:  wall_6_33
+		processing begun of material:  wall_10_57
+		processing begun of material:  room_26_152
+		processing begun of material:  room_27_153
+		processing begun of material:  room_30_156
+		processing begun of material:  white.003
+		processing begun of material:  flltgrey.001
+		processing begun of material:  frame_door_Cube_206
+		processing begun of material:  sweethome3d_hinge_1_6_207
+		processing begun of material:  sweethome3d_opening_on_hinge_1_handle_209
+		processing begun of material:  sweethome3d_opening_on_hinge_1_door_210
+		processing begun of material:  white_mesh01_231
+		processing begun of material:  tan
+		processing begun of material:  brown
+		processing begun of material:  bclair
+		processing begun of material:  archwhite2
+		processing begun of material:  lighttan.001
+		processing begun of material:  silver.002
+		processing begun of material:  279
+		processing begun of material:  metal.003
+		processing begun of material:  _2BNX13D07_1_1
+		processing begun of material:  _2BNL13D03_4_4
+		processing begun of material:  OfficeChair3_1
+		processing begun of material:  OfficeChair3_2
+		processing begun of material:  monitor
+		processing begun of material:  screen
+		processing begun of material:  soport_apple
+		processing begun of material:  base_teclado
+		processing begun of material:  313
+		processing begun of material:  teclas
+		processing begun of material:  wood.001
+		processing begun of material:  alumain
+		processing begun of material:  glasstransparent.001
+		processing begun of material:  318
+		processing begun of material:  libros_blancos
+		processing begun of material:  flwhite
+		processing begun of material:  fabric
+		processing begun of material:  mattress
+		processing begun of material:  legs
+		processing begun of material:  ruglegs
+		processing begun of material:  sheet
+		processing begun of material:  hetrenoir
+		processing begun of material:  verre
+		processing begun of material:  Gris
+		processing begun of material:  blondhair
+		processing begun of material:  lowbed
+		processing begun of material:  texturefabric
+		processing begun of material:  Upholstry
+		processing begun of material:  Chair
+		processing begun of material:  bone
+		processing begun of material:  metal_2_2_12_459
+		processing begun of material:  Lid
+		processing begun of material:  Drain.001
+		processing begun of material:  blue
+		processing begun of material:  glass.003
+		processing begun of material:  frame
+		processing begun of material:  red
+		processing begun of material:  metal_12_12_476
+		processing begun of material:  drain
+		processing begun of material:  cabinet.001
+		processing begun of material:  sink.001
+		processing begun of material:  front
+		processing begun of material:  top
+		processing begun of material:  Cloth1
+		processing begun of material:  Lining1
+		processing begun of material:  Hook
+		processing begun of material:  Hanger
+		processing begun of material:  Lining2
+		processing begun of material:  Cloth2
+		processing begun of material:  Rack
+		processing begun of material:  default
+			processing texture plan2_wall_6_32
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_wall_6_32.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_room_26_152
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_room_26_152.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_room_26_152
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_room_26_152.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_room_30_156
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_room_30_156.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_bclair
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_bclair.png'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_wood
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_wood.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_318
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_318.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_fabric
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_fabric.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_sheet
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_sheet.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_hetrenoir
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_hetrenoir.png'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_verre
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_verre.png'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_texturefabric
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_texturefabric.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_Cloth1
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_Cloth1.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan2_Cloth2
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan2_Cloth2.jpeg'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		processing begun of multimaterial:  plan.Multimaterial#0
+		Custom split normals with tangents being used
+		num positions      :  125897
+		num normals        :  125897
+		num tangents       :  503588
+		num uvs            :  251794
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  100244
+		WARNING: # of 0 area faces found:  44
+	processing begun of mesh:  1 Этаж
+		processing begun of material:  ground_1
+		processing begun of material:  wall_1_2.003
+		processing begun of material:  wall_1_3.003
+		processing begun of material:  wall_1_4.001
+		processing begun of material:  wall_2_9.002
+		processing begun of material:  wall_2_10.001
+		processing begun of material:  wall_7_40.001
+		processing begun of material:  wall_11_72.001
+		processing begun of material:  wall_12_74.001
+		processing begun of material:  wall_16_99
+		processing begun of material:  room_18_110
+		processing begun of material:  room_19_111
+		processing begun of material:  room_20_112
+		processing begun of material:  room_21_113
+		processing begun of material:  iris.001
+		processing begun of material:  yellow_green.001
+		processing begun of material:  flbrown.001
+		processing begun of material:  amber.001
+		processing begun of material:  white
+		processing begun of material:  yellowbrt.001
+		processing begun of material:  flgrey.001
+		processing begun of material:  white_frame_157
+		processing begun of material:  yellowbrt_sweethome3d_opening_on_hinge_1_handle_7_165
+		processing begun of material:  white_Montant_168
+		processing begun of material:  flltgrey.002
+		processing begun of material:  white_frame_205
+		processing begun of material:  flltgrey_sweethome3d_window_pane_on_hinge_1_211
+		processing begun of material:  Tub.001
+		processing begun of material:  Legs.001
+		processing begun of material:  Water.001
+		processing begun of material:  Side.001
+		processing begun of material:  Drain.002
+		processing begun of material:  Jet_system.001
+		processing begun of material:  lighttan.002
+		processing begun of material:  glasstransparent.002
+		processing begun of material:  glassblutint.001
+		processing begun of material:  fusta_taula.001
+		processing begun of material:  glasstransparent_glass2_Cube_281
+		processing begun of material:  flltbrown.001
+		processing begun of material:  flbrown_dessus_296
+		processing begun of material:  372
+		processing begun of material:  sofa.001
+		processing begun of material:  negrepotes.001
+		processing begun of material:  metall
+		processing begun of material:  lighttan_step_382
+		processing begun of material:  Bois.001
+		processing begun of material:  NoirTissu.001
+		processing begun of material:  essai.001
+		processing begun of material:  MetaPlast.001
+		processing begun of material:  sweethome3d_window_mirror_492
+		processing begun of material:  Rod.001
+		processing begun of material:  Junction.001
+		processing begun of material:  Right.001
+		processing begun of material:  Left.001
+		processing begun of material:  Rod_Rod_501
+		processing begun of material:  Junction_Rod_14_503
+		processing begun of material:  Right_RightCurtain_505
+		processing begun of material:  Left_LeftCurtain_507
+		processing begun of material:  Frame_out.001
+		processing begun of material:  Cage_out.001
+		processing begun of material:  Lock.001
+		processing begun of material:  Glass
+		processing begun of material:  Frame_in.001
+		processing begun of material:  Cage_in.001
+		processing begun of material:  Threshold.001
+		processing begun of material:  metal
+		processing begun of material:  toalla_blanca.001
+		processing begun of material:  mirror.001
+		processing begun of material:  cabinet.002
+		processing begun of material:  light.001
+		processing begun of material:  mirror_edge.001
+		processing begun of material:  cupb.001
+		processing begun of material:  sink.002
+		processing begun of material:  chrome.001
+		processing begun of material:  silver.003
+		processing begun of material:  metal_567
+		processing begun of material:  568
+		processing begun of material:  569
+		processing begun of material:  570
+		processing begun of material:  571
+		processing begun of material:  glass
+		processing begun of material:  585
+		processing begun of material:  587
+		processing begun of material:  Cube_27_590
+		processing begun of material:  591
+		processing begun of material:  flltgrey_603
+		processing begun of material:  ltgrey
+		processing begun of material:  grey.001
+		processing begun of material:  Aluminum
+		processing begun of material:  624
+		processing begun of material:  wire_000000000
+		processing begun of material:  wire_079079079
+		processing begun of material:  03___Default
+		processing begun of material:  wire_216102000
+			processing texture plan_wall_1_2
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_wall_2_10
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_wall_12_74
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_Side
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_sweethome3d_window_mirror_492
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_571
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_571
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_591
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		processing begun of multimaterial:  plan.Multimaterial#1
+		Custom split normals with tangents being used
+		num positions      :  67897
+		num normals        :  67897
+		num tangents       :  271588
+		num uvs            :  135794
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  83193
+		WARNING: # of 0 area faces found:  36
+	processing begun of mesh:  Участок
+		processing begun of material:  ground_1.004
+		processing begun of material:  wall_37_2
+		processing begun of material:  wall_37_3
+		processing begun of material:  wall_37_6
+		processing begun of material:  wall_40_24
+		processing begun of material:  wall_41_26
+		processing begun of material:  room_61_44
+		processing begun of material:  room_62_45
+		processing begun of material:  room_70_53
+		processing begun of material:  doorlines.001
+		processing begun of material:  interior.001
+		processing begun of material:  sweethome3d_window_mirror.001
+		processing begun of material:  textured.001
+		processing begun of material:  firstcolor.001
+		processing begun of material:  tires.001
+		processing begun of material:  chromes.001
+		processing begun of material:  holes.001
+		processing begun of material:  glass.005
+		processing begun of material:  blackplastics.001
+		processing begun of material:  lowparts.001
+		processing begun of material:  paintedwhite.001
+		processing begun of material:  white.005
+		processing begun of material:  159
+		processing begun of material:  162
+		processing begun of material:  Alu_frame.001
+		processing begun of material:  Glass.004
+		processing begun of material:  Flooring.001
+		processing begun of material:  Lamp.001
+		processing begun of material:  flpinegreen.001
+		processing begun of material:  silver.004
+		processing begun of material:  white_Cube_6_7_196
+		processing begun of material:  grey.002
+		processing begun of material:  Rock.001
+			processing texture plan_wall_37_2
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_wall_37_2
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_room_61_44
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_textured
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_paintedwhite
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_paintedwhite
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_159
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_159
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_Flooring
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_Lamp
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture plan_Rock
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		processing begun of multimaterial:  plan.Multimaterial#2
+		Custom split normals with tangents being used
+		num positions      :  45847
+		num normals        :  45847
+		num tangents       :  183388
+		num uvs            :  91694
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  25167
+	processing begun of mesh:  1-01L
+		processing begun of material:  ltgold_2_2.001
+		processing begun of material:  ltglass_1_1.001
+		processing begun of multimaterial:  plan.Multimaterial#3
+		Custom split normals with tangents being used
+		num positions      :  6068
+		num normals        :  6068
+		num tangents       :  24272
+		num uvs            :  12136
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  6160
+	processing begun of mesh:  1-02L
+		processing begun of material:  metall.002
+		processing begun of material:  Torus_2.001
+		processing begun of material:  4.001
+		processing begun of material:  5.001
+		processing begun of material:  sweethome3d_opening_on_rail_1_stones2_Icosphere_7680_7.001
+		processing begun of material:  sweethome3d_opening_on_rail_1_stones2_Icosphere_8.001
+		processing begun of material:  glass.004
+		processing begun of material:  17.001
+		processing begun of material:  18.001
+		processing begun of multimaterial:  plan.Multimaterial#4
+		Custom split normals with tangents being used
+		num positions      :  168415
+		num normals        :  168415
+		num tangents       :  673660
+		num uvs            :  336830
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  132302
+	processing begun of mesh:  1-03L
+		processing begun of material:  metal.004
+		processing begun of material:  20.001
+		processing begun of material:  21.001
+		processing begun of material:  22.001
+		processing begun of multimaterial:  plan.Multimaterial#5
+		Custom split normals with tangents being used
+		num positions      :  4320
+		num normals        :  4320
+		num tangents       :  17280
+		num uvs            :  8640
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  8512
+	processing begun of mesh:  1-04L
+		processing begun of material:  Mirror.001
+		processing begun of material:  Glass.003
+			processing texture plan_Mirror
+				WARNING: Exception during copy:
+					[Errno 2] No such file or directory: 'C:\\Users\\Aperkot\\Desktop\\plan_Mirror.png'
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		processing begun of multimaterial:  plan.Multimaterial#6
+		Custom split normals with tangents being used
+		num positions      :  251
+		num normals        :  251
+		num tangents       :  1004
+		num uvs            :  502
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  112
+	processing begun of mesh:  1-05L
+		processing begun of material:  Light.001
+		processing begun of material:  Support.001
+		processing begun of multimaterial:  plan.Multimaterial#7
+		Custom split normals with tangents being used
+		num positions      :  694
+		num normals        :  694
+		num tangents       :  2776
+		num uvs            :  1388
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  532
+	processing begun of mesh:  1-06L
+		processing begun of material:  white.004
+		Custom split normals with tangents being used
+		num positions      :  460
+		num normals        :  460
+		num tangents       :  1840
+		num uvs            :  920
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  588
+	processing begun of mesh:  1-07L
+		processing begun of material:  20.001
+		processing begun of material:  metal.004
+		processing begun of material:  21.001
+		processing begun of material:  22.001
+		registered as also a user of material:  20.001
+		registered as also a user of material:  metal.004
+		registered as also a user of material:  21.001
+		registered as also a user of material:  22.001
+		processing begun of multimaterial:  plan.Multimaterial#8
+		Custom split normals with tangents being used
+		num positions      :  4320
+		num normals        :  4320
+		num tangents       :  17280
+		num uvs            :  8640
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  8512
+	processing begun of mesh:  VV-1
+		processing begun of material:  vent_out.002
+		processing begun of material:  fan.002
+		processing begun of material:  vent_in.002
+		processing begun of material:  vent.002
+		processing begun of multimaterial:  plan.Multimaterial#9
+		num positions      :  722
+		num normals        :  722
+		num tangents       :  2888
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  336
+	processing begun of mesh:  Door 1
+		processing begun of material:  Gate.001
+		Custom split normals with tangents being used
+		num positions      :  2241
+		num normals        :  2241
+		num tangents       :  8964
+		num uvs            :  4482
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  3142
+	processing begun of mesh:  Vorota
+		processing begun of material:  wood.002
+		processing begun of material:  metal.005
+		processing begun of material:  sign.001
+			processing texture plan_sign
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		processing begun of multimaterial:  plan.Multimaterial#10
+		Custom split normals with tangents being used
+		num positions      :  3850
+		num normals        :  3850
+		num tangents       :  15400
+		num uvs            :  7700
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  1284
+========= Writing of JSON file started =========
+	writing mesh:  2 Этаж
+	writing mesh:  1 Этаж
+	writing mesh:  Участок
+	writing mesh:  1-01L
+	writing mesh:  1-02L
+	writing mesh:  1-03L
+	writing mesh:  1-04L
+	writing mesh:  1-05L
+	writing mesh:  1-06L
+	writing mesh:  1-07L
+	writing mesh:  VV-1
+	writing mesh:  Door 1
+	writing mesh:  Vorota
+========= Writing of JSON file completed =========
+========= end of processing =========
+elapsed time:  0 min, 39.5085 secs
