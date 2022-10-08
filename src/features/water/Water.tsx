@@ -1,26 +1,49 @@
-import classNames from 'classnames';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTint } from '@fortawesome/free-solid-svg-icons';
 
-import style from './Water.module.css';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import SwitchButton from '../../components/SwitchButton';
+import AddTimerButton from '../../components/Timer/AddTimerButton';
+import { addTimer, timers } from '../timer/timerSlice';
+import Timer from '../../components/Timer/Timer';
+import getID from '../../utils/getID';
+import TimerMode from '../timer/TimerMode';
 
-interface WaterProps {
-  value?: boolean;
-}
+import style from './water.module.css';
 
-const Water: React.FunctionComponent<WaterProps> = ({value = false}) => {
-  const classes = classNames({
-    [style.water]: true,
-    [style.normal]: !value,
-    [style.problem]: value,
-  });
-  
+const Water: React.FC = () => {
+  const groupName = 'HotWater';
+  const dispatch = useAppDispatch();
+  const allTimers = useAppSelector(timers);
+
+  const add = () => {
+    dispatch(addTimer({
+      id: getID(),
+      electricGroupName: groupName,
+      mode: TimerMode.Off,
+      time: {hour: 0, minute: 0},
+      weekDays: [],
+    }));
+  };
+
+  const timerElements = allTimers
+    .filter(timer => 
+      timer.electricGroupName === groupName)
+    .map(timer =>
+      <Timer key={timer.id} timer={timer} />);
+
   return (
-    <div className={classes}>
-      <FontAwesomeIcon icon={faTint}/>
+    <div className={style.water}>
+      
+      <h1>Вода</h1>
+      <SwitchButton electricGroupName={groupName}/>
+    
+      <div className={style.timer}>
+        {timerElements}
+      </div>
+
+      <AddTimerButton onClick={add}/>
     </div>
   );
 };
 
-export default React.memo(Water);
+export default Water;

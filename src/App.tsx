@@ -11,6 +11,7 @@ import Video from './features/video/Video';
 import Sleep from './features/sleep/Sleep';
 import Boiler from './features/boiler/Boiler';
 import Septic from './features/septic/Septic';
+import Water from './features/water/water';
 
 function App(): JSX.Element {
 
@@ -27,6 +28,7 @@ function App(): JSX.Element {
           <Route path='Video' element={<Video />}/>
           <Route path='Boiler' element={<Boiler />}/>
           <Route path='Septic' element={<Septic />}/>
+          <Route path='Water' element={<Water />}/>
         </Routes>
       </div>
       
