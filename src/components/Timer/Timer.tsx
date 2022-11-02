@@ -1,13 +1,53 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import style from './Timer.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStopwatch } from '@fortawesome/free-solid-svg-icons';
+import { deleteTimer, Timer as TimerState } from '../../features/timer/timerSlice';
+import { useAppDispatch } from '../../app/hooks';
 import Days from './Days';
 import Time from './Time';
 import Mode from './Mode';
-import { deleteTimer, Timer as TimerState } from '../../features/timer/timerSlice';
-import { useAppDispatch } from '../../app/hooks';
+
+const StyledTimer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background: var(--panel-background-color);
+  border-radius: 15px;
+  padding: 10px;
+  transition: all 0.3s linear;
+
+@media (max-width: 576px) {
+  flex-flow: wrap-reverse;
+  justify-content: right;
+  gap: 20px;
+  }
+`;
+
+const StyledClose = styled.div`
+  position: relative;
+  width: 40px;
+  height: 40px;
+
+&:before,
+&:after {
+  position: absolute;
+  left: 20px;
+  content: " ";
+  height: 40px;
+  width: 3px;
+  background-color: #a71616;
+}
+
+&:before {
+  transform: rotate(45deg);
+}
+
+&:after {
+  transform: rotate(-45deg);
+}`;
 
 interface TimerProps {
   timer: TimerState;
@@ -22,16 +62,12 @@ const Timer: React.FC<TimerProps> = ({timer}) => {
 
   return (
     <>
-      <div className={style.wrapper}>
-        <div className={style.timer}>
-          <h2>Таймер</h2>
-          <Time time={timer.time} timerId={timer.id}/>
-          <Mode mode={timer.mode} timerId={timer.id}/>
-          <Days days={timer.weekDays} timerId={timer.id}/>
-          <FontAwesomeIcon className={style.timerIcon} icon={faStopwatch}/>
-        </div>
-        <div className={style.close} onClick={closeTimer}></div>
-      </div>
+      <StyledTimer>
+        <Time time={timer.time} timerId={timer.id}/>
+        <Mode mode={timer.mode} timerId={timer.id}/>
+        <Days days={timer.weekDays} timerId={timer.id}/>
+        <StyledClose onClick={closeTimer}></StyledClose>
+      </StyledTimer>
     </>
   );
 };

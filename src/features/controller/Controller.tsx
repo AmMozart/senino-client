@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import ControllerCommand from './ControllerCommand';
-import { Connection } from './Connection';
+import { Connection } from '../Header/Connection';
 import { currentTimerCommand, setAllTimers} from '../timer/timerSlice';
 import { isConnect,
   setConnectionState,
@@ -11,6 +11,7 @@ import { isConnect,
   currentElectricGroupCommand
 } from './controllerSlice';
 import { PORT, SERVER_IP } from '../../config/var';
+import { clearLogCommand, setLog } from '../settings/settingsSlice';
 
 export const Controller: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -18,12 +19,15 @@ export const Controller: React.FC = () => {
   const connect = useAppSelector(isConnect);
   const myCurrentelectricGroupCommand = useAppSelector(currentElectricGroupCommand);
   const myCurrentTimerCommand = useAppSelector(currentTimerCommand);
+  const myClearLogCommand = useAppSelector(clearLogCommand);
 
   const socket = useRef<WebSocket>();
   const ref = useRef<ElectricGroupsState>();
 
+  let connectWss: () => void;
+
   useEffect(() => {
-    const connect = () => {
+    connectWss = () => {
       socket.current = new WebSocket(`wss://${SERVER_IP}:${PORT}`);
 
       socket.current.onopen = () => {
@@ -43,6 +47,10 @@ export const Controller: React.FC = () => {
             dispatch(setAllTimers(receive[key]));
             break;
           }
+          case 'logs': {
+            dispatch(setLog(receive[key]));
+            break;
+          }
           default:
             throw new Error(`'${event.data.constructor.name}' type of message receive is not handle. data is ${event.data}`);
           }
@@ -56,17 +64,15 @@ export const Controller: React.FC = () => {
           console.log(`[close] Соединение прервано, код=${event.code} причина=${event.reason}`);
         }
         dispatch(setConnectionState(false));
-        setTimeout(() => { connect(); }, 10000);
       };
 
       socket.current.onerror = (error) => {
         console.log(`[error] ${error}`);
         dispatch(setConnectionState(false));
-        setTimeout(() => { connect(); }, 10000);
       };
     };
 
-    connect();
+    connectWss();
   }, [dispatch]);
 
   useEffect(() => {
@@ -84,9 +90,18 @@ export const Controller: React.FC = () => {
     ref.current = myCurrentelectricGroupCommand;
   }, [myCurrentelectricGroupCommand]);
 
+  let id: any;
+
   useEffect(() => {
-    if (socket.current && connect)
+    if (socket.current && connect) {
       socket.current.send(JSON.stringify({command: ControllerCommand.GetState}));
+    }
+
+    if(connect) {
+      clearInterval(id);
+    } else {
+      id = setInterval(() => { connectWss(); }, 10000);
+    }
   }, [connect]);
 
   // useEffect(() => {
@@ -98,6 +113,11 @@ export const Controller: React.FC = () => {
     if (socket.current?.readyState === 1)
       socket.current.send(JSON.stringify({command: ControllerCommand.SetTimers, payload: myCurrentTimerCommand}));
   }, [myCurrentTimerCommand]);
+
+  useEffect(() => {
+    if (socket.current?.readyState === 1)
+      socket.current.send(JSON.stringify({command: ControllerCommand.ClearLog, payload: myClearLogCommand}));
+  }, [myClearLogCommand]);
 
   return <Connection isConnect={connect}/>;
 };

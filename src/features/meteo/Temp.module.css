@@ -1,6 +1,5 @@
 @import "/src/var.css";
 
 .temp {
-  color: var(--metallic-color);
   font-size: 0.8em;
 }

@@ -19,14 +19,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ],
   "types": [
     "babylonjs",
     "babylonjs-loaders",
     ""
   ],
+  "include": [
+    "src"
+  ]
 }

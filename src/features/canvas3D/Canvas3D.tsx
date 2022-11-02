@@ -1,8 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 
-import Assets3D from '../Assets3D/Assets3D';
 import { World3D } from '../../3d/World3D';
-import style from './Canvas3D.module.css';
+import Assets3D from '../Assets3D';
+
+const StyledCanvas3D = styled.canvas`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
 
 const Canvas3D: React.FC = () => {
   const [world3DReady, setWorld3DReady] = useState<boolean>(false);
@@ -25,12 +33,10 @@ const Canvas3D: React.FC = () => {
 
   return (
     <>
-      <div className={style.canvasWrapper}>
-        <canvas ref={canvas} className={style.canvas}>
-          You are browser do not support canvas tag!
-        </canvas>
-      </div>
-    
+      <StyledCanvas3D ref={canvas}>
+        You are browser do not support canvas tag!
+      </StyledCanvas3D>
+
       {world3DReady && <Assets3D />}
     </>
   );

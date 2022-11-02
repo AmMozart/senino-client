@@ -1,26 +1,62 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { loadPlayer, Player } from 'rtsp-relay/browser';
 
-import { IP_VIDEO_REGISTRATOR, PORT } from '../../config/var';
-import style from './Video.module.css';
+import { serverCamStreamUrl } from './url';
+import CameraList from './CameraList';
 
-const ffmpegServerStreamURL = `wss://${IP_VIDEO_REGISTRATOR}:${PORT}/api/stream`;
+const StyledCamera = styled.div`
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #000;
+  border-radius: 20px;
+  margin: 5px;
+  z-index: 2;
+
+ & canvas {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  border-radius: 20px;
+}
+
+& div {
+  display: block;
+  width: 85%;
+  max-height: 89%;
+}
+
+@media (max-height: 576px) {
+  & canvas {
+    width: 75%;
+  }
+}
+
+@media (max-width: 576px) {
+  flex-direction: column;
+}`;
 
 const Camera: React.FC = () => {
+  const [url, setUrl] = useState(serverCamStreamUrl.Road);
   const canvas = React.useRef<HTMLCanvasElement | null>(null);
 
+  let player: Player;
+  
   useEffect(() => {
-    let player: Player;
+    player && player.stop();
 
     if(canvas.current) {
       loadPlayer({
-        url: ffmpegServerStreamURL,
+        url,
         canvas: canvas.current,
         disableGl: true,
-
+        autoplay: true,
       })
         .then(plr => player = plr)
-        .catch((error: Error)  => console.log(error.message));
+        .catch((error: Error) => console.log(error.message));
     }
 
     return () => {
@@ -28,14 +64,18 @@ const Camera: React.FC = () => {
         player.destroy();
       }
     };
-  }, []);
+  }, [url]);
 
   return (
-    <div className={style.cam}>
-      <canvas className={style.canvas} ref={canvas}>
+    <StyledCamera>
+      <div>
+        <canvas ref={canvas}>
         You are browser do not support canvas tag!
-      </canvas>
-    </div>
+        </canvas>
+      </div>
+
+      <CameraList changeURL={setUrl}/>
+    </StyledCamera>
   );
 };
 

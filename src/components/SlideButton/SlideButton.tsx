@@ -1,7 +1,33 @@
-import classNames from 'classnames';
 import React from 'react';
+import styled from 'styled-components';
 
-import style from './BoilerPower.module.css';
+const StyledSlideButton = styled.section`
+& div {
+  --size: 80px;
+  position: relative;
+  width: calc(var(--size) * 2);
+  height: var(--size);
+  border-radius: calc(var(--size) / 2);
+  transition: all 0.5s linear;
+  background: ${(props: {isActive: boolean}) => props.isActive ? '#5591eb' : '#a1a1a1'};
+  }
+
+& button {
+  position: absolute;
+  left: ${(props: {isActive: boolean}) => props.isActive ? 'var(--size)' : '0'};
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(transparent, #fff);
+  border: 2px solid var(--panel-background-color);
+  border-radius: 50%;
+  color: #505050;
+  font-size: 1.2em;
+  transition: all 0.5s ease-out;
+}
+
+@media (max-height: 576px) {
+    --size: 40px;
+}`;
 
 interface SlideButtonProps {
   isActive: boolean;
@@ -9,25 +35,14 @@ interface SlideButtonProps {
 }
 
 const SlideButton: React.FC<SlideButtonProps> = ({isActive, onClick}) => {
-
-  const buttonStyle = classNames({
-    [style.button]: true,
-    [style.onButton]: isActive,
-    [style.offButton]: !isActive,
-  });
-
-  const backgroundStyle = classNames({
-    [style.background]: true,
-    [style.onBackground]: isActive,
-    [style.offBackground]: !isActive,
-  });
-
   const value = isActive ? 'Вкл' : 'Выкл';
 
   return (
-    <div className={backgroundStyle} onClick={onClick}>
-      <button className={buttonStyle}>{value}</button>
-    </div>
+    <StyledSlideButton isActive={isActive} onClick={onClick}>
+      <div>
+        <button>{value}</button>
+      </div>
+    </StyledSlideButton>
   );
 };
 

@@ -1,9 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
 
-import style from './Home.module.css';
+import StyledStatusButton from '../styles/StyledStatusButton';
+import ClickAnimation from '../styles/ClickAnimation';
 
 const Home: React.FunctionComponent = () => {
   const navigate = useNavigate();
@@ -13,9 +14,13 @@ const Home: React.FunctionComponent = () => {
   };
 
   return (
-    <div className={style.home} onClick={goHome}>
-      <FontAwesomeIcon icon={faHome}/>
-    </div>
+    <StyledStatusButton>
+      <ClickAnimation>
+        <div onClick={goHome}>
+          <FontAwesomeIcon icon={faHome}/>
+        </div>
+      </ClickAnimation>
+    </StyledStatusButton>
   );
 };
 

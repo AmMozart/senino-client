@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import MenuButton from './MenuButton';
+import MenuBurger from '../Header/MenuBurger';
 
 const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,7 @@ const Menu: React.FC = () => {
     }
   }, [location.pathname]);
 
-  return <MenuButton isOpen={isOpen} onClick={handleClick}/>;
+  return <MenuBurger isOpen={isOpen} onClick={handleClick}/>;
 };
 
 export default Menu;

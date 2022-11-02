@@ -1,19 +1,19 @@
 import React from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { useAppDispatch } from '../../app/hooks';
 import SwitchButton from '../../components/SwitchButton';
-import AddTimerButton from '../../components/Timer/AddTimerButton';
-import { addTimer, timers } from '../timer/timerSlice';
-import Timer from '../../components/Timer/Timer';
+import { addTimer } from '../timer/timerSlice';
 import getID from '../../utils/getID';
 import TimerMode from '../timer/TimerMode';
-
-import style from './Septic.module.css';
+import StyledPage from '../styles/StyledPage';
+import StyledTitle from '../styles/StyledTitle';
+import StyledContent from '../styles/StyledContent';
+import TimerSet from '../../components/Timer/TimerSet';
+import StyledButton from '../styles/StyledButton';
 
 const Septic: React.FC = () => {
   const groupName = 'Septik';
   const dispatch = useAppDispatch();
-  const allTimers = useAppSelector(timers);
 
   const add = () => {
     dispatch(addTimer({
@@ -25,24 +25,15 @@ const Septic: React.FC = () => {
     }));
   };
 
-  const timerElements = allTimers
-    .filter(timer => 
-      timer.electricGroupName === groupName)
-    .map(timer =>
-      <Timer key={timer.id} timer={timer} />);
-
   return (
-    <div className={style.septic}>
-      
-      <h1>Септик</h1>
-      <SwitchButton electricGroupName='Septik'/>
-    
-      <div className={style.timer}>
-        {timerElements}
-      </div>
-
-      <AddTimerButton onClick={add}/>
-    </div>
+    <StyledPage>
+      <StyledTitle>Септик</StyledTitle>
+      <StyledContent>
+        <SwitchButton electricGroupName='Septik'/>
+        <TimerSet groupName={groupName} />
+      </StyledContent>
+      <StyledButton onClick={add}>Добавить Таймер</StyledButton>
+    </StyledPage>
   );
 };
 

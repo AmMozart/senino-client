@@ -1,11 +1,32 @@
 import React from 'react';
-import classNames from 'classnames';
+import styled, { css } from 'styled-components';
 
 import TimerMode from '../../features/timer/TimerMode';
 import { setMode } from '../../features/timer/timerSlice';
-
-import style from './Mode.module.css';
 import { useAppDispatch } from '../../app/hooks';
+
+const StyledMode = styled.div`
+  font: 1.6em bold;
+  color: var(--btn-text-color);
+
+  @media (max-width: 576px) {
+  font-size: 1.2em;
+}
+`;
+
+const StyledButton = styled.span`
+  padding: 10px;
+  border-radius: 10px;
+  ${(props: {isActive: boolean}) => props.isActive
+    && css`
+      --color: rgb(24 141 22);
+      color: var(--color);
+      border: 1px solid var(--color);
+    `
+}
+
+`;
+
 
 interface ModeProps {
   mode: TimerMode;
@@ -19,21 +40,14 @@ const Mode: React.FC<ModeProps> = ({mode, timerId}) => {
     const newMode = event.currentTarget.textContent === 'Вкл' ? TimerMode.On : TimerMode.Off;
     dispatch(setMode({id: timerId, mode: newMode}));
   };
-  
-  const styleOn = classNames({
-    [style.selectButton]: mode === TimerMode.On
-  });
 
-  const styleOff = classNames({
-    [style.selectButton]: mode === TimerMode.Off
-  });
+  const isActive = mode === TimerMode.On;
 
   return (
-    <div className={style.mode}>
-      Режим:
-      <span className={styleOn} onClick={handleChange}>Вкл</span>
-      <span className={styleOff} onClick={handleChange}>Выкл</span>
-    </div>
+    <StyledMode>
+      <StyledButton isActive={isActive} onClick={handleChange}>Вкл</StyledButton>
+      <StyledButton isActive={!isActive} onClick={handleChange}>Выкл</StyledButton>
+    </StyledMode>
   );
 };
 

@@ -1,19 +1,20 @@
 import React from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { useAppDispatch } from '../../app/hooks';
 import SwitchButton from '../../components/SwitchButton';
-import Timer from '../../components/Timer/Timer';
-import { addTimer, timers } from '../timer/timerSlice';
 import getID from '../../utils/getID';
+import { addTimer } from '../timer/timerSlice';
 import TimerMode from '../timer/TimerMode';
-import AddTimerButton from '../../components/Timer/AddTimerButton';
+import StyledPage from '../styles/StyledPage';
 
-import style from './Boiler.module.css';
+import TimerSet from '../../components/Timer/TimerSet';
+import StyledTitle from '../styles/StyledTitle';
+import StyledContent from '../styles/StyledContent';
+import StyledButton from '../styles/StyledButton';
 
 const Boiler: React.FC = () => {
   const groupName = 'Boiler';
   const dispatch = useAppDispatch();
-  const allTimers = useAppSelector(timers);
 
   const add = () => {
     dispatch(addTimer({
@@ -25,25 +26,15 @@ const Boiler: React.FC = () => {
     }));
   };
 
-  const timerElements = allTimers
-    .filter(timer => 
-      timer.electricGroupName === groupName)
-    .map(timer =>
-      <Timer key={timer.id} timer={timer} />);
-
   return (
-    <div className={style.boiler}>
-
-      <h1>Отопительный котел</h1>
-      <SwitchButton electricGroupName={groupName} />
-
-      <div className={style.timer}>
-        {timerElements}
-      </div>
-
-      <AddTimerButton onClick={add}/>
-
-    </div>
+    <StyledPage>
+      <StyledTitle>Отопительный котел</StyledTitle>
+      <StyledContent>
+        <SwitchButton electricGroupName={groupName} />
+        <TimerSet groupName={groupName} />
+      </StyledContent>
+      <StyledButton onClick={add}>Добавить Таймер</StyledButton>
+    </StyledPage>
   );
 };
 

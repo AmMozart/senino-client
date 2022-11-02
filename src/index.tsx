@@ -3,26 +3,54 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import {enableMapSet} from 'immer';
+import { createGlobalStyle } from 'styled-components';
 
-import './index.css';
 import App from './App';
 import { store } from './app/store';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
+const GlobalStyle = createGlobalStyle`
+  *,
+  *::before,
+  *:after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    user-select: none;
+  }
+
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+`;
 
 enableMapSet();
 
 ReactDOM.render(
   <React.StrictMode>
+
+    <GlobalStyle />
+
     <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorkerRegistration.register();

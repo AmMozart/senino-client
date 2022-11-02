@@ -1,12 +1,32 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React from 'react';
+import styled from 'styled-components';
 
 import { useAppSelector } from '../../app/hooks';
-import { selectName } from './areaSlice';
 import AreaButton from './AreaButton/AreaButton';
-import AreaMenu from './AreaMenu';
+import { selectName } from './areaSlice';
 import AreaName from './AreaName';
-import style from './AreaPanel.module.css';
+
+const StyledAreaPanel = styled.section`
+  height: 90%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  background-color: var(--panel-background-color);
+
+  @media (max-width: 576px) {
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+  }
+`;
+
+const StyledButton = styled.div`
+  display: block;
+`;
 
 interface AreaPanelProps {
   areas: AreaName[];
@@ -15,32 +35,20 @@ interface AreaPanelProps {
 const AreaPanel: React.FC<AreaPanelProps> = ({areas}) => {
   const currentArea = useAppSelector(selectName);
 
-  const [isShow, setIsShow] = useState(false);
-
-  const tottleButtons = () => setIsShow(!isShow);
-  const hideButtons = () => setIsShow(false);
-
-  const btnClass = classNames({
-    [style.container]: true,
-    [style.show]: isShow,
-  });
-
   const Buttons = areas.map(area => {
     const isActive = currentArea === area;
-    return isShow && isActive ? 
-      null
-      :(
-        <div className={btnClass} key={area} onClick={hideButtons}>
-          <AreaButton name={area} isActive={isActive} />
-        </div>
-      );
+
+    return (
+      <StyledButton key={area}>
+        <AreaButton name={area} isActive={isActive} />
+      </StyledButton>
+    );
   });
 
   return (
-    <section className={style.areaPanel}>
+    <StyledAreaPanel>
       {Buttons}
-      <AreaMenu name={currentArea} onClick={tottleButtons}/>
-    </section>
+    </StyledAreaPanel>
   );
 };
 

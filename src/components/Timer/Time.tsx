@@ -1,9 +1,35 @@
 import React from 'react';
-import { useAppDispatch } from '../../app/hooks';
-import { Time as TimeType, setTime } from '../../features/timer/timerSlice';
+import styled from 'styled-components';
 
+import { Time as TimeType, setTime } from '../../features/timer/timerSlice';
+import { useAppDispatch } from '../../app/hooks';
 import getID from '../../utils/getID';
-import style from './Time.module.css';
+
+const StyledTime = styled.div`
+& label {
+  font: 1.5em Arial italic;
+}
+
+& input {
+  background: #0000;
+  padding: 0 10px;
+  color: var(--btn-text-color);
+  font: 2em Arial italic;
+}
+
+& input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-width: thin;
+}
+@media (max-width: 576px) {
+  & input {
+    font-size: 1.2em;
+  }
+}
+`;
 
 interface TimeProps {
   time: TimeType;
@@ -28,10 +54,9 @@ const Time: React.FC<TimeProps> = ({time, timerId}) => {
   const formatedMinute = time.minute.toString().padStart(2, '0');
 
   return (
-    <div className={style.time}>
-      <label htmlFor={id.toString()}>Время:</label>
+    <StyledTime>
       <input value={`${formatedHour}:${formatedMinute}`} type='time' id={id.toString()} required onChange={handleChange}/>
-    </div>
+    </StyledTime>
   );
 };
 

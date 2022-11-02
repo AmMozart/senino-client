@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { TIME_SLEEP_MODE } from '../../config/var';
+import { TIME_SLEEP_MODE_MS } from '../../config/var';
 import { useNavigate } from 'react-router-dom';
 
 const Sleep: React.FC = () => {
@@ -13,7 +13,7 @@ const Sleep: React.FC = () => {
 
     timer.current = setTimeout(() => {
       navigate('/Video');
-    }, TIME_SLEEP_MODE);
+    }, TIME_SLEEP_MODE_MS);
   };
 
   useEffect(() => {

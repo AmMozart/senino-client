@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
-import EventName from '../../utils/EventName';
 import { useAppSelector } from '../../app/hooks';
+import EventName from '../../utils/EventName';
 import pubSub from '../../utils/pubSub';
 import { selectName } from '../area/areaSlice';
 
