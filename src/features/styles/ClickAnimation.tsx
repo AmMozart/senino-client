@@ -17,7 +17,11 @@ const StyledClickAnimation = styled.div`
   animation: ${clickTransform} 0.3s ease-in-out;
 `;
 
-const ClickAnimation = ({ children } : {children: JSX.Element}) => {
+interface ClickAnimationProps {
+  children: React.ReactNode;
+}
+
+const ClickAnimation: React.FC<ClickAnimationProps> = ({ children }) => {
   const [isAnimate, setIsAnimate] = useState(false);
 
   const startAnimation = () => {

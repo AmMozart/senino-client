@@ -17,7 +17,12 @@ const StyledWarningAnimation = styled.div`
     css`animation: ${warning} 1.5s infinite ease;`}
 `;
 
-const WarningAnimation = ({ children, isWarning }: {children: JSX.Element, isWarning: boolean}) => {
+interface WarningAnimationProps {
+  isWarning: boolean;
+  children: React.ReactNode;
+}
+
+const WarningAnimation: React.FC<WarningAnimationProps> = ({ isWarning, children }) => {
   return (
     <StyledWarningAnimation isWarning={isWarning}>
       {children}

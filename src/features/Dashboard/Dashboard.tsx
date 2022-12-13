@@ -21,7 +21,7 @@ const StyledDashboard = styled.section`
   gap: 5px;
 `;
 
-const Dashboard = () => (
+const Dashboard: React.FC = () => (
   <StyledDashboard>
     <Header />
     <Routes>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
-import { wrapper } from '../../testUtils';
+import { Wrapper } from '../../testUtils';
 import AreaPanel from './AreaPanel';
 import AreaName from './AreaName';
 
@@ -14,7 +14,7 @@ describe('AreaPanel', () => {
   });
 
   it.skip('should rendered button', () => {
-    const {getByText} = render(<AreaPanel areas={areas}/>, {wrapper});
+    const {getByText} = render(<AreaPanel areas={areas}/>, {Wrapper});
 
     areas.forEach((val)=>{
       expect(getByText( new RegExp(val, 'i') )).toBeInTheDocument();

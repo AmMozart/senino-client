@@ -33,7 +33,7 @@ const settingsSlice = createSlice({
 
 export const { setLog, clear } = settingsSlice.actions;
 
-export const logText = (state: RootState) => state.settings.logText;
-export const clearLogCommand = (state: RootState) => state.settings.clearLogCommand;
+export const logText = (state: RootState): InitialState['logText'] => state.settings.logText;
+export const clearLogCommand = (state: RootState): InitialState['clearLogCommand'] => state.settings.clearLogCommand;
 
 export default settingsSlice.reducer;

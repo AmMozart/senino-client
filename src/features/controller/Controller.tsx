@@ -17,12 +17,13 @@ export const Controller: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const connect = useAppSelector(isConnect);
-  const myCurrentelectricGroupCommand = useAppSelector(currentElectricGroupCommand);
+  const myCurrentElectricGroupCommand = useAppSelector(currentElectricGroupCommand);
   const myCurrentTimerCommand = useAppSelector(currentTimerCommand);
   const myClearLogCommand = useAppSelector(clearLogCommand);
 
   const socket = useRef<WebSocket>();
   const ref = useRef<ElectricGroupsState>();
+  const intervalID = useRef<any>();
 
   let connectWss: () => void;
 
@@ -77,20 +78,18 @@ export const Controller: React.FC = () => {
 
   useEffect(() => {
     if (socket.current?.readyState === 1)
-      for (const key in myCurrentelectricGroupCommand) {
-        console.log('command:', myCurrentelectricGroupCommand);
+      for (const key in myCurrentElectricGroupCommand) {
+        console.log('command:', myCurrentElectricGroupCommand);
         const data = JSON.stringify(
           {
             command: ControllerCommand.LoadControl,
-            payload: {[key]: myCurrentelectricGroupCommand[key]}
+            payload: {[key]: myCurrentElectricGroupCommand[key]}
           });
 
         socket.current.send(data);
       }
-    ref.current = myCurrentelectricGroupCommand;
-  }, [myCurrentelectricGroupCommand]);
-
-  let id: any;
+    ref.current = myCurrentElectricGroupCommand;
+  }, [myCurrentElectricGroupCommand]);
 
   useEffect(() => {
     if (socket.current && connect) {
@@ -98,9 +97,9 @@ export const Controller: React.FC = () => {
     }
 
     if(connect) {
-      clearInterval(id);
+      clearInterval(intervalID.current);
     } else {
-      id = setInterval(() => { connectWss(); }, 10000);
+      intervalID.current = setInterval(() => { connectWss(); }, 10000);
     }
   }, [connect]);
 
