@@ -41,7 +41,6 @@ const RightBar = styled.section`
 `;
 
 const Header: React.FunctionComponent = () => {
-
   return (
     <StyledHeader>
       <Home />

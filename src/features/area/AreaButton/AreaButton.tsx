@@ -25,42 +25,43 @@ const StyledAreaButton = styled.button`
   box-shadow: var(--btn-shadow);
   transition: color, opacity 0.3s linear;
 
-  opacity: ${(props: {isActive: boolean}) => props.isActive ? '1' : '0.3'};
+  opacity: ${(props: { isActive: boolean }) => (props.isActive ? '1' : '0.3')};
 
   & img {
     width: 100px;
   }
 
-@media (max-width: 576px) {
+  @media (max-width: 576px) {
     height: 60px;
-    
-  & img {
-    width: 50px;
+
+    & img {
+      width: 50px;
+    }
   }
-}`;
+`;
 
 interface AreaButtonProps {
   name: AreaName;
   isActive?: boolean;
 }
 
-const AreaButton: React.FC<AreaButtonProps> = ({ name, isActive = false}) => {
+const AreaButton: React.FC<AreaButtonProps> = ({ name, isActive = false }) => {
   const dispatch = useAppDispatch();
 
   const changeArea: MouseEventHandler<HTMLButtonElement> = useCallback(() => {
     dispatch(change(name));
   }, [dispatch, name]);
 
-  
-  const srcImg = name === AreaName.Floor1
-    ? imageFloor1
-    : name === AreaName.Floor2
+  const srcImg =
+    name === AreaName.Floor1
+      ? imageFloor1
+      : name === AreaName.Floor2
       ? imageFloor2
       : imageGarden;
 
   return (
     <StyledAreaButton isActive={isActive} onClick={changeArea}>
-      <img src={srcImg} alt={name}/>
+      <img src={srcImg} alt={name} />
       {name}
     </StyledAreaButton>
   );

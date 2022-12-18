@@ -3,12 +3,13 @@ import React, { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import ControllerCommand from './ControllerCommand';
 import { Connection } from '../Header/Connection';
-import { currentTimerCommand, setAllTimers} from '../timer/timerSlice';
-import { isConnect,
+import { currentTimerCommand, setAllTimers } from '../timer/timerSlice';
+import {
+  isConnect,
   setConnectionState,
   setElectricGroupsState,
   ElectricGroupsState,
-  currentElectricGroupCommand
+  currentElectricGroupCommand,
 } from './controllerSlice';
 import { PORT, SERVER_IP } from '../../config/var';
 import { clearLogCommand, setLog } from '../settings/settingsSlice';
@@ -17,7 +18,9 @@ export const Controller: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const connect = useAppSelector(isConnect);
-  const myCurrentElectricGroupCommand = useAppSelector(currentElectricGroupCommand);
+  const myCurrentElectricGroupCommand = useAppSelector(
+    currentElectricGroupCommand
+  );
   const myCurrentTimerCommand = useAppSelector(currentTimerCommand);
   const myClearLogCommand = useAppSelector(clearLogCommand);
 
@@ -37,32 +40,38 @@ export const Controller: React.FC = () => {
 
       socket.current.onmessage = (event) => {
         const receive = JSON.parse(event.data);
-        
-        for(const key in receive) {
+
+        for (const key in receive) {
           switch (key) {
-          case 'electricGroup': {
-            dispatch(setElectricGroupsState(receive[key]));
-            break;
-          }
-          case 'timers': {
-            dispatch(setAllTimers(receive[key]));
-            break;
-          }
-          case 'logs': {
-            dispatch(setLog(receive[key]));
-            break;
-          }
-          default:
-            throw new Error(`'${event.data.constructor.name}' type of message receive is not handle. data is ${event.data}`);
+            case 'electricGroup': {
+              dispatch(setElectricGroupsState(receive[key]));
+              break;
+            }
+            case 'timers': {
+              dispatch(setAllTimers(receive[key]));
+              break;
+            }
+            case 'logs': {
+              dispatch(setLog(receive[key]));
+              break;
+            }
+            default:
+              throw new Error(
+                `'${event.data.constructor.name}' type of message receive is not handle. data is ${event.data}`
+              );
           }
         }
       };
 
-      socket.current.onclose = event => {
+      socket.current.onclose = (event) => {
         if (event.wasClean) {
-          console.log(`[close] Соединение закрыто чисто, код=${event.code} причина=${event.reason}`);
+          console.log(
+            `[close] Соединение закрыто чисто, код=${event.code} причина=${event.reason}`
+          );
         } else {
-          console.log(`[close] Соединение прервано, код=${event.code} причина=${event.reason}`);
+          console.log(
+            `[close] Соединение прервано, код=${event.code} причина=${event.reason}`
+          );
         }
         dispatch(setConnectionState(false));
       };
@@ -80,11 +89,10 @@ export const Controller: React.FC = () => {
     if (socket.current?.readyState === 1)
       for (const key in myCurrentElectricGroupCommand) {
         console.log('command:', myCurrentElectricGroupCommand);
-        const data = JSON.stringify(
-          {
-            command: ControllerCommand.LoadControl,
-            payload: {[key]: myCurrentElectricGroupCommand[key]}
-          });
+        const data = JSON.stringify({
+          command: ControllerCommand.LoadControl,
+          payload: { [key]: myCurrentElectricGroupCommand[key] },
+        });
 
         socket.current.send(data);
       }
@@ -93,13 +101,17 @@ export const Controller: React.FC = () => {
 
   useEffect(() => {
     if (socket.current && connect) {
-      socket.current.send(JSON.stringify({command: ControllerCommand.GetState}));
+      socket.current.send(
+        JSON.stringify({ command: ControllerCommand.GetState })
+      );
     }
 
-    if(connect) {
+    if (connect) {
       clearInterval(intervalID.current);
     } else {
-      intervalID.current = setInterval(() => { connectWss(); }, 10000);
+      intervalID.current = setInterval(() => {
+        connectWss();
+      }, 10000);
     }
   }, [connect]);
 
@@ -110,13 +122,23 @@ export const Controller: React.FC = () => {
 
   useEffect(() => {
     if (socket.current?.readyState === 1)
-      socket.current.send(JSON.stringify({command: ControllerCommand.SetTimers, payload: myCurrentTimerCommand}));
+      socket.current.send(
+        JSON.stringify({
+          command: ControllerCommand.SetTimers,
+          payload: myCurrentTimerCommand,
+        })
+      );
   }, [myCurrentTimerCommand]);
 
   useEffect(() => {
     if (socket.current?.readyState === 1)
-      socket.current.send(JSON.stringify({command: ControllerCommand.ClearLog, payload: myClearLogCommand}));
+      socket.current.send(
+        JSON.stringify({
+          command: ControllerCommand.ClearLog,
+          payload: myClearLogCommand,
+        })
+      );
   }, [myClearLogCommand]);
 
-  return <Connection isConnect={connect}/>;
+  return <Connection isConnect={connect} />;
 };

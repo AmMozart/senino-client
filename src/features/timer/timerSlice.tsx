@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import TimerMode from './TimerMode';
 import WeekDay from './WeekDay';
@@ -17,13 +17,13 @@ export interface Timer {
 }
 
 export interface TimerState {
- timers: Timer[];
- currentTimersCommand: Timer[];
+  timers: Timer[];
+  currentTimersCommand: Timer[];
 }
 
 const initialState: TimerState = {
   timers: [],
-  currentTimersCommand: []
+  currentTimersCommand: [],
 };
 
 const timerSlice = createSlice({
@@ -39,33 +39,47 @@ const timerSlice = createSlice({
     },
 
     deleteTimer: (state, action: PayloadAction<number>) => {
-      const index = state.timers.findIndex(timer => timer.id === action.payload);
+      const index = state.timers.findIndex(
+        (timer) => timer.id === action.payload
+      );
       if (index !== -1) {
         state.timers.splice(index, 1);
         state.currentTimersCommand = state.timers;
       }
     },
 
-    setMode: (state, action: PayloadAction<{id: number, mode: TimerMode}>) => {
-      const index = state.timers.findIndex(timer => timer.id === action.payload.id);
+    setMode: (
+      state,
+      action: PayloadAction<{ id: number; mode: TimerMode }>
+    ) => {
+      const index = state.timers.findIndex(
+        (timer) => timer.id === action.payload.id
+      );
       if (index !== -1) {
         state.timers[index].mode = action.payload.mode;
         state.currentTimersCommand = state.timers;
       }
     },
 
-    setTime: (state, action: PayloadAction<{id: number, time: Time}>) => {
-      const index = state.timers.findIndex(timer => timer.id === action.payload.id);
+    setTime: (state, action: PayloadAction<{ id: number; time: Time }>) => {
+      const index = state.timers.findIndex(
+        (timer) => timer.id === action.payload.id
+      );
       if (index !== -1) {
         state.timers[index].time = action.payload.time;
         state.currentTimersCommand = state.timers;
       }
     },
 
-    addWeekDay: (state, action: PayloadAction<{id: number, day: WeekDay}>) => {
-      const index = state.timers.findIndex(timer => timer.id === action.payload.id);
+    addWeekDay: (
+      state,
+      action: PayloadAction<{ id: number; day: WeekDay }>
+    ) => {
+      const index = state.timers.findIndex(
+        (timer) => timer.id === action.payload.id
+      );
       if (index !== -1) {
-        if(state.timers[index].weekDays.includes(action.payload.day)) {
+        if (state.timers[index].weekDays.includes(action.payload.day)) {
           return;
         }
         state.timers[index].weekDays.push(action.payload.day);
@@ -73,19 +87,34 @@ const timerSlice = createSlice({
       }
     },
 
-    deleteWeekDay: (state, action: PayloadAction<{id: number, day: WeekDay}>) => {
-      const index = state.timers.findIndex(timer => timer.id === action.payload.id);
+    deleteWeekDay: (
+      state,
+      action: PayloadAction<{ id: number; day: WeekDay }>
+    ) => {
+      const index = state.timers.findIndex(
+        (timer) => timer.id === action.payload.id
+      );
       if (index !== -1) {
-        state.timers[index].weekDays = state.timers[index].weekDays.filter(day => day !== action.payload.day);
+        state.timers[index].weekDays = state.timers[index].weekDays.filter(
+          (day) => day !== action.payload.day
+        );
         state.currentTimersCommand = state.timers;
       }
     },
-
-  }
+  },
 });
 
-export const {setAllTimers, addTimer, deleteTimer, setTime, setMode, addWeekDay, deleteWeekDay } = timerSlice.actions;
+export const {
+  setAllTimers,
+  addTimer,
+  deleteTimer,
+  setTime,
+  setMode,
+  addWeekDay,
+  deleteWeekDay,
+} = timerSlice.actions;
 export const timers = (state: RootState): Timer[] => state.timers.timers;
-export const currentTimerCommand = (state: RootState): Timer[] => state.timers.currentTimersCommand;
+export const currentTimerCommand = (state: RootState): Timer[] =>
+  state.timers.currentTimersCommand;
 
 export default timerSlice.reducer;

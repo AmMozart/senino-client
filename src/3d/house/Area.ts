@@ -4,12 +4,7 @@ import EventName from '../../utils/EventName';
 import pubSub from '../../utils/pubSub';
 
 export class Area {
-
-  public constructor(
-    private name: string,
-    private scene: BABYLON.Scene
-  ) {
-
+  public constructor(private name: string, private scene: BABYLON.Scene) {
     const mesh = this.scene.getMeshByName(name);
 
     pubSub.subscribe(EventName.ChangeArea, (name: string) => {

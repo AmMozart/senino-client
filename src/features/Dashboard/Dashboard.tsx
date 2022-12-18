@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { ControlPanel } from '../controlPanel/ControlPanel';
@@ -25,14 +25,14 @@ const Dashboard: React.FC = () => (
   <StyledDashboard>
     <Header />
     <Routes>
-      <Route path='/' element={<ControlPanel />}/>
-      <Route path='Meteo' element={<MeteoDetails />}/>
-      <Route path='Menu' element={<MenuList />}/>
-      <Route path='Video' element={<Video />}/>
-      <Route path='Boiler' element={<Boiler />}/>
-      <Route path='Septic' element={<Septic />}/>
-      <Route path='Water' element={<Water />}/>
-      <Route path='Settings' element={<Settings />}/>
+      <Route path='/' element={<ControlPanel />} />
+      <Route path='Meteo' element={<MeteoDetails />} />
+      <Route path='Menu' element={<MenuList />} />
+      <Route path='Video' element={<Video />} />
+      <Route path='Boiler' element={<Boiler />} />
+      <Route path='Septic' element={<Septic />} />
+      <Route path='Water' element={<Water />} />
+      <Route path='Settings' element={<Settings />} />
     </Routes>
   </StyledDashboard>
 );

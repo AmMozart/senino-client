@@ -13,14 +13,17 @@ const Settings: React.FC = () => {
   const dispatch = useAppDispatch();
   const logs = useAppSelector(logText);
 
-  const clickHandler: MouseEventHandler<HTMLButtonElement> = () => dispatch(clear());
+  const clickHandler: MouseEventHandler<HTMLButtonElement> = () =>
+    dispatch(clear());
 
   return (
     <StyledPage>
       <StyledTitle>Журнал событий</StyledTitle>
       <StyledContent>
         <ul>
-          {logs.map(node => <li key={getID()}>{node}</li>)}
+          {logs.map((node) => (
+            <li key={getID()}>{node}</li>
+          ))}
         </ul>
       </StyledContent>
       <StyledButton onClick={clickHandler}>Очистить</StyledButton>

@@ -23,16 +23,10 @@ const TimerSet: React.FC<PropsTimerSet> = ({ groupName }) => {
   const allTimers = useAppSelector(timers);
 
   const timerElements = allTimers
-    .filter(timer => 
-      timer.electricGroupName === groupName)
-    .map(timer =>
-      <Timer key={timer.id} timer={timer} />);
+    .filter((timer) => timer.electricGroupName === groupName)
+    .map((timer) => <Timer key={timer.id} timer={timer} />);
 
-  return (
-    <StyledTimerSet>
-      {timerElements}
-    </StyledTimerSet>
-  );
+  return <StyledTimerSet>{timerElements}</StyledTimerSet>;
 };
 
 export default TimerSet;

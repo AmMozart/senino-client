@@ -33,23 +33,19 @@ const initialState: MeteoState = {
   dayAfterTomorrow: initMeteoData,
 };
 
-export const updateData = createAsyncThunk(
-  'meteo/updateData',
-  async () => {
-    const meteoDataArr: MeteoData[] = await meteoStation.getMeteoData();
-    return {
-      today: Object.assign({}, meteoDataArr[0]),
-      tomorrow: Object.assign({}, meteoDataArr[1]),
-      dayAfterTomorrow: Object.assign({}, meteoDataArr[2])
-    };
-  }
-);
+export const updateData = createAsyncThunk('meteo/updateData', async () => {
+  const meteoDataArr: MeteoData[] = await meteoStation.getMeteoData();
+  return {
+    today: Object.assign({}, meteoDataArr[0]),
+    tomorrow: Object.assign({}, meteoDataArr[1]),
+    dayAfterTomorrow: Object.assign({}, meteoDataArr[2]),
+  };
+});
 
 const meteoSlice = createSlice({
   name: 'meteo',
   initialState: initialState,
-  reducers: {
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(updateData.fulfilled, (state, action) => {
@@ -58,7 +54,7 @@ const meteoSlice = createSlice({
       .addCase(updateData.rejected, (state, action) => {
         console.log(action.error);
       });
-  }
+  },
 });
 
 export const selectMeteo = (state: RootState): MeteoState => state.meteo;

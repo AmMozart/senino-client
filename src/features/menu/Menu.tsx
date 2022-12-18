@@ -9,19 +9,19 @@ const Menu: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect( () => {
-    setIsOpen( location.pathname === '/Menu' );
+  useEffect(() => {
+    setIsOpen(location.pathname === '/Menu');
   }, [location.pathname]);
 
-  const handleClick = useCallback( () => {
-    if(location.pathname === '/Menu') {
+  const handleClick = useCallback(() => {
+    if (location.pathname === '/Menu') {
       navigate('/');
     } else {
       navigate('/Menu');
     }
   }, [location.pathname]);
 
-  return <MenuBurger isOpen={isOpen} onClick={handleClick}/>;
+  return <MenuBurger isOpen={isOpen} onClick={handleClick} />;
 };
 
 export default Menu;

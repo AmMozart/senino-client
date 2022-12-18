@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -43,8 +43,8 @@ export const Meteo: React.FC = () => {
   return (
     <ClickAnimation>
       <StyledMeteoStatusButton onClick={openDetails}>
-        <Temp temp={temperature}/>
-        <Icon name={iconName}/>
+        <Temp temp={temperature} />
+        <Icon name={iconName} />
       </StyledMeteoStatusButton>
     </ClickAnimation>
   );

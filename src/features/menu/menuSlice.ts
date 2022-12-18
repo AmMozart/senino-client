@@ -1,4 +1,3 @@
-// import React from 'react';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
@@ -25,11 +24,11 @@ const menuSlice = createSlice({
     closeMenu: (state) => {
       state.isOpen = false;
     },
-  }
+  },
 });
 
 export const { changeMenuItem, openMenu, closeMenu } = menuSlice.actions;
-export const menuName = (state: RootState): string => state.menu.name; 
+export const menuName = (state: RootState): string => state.menu.name;
 export const isOpen = (state: RootState): boolean => state.menu.isOpen;
 
-export default menuSlice.reducer; 
+export default menuSlice.reducer;

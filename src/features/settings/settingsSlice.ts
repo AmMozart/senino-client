@@ -9,10 +9,8 @@ interface InitialState {
 }
 
 const settingsState: InitialState = {
-  logText: [
-    EMPTY_LOG_STRING
-  ],
-  clearLogCommand: []
+  logText: [EMPTY_LOG_STRING],
+  clearLogCommand: [],
 };
 
 const settingsSlice = createSlice({
@@ -27,13 +25,16 @@ const settingsSlice = createSlice({
 
     clear(state) {
       state.clearLogCommand = [];
-    }
-  }
+    },
+  },
 });
 
 export const { setLog, clear } = settingsSlice.actions;
 
-export const logText = (state: RootState): InitialState['logText'] => state.settings.logText;
-export const clearLogCommand = (state: RootState): InitialState['clearLogCommand'] => state.settings.clearLogCommand;
+export const logText = (state: RootState): InitialState['logText'] =>
+  state.settings.logText;
+export const clearLogCommand = (
+  state: RootState
+): InitialState['clearLogCommand'] => state.settings.clearLogCommand;
 
 export default settingsSlice.reducer;

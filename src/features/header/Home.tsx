@@ -17,7 +17,7 @@ const Home: React.FunctionComponent = () => {
     <StyledStatusButton>
       <ClickAnimation>
         <div onClick={goHome}>
-          <FontAwesomeIcon icon={faHome}/>
+          <FontAwesomeIcon icon={faHome} />
         </div>
       </ClickAnimation>
     </StyledStatusButton>

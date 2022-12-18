@@ -7,7 +7,7 @@ interface Channel {
 }
 
 class EventBus {
-  private channel: Channel = {}
+  private channel: Channel = {};
 
   public subscribe(eventName: EventName, callback: Callback): void {
     if (!this.channel[eventName]) {
@@ -22,9 +22,8 @@ class EventBus {
       return;
     }
 
-    callbacks.forEach(callback => callback(payload));
+    callbacks.forEach((callback) => callback(payload));
   }
-
 }
 
 export default new EventBus();

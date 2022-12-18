@@ -7,7 +7,7 @@ const Sleep: React.FC = () => {
   const timer = useRef<ReturnType<typeof setTimeout>>();
 
   const callback = () => {
-    if(timer.current) {
+    if (timer.current) {
       clearTimeout(timer.current);
     }
 
@@ -22,7 +22,7 @@ const Sleep: React.FC = () => {
 
     return () => {
       window.removeEventListener('click', callback);
-      if(timer.current) {
+      if (timer.current) {
         clearTimeout(timer.current);
       }
     };

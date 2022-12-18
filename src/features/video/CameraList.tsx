@@ -1,4 +1,4 @@
-import React, { MouseEventHandler} from 'react';
+import React, { MouseEventHandler } from 'react';
 import styled from 'styled-components';
 
 import { serverCamStreamUrl } from './url';
@@ -13,41 +13,42 @@ const StyledCameraList = styled.aside`
   bottom: 0;
   background-color: var(--panel-background-color);
 
-& li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--btn-text-color);
-  margin: 10px;
-  width: 100px;
-  height: 100px;
-  background: var(--btn-back-color);
-  cursor: pointer;
-  border-radius: 50%;
-  transition: all 0.5s linear;
-}
-
-& li:active {
-  color: rgb(52, 110, 187);
-}
-
-@media (max-width: 576px) {
   & li {
-    width: 70px;
-    height: 70px;
-    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--btn-text-color);
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    background: var(--btn-back-color);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.5s linear;
   }
 
-  & ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  & li:active {
+    color: rgb(52, 110, 187);
+  }
+
+  @media (max-width: 576px) {
+    & li {
+      width: 70px;
+      height: 70px;
+      font-size: 0.8em;
     }
-}`;
+
+    & ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+`;
 
 interface CameraListProps {
   changeURL: (url: string) => void;
@@ -55,19 +56,19 @@ interface CameraListProps {
 
 const CameraList: React.FC<CameraListProps> = ({ changeURL }) => {
   const handleClick: MouseEventHandler = (e) => {
-    switch(e.currentTarget.textContent) {
-    case 'Дорога': {
-      changeURL(serverCamStreamUrl.Road);
-      break;
-    }
-    case 'Гостиная': {
-      changeURL(serverCamStreamUrl.LivingRoom);
-      break;
-    }
-    case 'Передний Двор': {
-      changeURL(serverCamStreamUrl.Garden);
-      break;
-    }
+    switch (e.currentTarget.textContent) {
+      case 'Дорога': {
+        changeURL(serverCamStreamUrl.Road);
+        break;
+      }
+      case 'Гостиная': {
+        changeURL(serverCamStreamUrl.LivingRoom);
+        break;
+      }
+      case 'Передний Двор': {
+        changeURL(serverCamStreamUrl.Garden);
+        break;
+      }
     }
   };
 

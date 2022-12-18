@@ -15,51 +15,52 @@ const StyledCamera = styled.div`
   border-radius: 20px;
   z-index: 2;
 
- & canvas {
-  display: block;
-  width: 100%;
-  max-height: 100%;
-  border-radius: 20px;
-}
-
-& div {
-  display: block;
-  width: 85%;
-  max-height: 89%;
-}
-
-@media (max-height: 576px) {
   & canvas {
-    width: 75%;
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
   }
-}
 
-@media (max-width: 576px) {
-  flex-direction: column;
-}`;
+  & div {
+    display: block;
+    width: 85%;
+    max-height: 89%;
+  }
+
+  @media (max-height: 576px) {
+    & canvas {
+      width: 75%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+`;
 
 const Camera: React.FC = () => {
   const [url, setUrl] = useState(serverCamStreamUrl.Road);
   const canvas = React.useRef<HTMLCanvasElement | null>(null);
 
   let player: Player;
-  
+
   useEffect(() => {
     player && player.stop();
 
-    if(canvas.current) {
+    if (canvas.current) {
       loadPlayer({
         url,
         canvas: canvas.current,
         disableGl: true,
         autoplay: true,
       })
-        .then(plr => player = plr)
+        .then((plr) => (player = plr))
         .catch((error: Error) => console.log(error.message));
     }
 
     return () => {
-      if(player) {
+      if (player) {
         player.destroy();
       }
     };
@@ -68,12 +69,10 @@ const Camera: React.FC = () => {
   return (
     <StyledCamera>
       <div>
-        <canvas ref={canvas}>
-          You are browser do not support canvas tag!
-        </canvas>
+        <canvas ref={canvas}>You are browser do not support canvas tag!</canvas>
       </div>
 
-      <CameraList changeURL={setUrl}/>
+      <CameraList changeURL={setUrl} />
     </StyledCamera>
   );
 };

@@ -1,6 +1,3 @@
-
 export class ElectricGroup {
-
-  constructor(public name: string) {
-  }
+  constructor(public name: string) {}
 }

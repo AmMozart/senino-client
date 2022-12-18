@@ -36,12 +36,14 @@ interface MenuItemProps {
   faIcon: IconDefinition;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({name, faIcon}) => {
+const MenuItem: React.FC<MenuItemProps> = ({ name, faIcon }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    const menuItem = Object.keys(MenuItemName).filter((x) => (MenuItemName as any)[x] == name)[0];
+    const menuItem = Object.keys(MenuItemName).filter(
+      (x) => (MenuItemName as any)[x] == name
+    )[0];
     dispatch(changeMenuItem(menuItem));
 
     navigate(`/${menuItem}`);
@@ -49,7 +51,7 @@ const MenuItem: React.FC<MenuItemProps> = ({name, faIcon}) => {
 
   return (
     <StyledMenuList onClick={handleClick}>
-      <FontAwesomeIcon className='icon' icon={faIcon}/>
+      <FontAwesomeIcon className='icon' icon={faIcon} />
       <label>{name}</label>
     </StyledMenuList>
   );

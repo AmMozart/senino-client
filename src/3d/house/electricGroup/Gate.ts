@@ -8,7 +8,7 @@ import { blindGroup } from '../../../config/config';
 import { Driver } from './Driver';
 
 export class Gate extends Driver {
-  private standartMaterial?: BABYLON.Nullable<BABYLON.Material>
+  private standartMaterial?: BABYLON.Nullable<BABYLON.Material>;
   private intervalID: ReturnType<typeof setInterval> | undefined;
   private mesh: BABYLON.Nullable<BABYLON.AbstractMesh>;
   private animation: BABYLON.Nullable<BABYLON.Animatable> | undefined;
@@ -29,50 +29,51 @@ export class Gate extends Driver {
       }
     });
 
-    pubSub.subscribe(EventName.ChangeState, (electricGroupsState: ElectricGroupsState) => {
-      this.changeColor(Boolean(electricGroupsState[name]), this.mesh);
-      const ms = 200;
+    pubSub.subscribe(
+      EventName.ChangeState,
+      (electricGroupsState: ElectricGroupsState) => {
+        this.changeColor(Boolean(electricGroupsState[name]), this.mesh);
+        const ms = 200;
 
-      if(electricGroupsState[name]) {
-        if(this.intervalID) clearInterval(this.intervalID);
+        if (electricGroupsState[name]) {
+          if (this.intervalID) clearInterval(this.intervalID);
 
-        switch(this.state) {
+          switch (this.state) {
+            case 'STOP_CLOSING': {
+              this.open();
+              this.intervalID = setInterval(() => {
+                this.stateTime += ms;
 
-        case 'STOP_CLOSING': {
-          this.open();
-          this.intervalID = setInterval(() => {
-            this.stateTime += ms;
-            
-            if(this.stateTime >= this.openTime) {
-              if(this.intervalID) clearInterval(this.intervalID);
-              this.state = 'STOP_OPENING';
+                if (this.stateTime >= this.openTime) {
+                  if (this.intervalID) clearInterval(this.intervalID);
+                  this.state = 'STOP_OPENING';
+                }
+              }, ms);
+              break;
             }
-          }, ms);
-          break;
-        }
 
-        case 'STOP_OPENING': {
-          this.close();
-          this.intervalID = setInterval(() => {
-            this.stateTime -= ms;
-            
-            if(this.stateTime <= 0) {
-              if(this.intervalID) clearInterval(this.intervalID);
-              this.state = 'STOP_CLOSING';
+            case 'STOP_OPENING': {
+              this.close();
+              this.intervalID = setInterval(() => {
+                this.stateTime -= ms;
+
+                if (this.stateTime <= 0) {
+                  if (this.intervalID) clearInterval(this.intervalID);
+                  this.state = 'STOP_CLOSING';
+                }
+              }, ms);
+              break;
             }
-          }, ms);
-          break;
-        }
 
-        case 'OPENING':
-        case 'CLOSING': {
-          this.stop();
-          break;
+            case 'OPENING':
+            case 'CLOSING': {
+              this.stop();
+              break;
+            }
+          }
         }
-        }
-
       }
-    });
+    );
 
     this.addClickEvent(this.mesh);
   }
@@ -82,15 +83,16 @@ export class Gate extends Driver {
     if (this.mesh) {
       this.animation = BABYLON.Animation.CreateAndStartAnimation(
         'Gate animate',
-        this.mesh, 'position',
+        this.mesh,
+        'position',
         30,
-        (this.openTime - this.stateTime ) / 1000 * 30,
+        ((this.openTime - this.stateTime) / 1000) * 30,
         new BABYLON.Vector3(0, 0, this.mesh.position.z),
         new BABYLON.Vector3(0, 0, -4),
         BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
       );
     }
-  }
+  };
 
   public close = () => {
     this.state = 'CLOSING';
@@ -98,25 +100,27 @@ export class Gate extends Driver {
     if (this.mesh) {
       this.animation = BABYLON.Animation.CreateAndStartAnimation(
         'Gate animate',
-        this.mesh, 'position',
+        this.mesh,
+        'position',
         30,
-        this.stateTime / 1000 * 30,
+        (this.stateTime / 1000) * 30,
         new BABYLON.Vector3(0, 0, this.mesh.position.z),
         new BABYLON.Vector3(0, 0, 0),
         BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
       );
     }
-  }
-  
+  };
+
   public stop = () => {
-    this.state = this.state === 'OPENING'
-      ? 'STOP_OPENING'
-      : 'STOP_CLOSING';
+    this.state = this.state === 'OPENING' ? 'STOP_OPENING' : 'STOP_CLOSING';
 
-    if(this.animation) this.animation.stop();
-  }
+    if (this.animation) this.animation.stop();
+  };
 
-  private changeColor(isOn: boolean, mesh: BABYLON.Nullable<BABYLON.AbstractMesh>) {
+  private changeColor(
+    isOn: boolean,
+    mesh: BABYLON.Nullable<BABYLON.AbstractMesh>
+  ) {
     if (mesh) {
       const myMaterial = new BABYLON.StandardMaterial('myMaterial', this.scene);
       myMaterial.diffuseColor = BABYLON.Color3.Green();
@@ -130,9 +134,14 @@ export class Gate extends Driver {
     if (mesh) {
       mesh.isPickable = true;
       mesh.actionManager = new BABYLON.ActionManager(this.scene);
-      mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnLeftPickTrigger, () => {
-        pubSub.publish(EventName.ClickOnElectricGroup, mesh.name);
-      }));
+      mesh.actionManager.registerAction(
+        new BABYLON.ExecuteCodeAction(
+          BABYLON.ActionManager.OnLeftPickTrigger,
+          () => {
+            pubSub.publish(EventName.ClickOnElectricGroup, mesh.name);
+          }
+        )
+      );
     }
   }
 }

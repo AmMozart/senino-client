@@ -16,20 +16,22 @@ const Water: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const add = () => {
-    dispatch(addTimer({
-      id: getID(),
-      electricGroupName: groupName,
-      mode: TimerMode.Off,
-      time: {hour: 0, minute: 0},
-      weekDays: [],
-    }));
+    dispatch(
+      addTimer({
+        id: getID(),
+        electricGroupName: groupName,
+        mode: TimerMode.Off,
+        time: { hour: 0, minute: 0 },
+        weekDays: [],
+      })
+    );
   };
 
   return (
     <StyledPage>
       <StyledTitle>Вода</StyledTitle>
       <StyledContent>
-        <SwitchButton electricGroupName={groupName}/>
+        <SwitchButton electricGroupName={groupName} />
         <TimerSet groupName={groupName} />
       </StyledContent>
       <StyledButton onClick={add}>Добавить Таймер</StyledButton>

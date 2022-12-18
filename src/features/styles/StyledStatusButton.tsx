@@ -13,10 +13,10 @@ const StyledStatusButton = styled.div`
   border-radius: var(--btn-border-radius);
   box-shadow: var(--btn-shadow);
 
-@media (max-width: 576px) {
-  width: 60px;
-  height: 60px;
-}
+  @media (max-width: 576px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 export default StyledStatusButton;

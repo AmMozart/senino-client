@@ -6,29 +6,29 @@ import { useAppDispatch } from '../../app/hooks';
 import getID from '../../utils/getID';
 
 const StyledTime = styled.div`
-& label {
-  font: 1.5em Arial italic;
-}
-
-& input {
-  background: #0000;
-  padding: 0 10px;
-  color: var(--btn-text-color);
-  font: 2em Arial italic;
-}
-
-& input[type="time"]::-webkit-calendar-picker-indicator {
-  opacity: 1;
-  display: block;
-  width: 60px;
-  height: 60px;
-  border-width: thin;
-}
-@media (max-width: 576px) {
-  & input {
-    font-size: 1.2em;
+  & label {
+    font: 1.5em Arial italic;
   }
-}
+
+  & input {
+    background: #0000;
+    padding: 0 10px;
+    color: var(--btn-text-color);
+    font: 2em Arial italic;
+  }
+
+  & input[type='time']::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-width: thin;
+  }
+  @media (max-width: 576px) {
+    & input {
+      font-size: 1.2em;
+    }
+  }
 `;
 
 interface TimeProps {
@@ -36,17 +36,19 @@ interface TimeProps {
   timerId: number;
 }
 
-const Time: React.FC<TimeProps> = ({time, timerId}) => {
+const Time: React.FC<TimeProps> = ({ time, timerId }) => {
   const dispatch = useAppDispatch();
   const id = getID();
 
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event): void => {
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ): void => {
     if (event.currentTarget.value.length > 2) {
       const arr = event.currentTarget.value.split(':');
       const hour = Number(arr[0]);
       const minute = Number(arr[1]);
-      
-      dispatch(setTime({id: timerId, time: {hour, minute}}));
+
+      dispatch(setTime({ id: timerId, time: { hour, minute } }));
     }
   };
 
@@ -55,7 +57,13 @@ const Time: React.FC<TimeProps> = ({time, timerId}) => {
 
   return (
     <StyledTime>
-      <input value={`${formatedHour}:${formatedMinute}`} type='time' id={id.toString()} required onChange={handleChange}/>
+      <input
+        value={`${formatedHour}:${formatedMinute}`}
+        type='time'
+        id={id.toString()}
+        required
+        onChange={handleChange}
+      />
     </StyledTime>
   );
 };

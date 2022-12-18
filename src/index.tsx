@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import {enableMapSet} from 'immer';
+import { enableMapSet } from 'immer';
 import { createGlobalStyle } from 'styled-components';
 
 import App from './App';
@@ -40,7 +40,6 @@ enableMapSet();
 
 ReactDOM.render(
   <React.StrictMode>
-
     <GlobalStyle />
 
     <BrowserRouter>
@@ -48,7 +47,6 @@ ReactDOM.render(
         <App />
       </Provider>
     </BrowserRouter>
-
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -6,14 +6,16 @@ import StyledStatusButton from '../styles/StyledStatusButton';
 import WarningAnimation from '../styles/WarningAnimation';
 
 interface IConnectionProps {
-    isConnect: boolean;
+  isConnect: boolean;
 }
 
-export const Connection: React.FunctionComponent<IConnectionProps> = ({ isConnect }) => {
+export const Connection: React.FunctionComponent<IConnectionProps> = ({
+  isConnect,
+}) => {
   return (
     <StyledStatusButton>
       <WarningAnimation isWarning={!isConnect}>
-        <FontAwesomeIcon icon={faNetworkWired}/>
+        <FontAwesomeIcon icon={faNetworkWired} />
       </WarningAnimation>
     </StyledStatusButton>
   );

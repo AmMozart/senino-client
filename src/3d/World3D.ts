@@ -25,7 +25,11 @@ export class World3D {
     this.scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
 
     this.camera = new Camera(canvas, this.scene);
-    this.light = new BABYLON.HemisphericLight('HemiLight', new BABYLON.Vector3(0, 50, 0), this.scene);
+    this.light = new BABYLON.HemisphericLight(
+      'HemiLight',
+      new BABYLON.Vector3(0, 50, 0),
+      this.scene
+    );
     this.light.intensity = 1;
 
     this.area = [];
@@ -54,14 +58,16 @@ export class World3D {
   public async init(): Promise<void> {
     return await ModelImporter.import(this.scene).then(() => {
       const areas = Object.values(AreaName);
-      this.area = areas.map(area => new Area(area, this.scene));
+      this.area = areas.map((area) => new Area(area, this.scene));
 
       Object.values(lightGroup).forEach((array) => {
-        this.lights = array.map(name => new Light(name, this.scene));
+        this.lights = array.map((name) => new Light(name, this.scene));
       });
 
       Object.values(blindGroup).forEach((array) => {
-        this.blinds = array.map(name => new Gate(name, TIME_FOR_OPEN_GATE_MS, this.scene));
+        this.blinds = array.map(
+          (name) => new Gate(name, TIME_FOR_OPEN_GATE_MS, this.scene)
+        );
       });
     });
   }

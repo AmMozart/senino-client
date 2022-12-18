@@ -25,14 +25,14 @@ const SkyInfo: React.FC<SkyInfoProps> = ({ sky }) => {
       .then((module) => {
         setImage(module.default);
       })
-      .catch((e: Error)=>{
+      .catch((e: Error) => {
         console.log('Error import image: ', e.message);
       });
   }, [sky]);
 
   return (
     <div className={style.info}>
-      {image && <img className={style.icon} src={image} alt="" />}
+      {image && <img className={style.icon} src={image} alt='' />}
       <span className={style.description}>{description}</span>
     </div>
   );

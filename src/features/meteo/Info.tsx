@@ -16,10 +16,22 @@ interface InfoProps {
 const Info: React.FC<InfoProps> = ({ temp, humidity, pressure, windSpeed }) => {
   return (
     <div className={style.info}>
-      <p><img className={style.icon} src={tempIco} alt="темп." /> <span className={style.temp}>{temp} &deg;C </span></p>
-      <p><img className={style.icon} src={humIco} alt="влаж." /> <span>{humidity} %</span></p>
-      <p><img className={style.icon} src={presIco} alt="давл." /> <span>{pressure} мм.</span></p>
-      <p><img className={style.icon} src={windIco} alt="ветер" /> <span>{windSpeed} м/с</span></p>
+      <p>
+        <img className={style.icon} src={tempIco} alt='темп.' />{' '}
+        <span className={style.temp}>{temp} &deg;C </span>
+      </p>
+      <p>
+        <img className={style.icon} src={humIco} alt='влаж.' />{' '}
+        <span>{humidity} %</span>
+      </p>
+      <p>
+        <img className={style.icon} src={presIco} alt='давл.' />{' '}
+        <span>{pressure} мм.</span>
+      </p>
+      <p>
+        <img className={style.icon} src={windIco} alt='ветер' />{' '}
+        <span>{windSpeed} м/с</span>
+      </p>
     </div>
   );
 };

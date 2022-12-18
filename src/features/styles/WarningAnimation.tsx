@@ -13,8 +13,11 @@ const warning = keyframes`
   }`;
 
 const StyledWarningAnimation = styled.div`
-  ${(props: {isWarning: boolean}) => props.isWarning && 
-    css`animation: ${warning} 1.5s infinite ease;`}
+  ${(props: { isWarning: boolean }) =>
+    props.isWarning &&
+    css`
+      animation: ${warning} 1.5s infinite ease;
+    `}
 `;
 
 interface WarningAnimationProps {
@@ -22,7 +25,10 @@ interface WarningAnimationProps {
   children: React.ReactNode;
 }
 
-const WarningAnimation: React.FC<WarningAnimationProps> = ({ isWarning, children }) => {
+const WarningAnimation: React.FC<WarningAnimationProps> = ({
+  isWarning,
+  children,
+}) => {
   return (
     <StyledWarningAnimation isWarning={isWarning}>
       {children}

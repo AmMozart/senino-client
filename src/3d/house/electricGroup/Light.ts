@@ -8,12 +8,9 @@ import { lightGroup } from '../../../config/config';
 import { Switch } from './Switch';
 
 export class Light extends Switch {
-  private standartMaterial?: BABYLON.Nullable<BABYLON.Material>
+  private standartMaterial?: BABYLON.Nullable<BABYLON.Material>;
 
-  public constructor(
-    public name: string,
-    private scene: BABYLON.Scene
-  ) {
+  public constructor(public name: string, private scene: BABYLON.Scene) {
     super(name);
     const mesh = this.scene.getMeshByName(name);
     if (mesh) this.standartMaterial = mesh.material;
@@ -24,19 +21,25 @@ export class Light extends Switch {
       }
     });
 
-    pubSub.subscribe(EventName.ChangeState, (electricGroupsState: ElectricGroupsState) => {
-      // for (const key in electricGroupsState) {
-      //   if (name === key) {
-      //     this.changeColor(Boolean(electricGroupsState[key]), mesh);
-      //   }
-      // }
-      this.changeColor(Boolean(electricGroupsState[name]), mesh);
-    });
+    pubSub.subscribe(
+      EventName.ChangeState,
+      (electricGroupsState: ElectricGroupsState) => {
+        // for (const key in electricGroupsState) {
+        //   if (name === key) {
+        //     this.changeColor(Boolean(electricGroupsState[key]), mesh);
+        //   }
+        // }
+        this.changeColor(Boolean(electricGroupsState[name]), mesh);
+      }
+    );
 
     this.addClickEvent(mesh);
   }
 
-  private changeColor(isOn: boolean, mesh: BABYLON.Nullable<BABYLON.AbstractMesh>) {
+  private changeColor(
+    isOn: boolean,
+    mesh: BABYLON.Nullable<BABYLON.AbstractMesh>
+  ) {
     if (mesh) {
       const myMaterial = new BABYLON.StandardMaterial('myMaterial', this.scene);
       myMaterial.diffuseColor = BABYLON.Color3.Yellow();
@@ -50,11 +53,14 @@ export class Light extends Switch {
     if (mesh) {
       mesh.isPickable = true;
       mesh.actionManager = new BABYLON.ActionManager(this.scene);
-      mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnLeftPickTrigger, () => {
-        pubSub.publish(EventName.ClickOnElectricGroup, mesh.name);
-
-      }));
+      mesh.actionManager.registerAction(
+        new BABYLON.ExecuteCodeAction(
+          BABYLON.ActionManager.OnLeftPickTrigger,
+          () => {
+            pubSub.publish(EventName.ClickOnElectricGroup, mesh.name);
+          }
+        )
+      );
     }
-
   }
 }

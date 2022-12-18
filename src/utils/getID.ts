@@ -1,7 +1,6 @@
-
 function getGeneratorID(): () => number {
   let id = 0;
-  return function() {
+  return function () {
     return id++;
   };
 }

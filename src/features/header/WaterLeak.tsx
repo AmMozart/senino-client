@@ -9,11 +9,13 @@ interface WaterLeakProps {
   isLeak?: boolean;
 }
 
-const WaterLeak: React.FunctionComponent<WaterLeakProps> = ({isLeak = false}) => {
+const WaterLeak: React.FunctionComponent<WaterLeakProps> = ({
+  isLeak = false,
+}) => {
   return (
     <StyledStatusButton>
       <WarningAnimation isWarning={isLeak}>
-        <FontAwesomeIcon icon={faTint}/>
+        <FontAwesomeIcon icon={faTint} />
       </WarningAnimation>
     </StyledStatusButton>
   );

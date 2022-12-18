@@ -5,7 +5,6 @@ import EventName from '../../utils/EventName';
 import Camera from './Camera';
 
 const Video: React.FC = () => {
-
   useEffect(() => {
     pubSub.publish(EventName.Stop3DRender);
     return () => {

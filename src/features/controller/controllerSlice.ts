@@ -4,18 +4,18 @@ import { RootState } from '../../app/store';
 
 export type ElectricGroupsState = {
   [key: string]: number;
-}
+};
 
 interface InitialState {
   isConnect: boolean;
   electricGroupsState: ElectricGroupsState;
-  currentElectricGroupCommand: ElectricGroupsState
+  currentElectricGroupCommand: ElectricGroupsState;
 }
 
 const controllerState: InitialState = {
   isConnect: false,
   electricGroupsState: {},
-  currentElectricGroupCommand: {}
+  currentElectricGroupCommand: {},
 };
 
 const controllerSlice = createSlice({
@@ -26,7 +26,10 @@ const controllerSlice = createSlice({
       state.isConnect = action.payload;
     },
 
-    setElectricGroupsState: (state, action: PayloadAction<ElectricGroupsState>) => {
+    setElectricGroupsState: (
+      state,
+      action: PayloadAction<ElectricGroupsState>
+    ) => {
       state.electricGroupsState = action.payload;
     },
 
@@ -35,18 +38,28 @@ const controllerSlice = createSlice({
     },
 
     setToggleValue: (state, action: PayloadAction<{ name: string }>) => {
-      state.currentElectricGroupCommand =
-        state.electricGroupsState[action.payload.name]
-          ? {[action.payload.name]: 0}
-          : {[action.payload.name]: 255};
-    }
+      state.currentElectricGroupCommand = state.electricGroupsState[
+        action.payload.name
+      ]
+        ? { [action.payload.name]: 0 }
+        : { [action.payload.name]: 255 };
+    },
   },
 });
 
-export const {setCurrentCommand, setConnectionState, setElectricGroupsState, setToggleValue } = controllerSlice.actions;
+export const {
+  setCurrentCommand,
+  setConnectionState,
+  setElectricGroupsState,
+  setToggleValue,
+} = controllerSlice.actions;
 
-export const electricGroupsState = (state: RootState): ElectricGroupsState => state.controller.electricGroupsState;
-export const isConnect = (state: RootState): boolean => state.controller.isConnect;
-export const currentElectricGroupCommand = (state: RootState): ElectricGroupsState => state.controller.currentElectricGroupCommand;
+export const electricGroupsState = (state: RootState): ElectricGroupsState =>
+  state.controller.electricGroupsState;
+export const isConnect = (state: RootState): boolean =>
+  state.controller.isConnect;
+export const currentElectricGroupCommand = (
+  state: RootState
+): ElectricGroupsState => state.controller.currentElectricGroupCommand;
 
 export default controllerSlice.reducer;

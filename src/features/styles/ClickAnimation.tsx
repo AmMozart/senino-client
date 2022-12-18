@@ -38,9 +38,11 @@ const ClickAnimation: React.FC<ClickAnimationProps> = ({ children }) => {
 
   return (
     <div onClick={handleClick} onAnimationEnd={stopAnimation}>
-      {isAnimate
-        ? <StyledClickAnimation>{children}</StyledClickAnimation>
-        : children}
+      {isAnimate ? (
+        <StyledClickAnimation>{children}</StyledClickAnimation>
+      ) : (
+        children
+      )}
     </div>
   );
 };

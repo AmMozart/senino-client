@@ -1,12 +1,12 @@
 export interface ReceiveData {
   temp: {
-    day: number,
-    night: number,
+    day: number;
+    night: number;
   };
   humidity: number;
   speed: number;
   pressure: number;
-  weather: Array<{icon: string}>;
+  weather: Array<{ icon: string }>;
   dt: number;
   icon: string;
 }
@@ -33,8 +33,8 @@ class MeteoData {
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
 
-    return `${ day < 10 ? '0' + day : day }.
-            ${ month < 10 ? '0' + month : month }.
+    return `${day < 10 ? '0' + day : day}.
+            ${month < 10 ? '0' + month : month}.
             ${year}`;
   }
 }

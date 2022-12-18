@@ -19,10 +19,14 @@ const OneDayWeather: React.FC<OneDayWeatherProps> = ({ title, meteoData }) => {
         <h2 className={style.title}>{title}</h2>
         <span className={style.date}>{date}</span>
         <SkyInfo sky={icon} />
-        <Info temp={temp} humidity={humidity} pressure={pressure} windSpeed={wind} />
+        <Info
+          temp={temp}
+          humidity={humidity}
+          pressure={pressure}
+          windSpeed={wind}
+        />
       </div>
-      <div className={style.shadow}>
-      </div>
+      <div className={style.shadow}></div>
     </div>
   );
 };
