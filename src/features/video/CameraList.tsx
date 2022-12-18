@@ -3,12 +3,15 @@ import styled from 'styled-components';
 
 import { serverCamStreamUrl } from './url';
 
-const StyledCameraList = styled.section`
+const StyledCameraList = styled.aside`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 90%;
   right: 0;
   bottom: 0;
-  margin: 5px;
   background-color: var(--panel-background-color);
-  border-radius: 30px;
 
 & li {
   display: flex;
@@ -46,11 +49,11 @@ const StyledCameraList = styled.section`
     }
 }`;
 
-interface PropsCameraList {
+interface CameraListProps {
   changeURL: (url: string) => void;
 }
 
-const CameraList: React.FC<PropsCameraList> = ({ changeURL }) => {
+const CameraList: React.FC<CameraListProps> = ({ changeURL }) => {
   const handleClick: MouseEventHandler = (e) => {
     switch(e.currentTarget.textContent) {
     case 'Дорога': {
@@ -59,6 +62,10 @@ const CameraList: React.FC<PropsCameraList> = ({ changeURL }) => {
     }
     case 'Гостиная': {
       changeURL(serverCamStreamUrl.LivingRoom);
+      break;
+    }
+    case 'Передний Двор': {
+      changeURL(serverCamStreamUrl.Garden);
       break;
     }
     }

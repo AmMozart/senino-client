@@ -6,14 +6,13 @@ import { serverCamStreamUrl } from './url';
 import CameraList from './CameraList';
 
 const StyledCamera = styled.div`
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
+  width: 90%;
+  height: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
   background: #000;
   border-radius: 20px;
-  margin: 5px;
   z-index: 2;
 
  & canvas {
@@ -70,7 +69,7 @@ const Camera: React.FC = () => {
     <StyledCamera>
       <div>
         <canvas ref={canvas}>
-        You are browser do not support canvas tag!
+          You are browser do not support canvas tag!
         </canvas>
       </div>
 

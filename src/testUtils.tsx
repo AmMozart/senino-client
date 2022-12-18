@@ -14,4 +14,4 @@ const Wrapper: React.FC<WrapperProps> = ({children}) => {
   );
 };
 
-export {Wrapper};
+export default Wrapper;
