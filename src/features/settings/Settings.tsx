@@ -2,19 +2,33 @@ import React, { MouseEventHandler } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import getID from '../../utils/getID';
+import ActionRequest from '../password/ActionRequest';
+import { show } from '../password/passwordSlice';
 import StyledButton from '../styles/StyledButton';
 import StyledContent from '../styles/StyledContent';
 import StyledPage from '../styles/StyledPage';
 import StyledTitle from '../styles/StyledTitle';
 
 import { logText, clear } from './settingsSlice';
+import { actionRequest, passwordState } from '../password/passwordSlice';
+import PasswordState from '../../components/DigitalPanel/PasswordState';
 
 const Settings: React.FC = () => {
   const dispatch = useAppDispatch();
   const logs = useAppSelector(logText);
+  const currentActionRequest = useAppSelector(actionRequest);
+  const currentPasswordState = useAppSelector(passwordState);
 
-  const clickHandler: MouseEventHandler<HTMLButtonElement> = () =>
+  if (
+    currentActionRequest === ActionRequest.ClearLogFile &&
+    currentPasswordState === PasswordState.Correct
+  ) {
     dispatch(clear());
+  }
+
+  const showPasswordDigitalPad: MouseEventHandler<HTMLButtonElement> = () => {
+    dispatch(show(ActionRequest.ClearLogFile));
+  };
 
   return (
     <StyledPage>
@@ -26,7 +40,7 @@ const Settings: React.FC = () => {
           ))}
         </ul>
       </StyledContent>
-      <StyledButton onClick={clickHandler}>Очистить</StyledButton>
+      <StyledButton onClick={showPasswordDigitalPad}>Очистить</StyledButton>
     </StyledPage>
   );
 };
