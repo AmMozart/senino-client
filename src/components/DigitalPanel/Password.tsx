@@ -1,4 +1,4 @@
-import React, { createRef, MouseEventHandler } from 'react';
+import React, { createRef } from 'react';
 import styled from 'styled-components';
 import PasswordState from './PasswordState';
 
