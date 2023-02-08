@@ -9,7 +9,7 @@ import {
   passwordState,
   verify,
 } from './passwordSlice';
-import DigitalPanel from '../../components/DigitalPanel/DigitalPanel';
+import DigitalPanel from '../../components/DigitalPanel';
 
 const Password: React.FC = () => {
   const dispatch = useAppDispatch();
