@@ -1,12 +1,12 @@
 import React, { MouseEventHandler, useCallback } from 'react';
 import styled from 'styled-components';
 
-import imageFloor1 from '../../../img/1_floor.png';
-import imageFloor2 from '../../../img/2_floor.png';
-import imageGarden from '../../../img/Garden.png';
-import { useAppDispatch } from '../../../app/hooks';
-import { change } from '../areaSlice';
-import AreaName from '../AreaName';
+import imageFloor1 from '../../img/1_floor.png';
+import imageFloor2 from '../../img/2_floor.png';
+import imageGarden from '../../img/Garden.png';
+import { useAppDispatch } from '../../app/hooks';
+import { change } from './areaSlice';
+import AreaName from './AreaName';
 
 const StyledAreaButton = styled.button`
   display: flex;

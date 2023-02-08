@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
-import Wrapper from '../../../testUtils';
-import AreaName from '../AreaName';
+import Wrapper from '../../testUtils';
+import AreaName from './AreaName';
 import AreaButton from './AreaButton';
 
 describe('AreaButton', () => {
