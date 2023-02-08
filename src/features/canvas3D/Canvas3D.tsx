@@ -14,7 +14,7 @@ const StyledCanvas3D = styled.canvas`
 
 const Canvas3D: React.FC = () => {
   const [world3DReady, setWorld3DReady] = useState<boolean>(false);
-  
+
   const canvas = React.useRef<HTMLCanvasElement | null>(null);
   const world3D = useRef<World3D | null>(null);
 

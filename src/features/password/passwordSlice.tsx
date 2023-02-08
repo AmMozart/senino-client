@@ -70,11 +70,14 @@ export const { change, clear, show, close } = passwordSlice.actions;
 
 export const password = (state: RootState): InitialState['password'] =>
   state.password.password;
+
 export const actionRequest = (
   state: RootState
 ): InitialState['actionRequest'] => state.password.actionRequest;
+
 export const isShow = (state: RootState): InitialState['isShow'] =>
   state.password.isShow;
+
 export const passwordState = (
   state: RootState
 ): InitialState['passwordState'] => state.password.passwordState;

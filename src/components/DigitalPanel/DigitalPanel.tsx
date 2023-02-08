@@ -87,7 +87,7 @@ const DigitalPanel: React.FC<DigitalPanelProps> = ({
 }) => {
   return (
     <StyledDigitalPanel>
-      <div className='close' onClick={onClickClose}>
+      <div className='close' onClick={onClickClose} data-testid='closeButton'>
         <FontAwesomeIcon icon={faTimes} />
       </div>
       <h1>Введите пароль</h1>

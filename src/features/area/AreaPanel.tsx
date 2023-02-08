@@ -24,32 +24,18 @@ const StyledAreaPanel = styled.section`
   }
 `;
 
-const StyledButton = styled.div`
-  display: block;
-`;
-
 interface AreaPanelProps {
   areas: AreaName[];
 }
 
-const AreaPanel: React.FC<AreaPanelProps> = ({areas}) => {
+const AreaPanel: React.FC<AreaPanelProps> = ({ areas }) => {
   const currentArea = useAppSelector(selectName);
 
-  const Buttons = areas.map(area => {
-    const isActive = currentArea === area;
+  const Buttons = areas.map((area) => (
+    <AreaButton key={area} name={area} isActive={currentArea === area} />
+  ));
 
-    return (
-      <StyledButton key={area}>
-        <AreaButton name={area} isActive={isActive} />
-      </StyledButton>
-    );
-  });
-
-  return (
-    <StyledAreaPanel>
-      {Buttons}
-    </StyledAreaPanel>
-  );
+  return <StyledAreaPanel>{Buttons}</StyledAreaPanel>;
 };
 
 export default AreaPanel;

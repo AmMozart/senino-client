@@ -35,6 +35,10 @@ const StyledCameraList = styled.aside`
   }
 
   @media (max-width: 576px) {
+    height: 10%;
+    width: 100%;
+    bottom: 0;
+
     & li {
       width: 70px;
       height: 70px;
