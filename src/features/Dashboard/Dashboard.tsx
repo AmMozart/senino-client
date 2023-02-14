@@ -11,6 +11,7 @@ import Boiler from '../Boiler';
 import Septic from '../Septic';
 import Video from '../video/Video';
 import Water from '../Water';
+import Connect from '../Connect';
 
 const StyledDashboard = styled.section`
   width: 100%;
@@ -33,6 +34,7 @@ const Dashboard: React.FC = () => (
       <Route path='Septic' element={<Septic />} />
       <Route path='Water' element={<Water />} />
       <Route path='Settings' element={<Settings />} />
+      <Route path='Connect' element={<Connect />} />
     </Routes>
   </StyledDashboard>
 );
