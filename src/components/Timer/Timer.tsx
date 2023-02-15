@@ -34,21 +34,21 @@ const StyledClose = styled.div`
   width: 40px;
   height: 40px;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     position: absolute;
     left: 20px;
-    content: ' ';
-    height: 40px;
     width: 3px;
+    height: 40px;
     background-color: #a71616;
+    content: ' ';
   }
 
-  &:before {
+  &::before {
     transform: rotate(45deg);
   }
 
-  &:after {
+  &::after {
     transform: rotate(-45deg);
   }
 `;

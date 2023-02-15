@@ -8,10 +8,9 @@ import getID from '../../utils/getID';
 
 const StyledDays = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
   z-index: 2;
 `;
 
@@ -21,16 +20,16 @@ const StyledOneDays = styled.div`
 
   & label {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--metallic-color);
-    padding: 10px;
     width: 60px;
     height: 60px;
-    background: var(--btn-back-color);
-    cursor: pointer;
-    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
     border: 1px solid #2b2b2b;
+    border-radius: 50%;
+    background: var(--btn-back-color);
+    color: var(--metallic-color);
+    cursor: pointer;
     transition: all 0.3s linear;
   }
 
@@ -40,7 +39,7 @@ const StyledOneDays = styled.div`
   }
 
   & input:checked + label {
-    background: rgb(24, 141, 22);
+    background: rgb(24 141 22);
     color: #fff;
   }
 

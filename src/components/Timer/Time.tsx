@@ -7,23 +7,24 @@ import getID from '../../utils/getID';
 
 const StyledTime = styled.div`
   & label {
-    font: 1.5em Arial italic;
+    font: 1.5em italic sans-serif;
   }
 
   & input {
-    background: #0000;
     padding: 0 10px;
+    background: #0000;
     color: var(--btn-text-color);
-    font: 2em Arial italic;
+    font: 2em italic sans-serif;
   }
 
   & input[type='time']::-webkit-calendar-picker-indicator {
-    opacity: 1;
     display: block;
     width: 60px;
     height: 60px;
     border-width: thin;
+    opacity: 1;
   }
+
   @media (max-width: 576px) {
     & input {
       font-size: 1.2em;

@@ -7,10 +7,9 @@ import styled from 'styled-components';
 
 const StyledTimerSet = styled(React.Fragment)`
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
   height: 85%;
   overflow-y: scroll;
 `;

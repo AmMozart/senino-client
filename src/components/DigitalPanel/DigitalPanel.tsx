@@ -22,30 +22,30 @@ const StyledDigitalPanel = styled.section`
 
   & section {
     display: grid;
+    grid-gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
   }
+
   & input {
+    grid-column: 1 / 4;
     text-align: center;
-    grid-column-start: 1;
-    grid-column-end: 4;
   }
 
   & .close {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
-    right: 10px;
     top: 10px;
+    right: 10px;
+    display: flex;
     width: 80px;
     height: 80px;
-    background-color: #2e2e2e;
-    font-size: 2.5em;
-    color: #e1e1e1;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #676767;
     border-radius: 20px;
+    background-color: #2e2e2e;
+    color: #e1e1e1;
+    font-size: 2.5em;
   }
 
   & h1 {
@@ -56,9 +56,11 @@ const StyledDigitalPanel = styled.section`
     & section {
       grid-gap: 5px;
     }
+
     & h1 {
       font-size: 0.8em;
     }
+
     & .close {
       width: 60px;
       height: 60px;

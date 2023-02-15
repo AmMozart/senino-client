@@ -6,8 +6,8 @@ import { serverCamStreamUrl } from './url';
 const StyledCameraList = styled.aside`
   display: flex;
   justify-content: center;
-  align-items: center;
   position: fixed;
+  align-items: center;
   height: 90%;
   right: 0;
   bottom: 0;
@@ -15,29 +15,29 @@ const StyledCameraList = styled.aside`
 
   & li {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--btn-text-color);
-    margin: 10px;
     width: 100px;
     height: 100px;
-    background: var(--btn-back-color);
-    cursor: pointer;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
+    margin: 10px;
+    background: var(--btn-back-color);
+    color: var(--btn-text-color);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
     transition: all 0.5s linear;
   }
 
   & li:active {
-    color: rgb(52, 110, 187);
+    color: rgb(52 110 187);
   }
 
   @media (max-width: 576px) {
-    height: 10%;
-    width: 100%;
     bottom: 0;
+    width: 100%;
+    height: 10%;
 
     & li {
       width: 70px;

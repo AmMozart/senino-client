@@ -24,7 +24,6 @@ const StyledAreaButton = styled.button`
   cursor: pointer;
   box-shadow: var(--btn-shadow);
   transition: color, opacity 0.3s linear;
-
   opacity: ${(props: { isActive: boolean }) => (props.isActive ? '1' : '0.3')};
 
   & img {

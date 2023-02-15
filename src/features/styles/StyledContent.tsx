@@ -9,7 +9,7 @@ const StyledContent = styled.section`
   padding: 10px;
   width: 100%;
   height: 80%;
-  background: #000000cc;
+  background: #000c;
   transition: all 0.3s linear;
   overflow: auto;
   gap: 10px;

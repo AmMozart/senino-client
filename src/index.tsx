@@ -12,11 +12,11 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 const GlobalStyle = createGlobalStyle`
   *,
   *::before,
-  *:after {
-    padding: 0;
-    margin: 0;
-    border: 0;
+  *::after {
     box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
     user-select: none;
   }
 

@@ -18,8 +18,8 @@ const StyledAreaPanel = styled.section`
   background-color: var(--panel-background-color);
 
   @media (max-width: 576px) {
-    height: auto;
     width: 100%;
+    height: auto;
     flex-direction: row;
   }
 `;

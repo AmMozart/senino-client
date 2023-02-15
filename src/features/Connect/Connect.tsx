@@ -26,27 +26,29 @@ const StyledMapContent = styled(StyledContent)<{ connect: boolean }>`
   }
 
   & div::before {
-    content: '${(p) => (p.connect ? 'Ok' : 'Error')}';
     position: absolute;
+    top: calc(var(--size) / -2);
+    left: calc((var(--width-block) - var(--size)) / 2);
+    display: flex;
     width: var(--size);
     height: var(--size);
-    left: calc((var(--width-block) - var(--size)) / 2);
-    top: calc(var(--size) / -2);
+    align-items: center;
+    justify-content: center;
     border: 2px solid var(--color);
     border-radius: 50%;
     box-shadow: inset 0 0 30px var(--color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
     color: #e4ff00;
+    content: '${(p) => (p.connect ? 'ok' : 'error')}';
+    font-size: 1rem;
   }
 
   @media (max-width: 940px) {
     font-size: 7em;
+
     & div {
       --width-block: 350px;
     }
+
     & div::before {
       --size: 60px;
     }
@@ -54,9 +56,11 @@ const StyledMapContent = styled(StyledContent)<{ connect: boolean }>`
 
   @media (max-width: 760px) {
     font-size: 5em;
+
     & div {
       --width-block: 200px;
     }
+
     & div::before {
       --size: 50px;
     }
@@ -64,9 +68,11 @@ const StyledMapContent = styled(StyledContent)<{ connect: boolean }>`
 
   @media (max-width: 576px) {
     font-size: 3em;
+
     & div {
       --width-block: 100px;
     }
+
     & div::before {
       --size: 40px;
     }

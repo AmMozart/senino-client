@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   cursor: pointer;
 
   &:active {
-    background: #ffffff;
+    background: #fff;
   }
 
   @media (max-height: 500px) {
