@@ -67,6 +67,12 @@ const StyledOneDayWeather = styled.div`
       display: none;
     }
   }
+
+  @media (max-width: 765px) {
+    & .title {
+      font-size: 1em;
+    }
+  }
 `;
 
 interface OneDayWeatherProps {

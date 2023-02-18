@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const clickTransform = keyframes`
 from {
   transform: scale(1);
 }
-50% {
-  transform: scale(0.7);
+40% {
+  transform: scale(0.6);
 }
 to {
   transform: scale(1);
 }
 `;
 
-const StyledClickAnimation = styled.div`
-  animation: ${clickTransform} 0.3s ease-in-out;
+const StyledClickAnimation = styled.div<{ animate: boolean }>`
+  ${({ animate }) =>
+    animate &&
+    css`
+      animation: ${clickTransform} 0.3s ease-out;
+    `}
 `;
 
 interface ClickAnimationProps {
@@ -37,13 +41,13 @@ const ClickAnimation: React.FC<ClickAnimationProps> = ({ children }) => {
   };
 
   return (
-    <div onClick={handleClick} onAnimationEnd={stopAnimation}>
-      {isAnimate ? (
-        <StyledClickAnimation>{children}</StyledClickAnimation>
-      ) : (
-        children
-      )}
-    </div>
+    <StyledClickAnimation
+      animate={isAnimate}
+      onClick={handleClick}
+      onAnimationEnd={stopAnimation}
+    >
+      {children}
+    </StyledClickAnimation>
   );
 };
 
