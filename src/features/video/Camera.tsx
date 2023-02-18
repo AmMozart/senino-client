@@ -17,7 +17,7 @@ const StyledCamera = styled.div`
 
   & canvas {
     display: block;
-    width: 100%;
+    max-width: 100%;
     max-height: 100%;
     border-radius: 20px;
   }
