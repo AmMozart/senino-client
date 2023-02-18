@@ -1,4 +1,13 @@
-const meteoConfig = {
+interface MeteoConfig {
+  city: string;
+  country: string;
+  mode: string;
+  units: string;
+  count: number;
+  APPID: string;
+}
+
+const meteoConfig: MeteoConfig = {
   city: 'Moscow',
   country: 'RU',
   mode: 'json',

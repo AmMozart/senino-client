@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
-import style from './Icon.module.css';
+const StyledIcon = styled.img`
+  padding-right: 5px;
+  height: 1.2em;
+`;
 
 interface IconProps {
   name: string;
@@ -21,7 +25,7 @@ const Icon: React.FC<IconProps> = ({ name }) => {
     }
   }, [name]);
 
-  return image ? <img className={style.icon} alt={name} src={image} /> : null;
+  return image ? <StyledIcon alt={name} src={image} /> : null;
 };
 
 export default React.memo(Icon);

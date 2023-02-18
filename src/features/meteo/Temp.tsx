@@ -1,13 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import style from './Temp.module.css';
+const StyledTemp = styled.span`
+  font-size: 0.8em;
+`;
 
 interface TempProps {
   temp: number;
 }
 
 const Temp: React.FC<TempProps> = ({ temp }) => {
-  return <span className={style.temp}>{temp}&deg;C</span>;
+  return <StyledTemp>{temp}&deg;C</StyledTemp>;
 };
 
 export default React.memo(Temp);

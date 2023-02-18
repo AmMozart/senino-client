@@ -34,6 +34,16 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
   }
+  
+  :root {
+  --btn-text-color: #bbb;
+  --btn-text-color-active: #fff;
+  --h1-text-color: var(--btn-text-color);
+  --panel-background-color: rgb(18 18 18 / 90%);
+  --panel-border: 3px solid #1f1f1f;
+  --metallic-color: #5f7286;
+}
+
 `;
 
 enableMapSet();

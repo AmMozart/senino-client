@@ -1,6 +1,37 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
-import style from './SkyInfo.module.css';
+const StyledSkyInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  & .icon {
+    height: 80%;
+    padding: 0;
+    margin: 0;
+  }
+
+  & .description {
+    padding: 0;
+    margin: 0;
+    font-size: x-large;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: row;
+    align-items: right;
+
+    & .icon {
+      height: 100px;
+    }
+
+    & .description {
+      display: none;
+    }
+  }
+`;
 
 interface SkyInfoProps {
   sky: string;
@@ -31,10 +62,10 @@ const SkyInfo: React.FC<SkyInfoProps> = ({ sky }) => {
   }, [sky]);
 
   return (
-    <div className={style.info}>
-      {image && <img className={style.icon} src={image} alt='' />}
-      <span className={style.description}>{description}</span>
-    </div>
+    <StyledSkyInfo>
+      {image && <img className={'icon'} src={image} alt='' />}
+      <span className={'description'}>{description}</span>
+    </StyledSkyInfo>
   );
 };
 
