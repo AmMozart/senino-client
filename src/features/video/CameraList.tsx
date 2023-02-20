@@ -1,22 +1,25 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { useAppDispatch } from '../../app/hooks';
 
-import { serverCamStreamUrl } from './url';
+import { Camera, cameras } from './cameras';
+import { changeCamera } from './cameraSlice';
 
-const StyledCameraList = styled.aside`
+const StyledCameraList = styled.ul`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   position: fixed;
   align-items: center;
   height: 90%;
   right: 0;
   bottom: 0;
   background-color: var(--panel-background-color);
+  overflow: auto;
 
   & li {
     display: flex;
     width: 100px;
-    height: 100px;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
@@ -24,7 +27,7 @@ const StyledCameraList = styled.aside`
     background: var(--btn-back-color);
     color: var(--btn-text-color);
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     transition: all 0.5s linear;
@@ -38,51 +41,31 @@ const StyledCameraList = styled.aside`
     bottom: 0;
     width: 100%;
     height: 10%;
+    display: flex;
+    flex-direction: row;
 
     & li {
       width: 70px;
       height: 70px;
       font-size: 0.8em;
     }
-
-    & ul {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
   }
 `;
 
-interface CameraListProps {
-  changeURL: (url: string) => void;
-}
+const CameraList: React.FC = () => {
+  const dispatch = useAppDispatch();
 
-const CameraList: React.FC<CameraListProps> = ({ changeURL }) => {
-  const handleClick: MouseEventHandler = (e) => {
-    switch (e.currentTarget.textContent) {
-      case 'Дорога': {
-        changeURL(serverCamStreamUrl.Road);
-        break;
-      }
-      case 'Гостиная': {
-        changeURL(serverCamStreamUrl.LivingRoom);
-        break;
-      }
-      case 'Передний Двор': {
-        changeURL(serverCamStreamUrl.Garden);
-        break;
-      }
-    }
+  const handleClick = (camera: Camera) => {
+    dispatch(changeCamera(camera));
   };
 
   return (
     <StyledCameraList>
-      <ul>
-        <li onClick={handleClick}>Дорога</li>
-        <li onClick={handleClick}>Гостиная</li>
-        <li onClick={handleClick}>Передний Двор</li>
-      </ul>
+      {cameras.map((camera) => (
+        <li key={camera.id} onClick={() => handleClick(camera)}>
+          {camera.name}
+        </li>
+      ))}
     </StyledCameraList>
   );
 };

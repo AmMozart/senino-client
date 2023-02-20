@@ -3,7 +3,9 @@ enum EventName {
   ChangeSystem,
   ChangeRoom,
   ChangeState,
+  ChangeVideoCamera,
   ClickOnElectricGroup,
+  ClickOnVideoCameraGroup,
   Stop3DRender,
   Start3DRender,
 }

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { loadPlayer, Player } from 'rtsp-relay/browser';
 
-import { serverCamStreamUrl } from './url';
 import CameraList from './CameraList';
+import { useAppSelector } from '../../app/hooks';
+import { camera } from './cameraSlice';
 
 const StyledCamera = styled.div`
   width: 90%;
@@ -40,7 +41,8 @@ const StyledCamera = styled.div`
 `;
 
 const Camera: React.FC = () => {
-  const [url, setUrl] = useState(serverCamStreamUrl.Road);
+  const currentCamera = useAppSelector(camera);
+
   const canvas = React.useRef<HTMLCanvasElement | null>(null);
 
   let player: Player;
@@ -50,7 +52,7 @@ const Camera: React.FC = () => {
 
     if (canvas.current) {
       loadPlayer({
-        url,
+        url: currentCamera.url,
         canvas: canvas.current,
         disableGl: true,
         autoplay: true,
@@ -64,7 +66,7 @@ const Camera: React.FC = () => {
         player.destroy();
       }
     };
-  }, [url]);
+  }, [currentCamera]);
 
   return (
     <StyledCamera>
@@ -72,7 +74,7 @@ const Camera: React.FC = () => {
         <canvas ref={canvas}>You are browser do not support canvas tag!</canvas>
       </div>
 
-      <CameraList changeURL={setUrl} />
+      <CameraList />
     </StyledCamera>
   );
 };

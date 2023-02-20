@@ -39,7 +39,13 @@ export const climateGroup: ElectricGroup = {
 };
 
 export const blindGroup: ElectricGroup = {
-  [AreaName.Garden]: ['Vorota'],
+  [AreaName.Garden]: ['Vorota', 'Door 1'],
   [AreaName.Floor1]: [],
+  [AreaName.Floor2]: [],
+};
+
+export const videoCameraGroup: ElectricGroup = {
+  [AreaName.Garden]: ['CAM1', 'CAM2', 'CAM3', 'CAM4', 'CAM5', 'CAM6', 'CAM7'],
+  [AreaName.Floor1]: ['CAM1', 'CAM2', 'CAM3', 'CAM4', 'CAM5', 'CAM6', 'CAM7'],
   [AreaName.Floor2]: [],
 };

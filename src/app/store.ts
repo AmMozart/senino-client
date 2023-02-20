@@ -7,6 +7,7 @@ import menu from '../features/menu/menuSlice';
 import timers from '../features/timer/timerSlice';
 import settings from '../features/settings/settingsSlice';
 import password from '../features/password/passwordSlice';
+import camera from '../features/video/cameraSlice';
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     timers,
     settings,
     password,
+    camera,
   },
 });
 
