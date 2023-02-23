@@ -73,7 +73,6 @@ const Camera: React.FC = () => {
       <div>
         <canvas ref={canvas}>You are browser do not support canvas tag!</canvas>
       </div>
-
       <CameraList />
     </StyledCamera>
   );

@@ -12,297 +12,6 @@ Exporter version: 3.3.0, Blender version: 3.3.0
 		Texture directory   :  D:\Projects\blender\
 	Python World class constructor completed
 	WARNING: No active camera has been assigned, or is not in a currently enabled collection
-	processing begun of mesh:  Участок
-		processing begun of material:  ground_1.008
-		processing begun of material:  wall_1_2.001
-		processing begun of material:  wall_1_3.001
-		processing begun of material:  wall_1_4
-		processing begun of material:  wall_1_7
-		processing begun of material:  wall_2_9
-		processing begun of material:  wall_2_10
-		processing begun of material:  wall_7_40
-		processing begun of material:  wall_12_74
-		processing begun of material:  wall_12_75
-		processing begun of material:  wall_13_80
-		processing begun of material:  wall_13_81
-		processing begun of material:  wall_16_98
-		processing begun of material:  wall_17_104
-		processing begun of material:  wall_17_105
-		processing begun of material:  wall_21_129
-		processing begun of material:  wall_37_224
-		processing begun of material:  wall_37_225
-		processing begun of material:  wall_37_228
-		processing begun of material:  wall_40_246
-		processing begun of material:  wall_41_248
-		processing begun of material:  wall_43_260
-		processing begun of material:  wall_48_290
-		processing begun of material:  room_51_308
-		processing begun of material:  room_52_309
-		processing begun of material:  room_53_310
-		processing begun of material:  room_54_311
-		processing begun of material:  room_55_312
-		processing begun of material:  room_56_313
-		processing begun of material:  room_59_316
-		processing begun of material:  room_61_318
-		processing begun of material:  room_71_329
-		processing begun of material:  iris
-		processing begun of material:  yellow_green
-		processing begun of material:  flbrown
-		processing begun of material:  amber
-		processing begun of material:  white.002
-		processing begun of material:  yellowbrt
-		processing begun of material:  flgrey
-		processing begun of material:  white_frame_373
-		processing begun of material:  yellowbrt_sweethome3d_opening_on_hinge_1_handle_7_381
-		processing begun of material:  white_Montant_384
-		processing begun of material:  flltgrey
-		processing begun of material:  white_frame_421
-		processing begun of material:  flltgrey_sweethome3d_window_pane_on_hinge_1_427
-		processing begun of material:  Tub
-		processing begun of material:  Legs
-		processing begun of material:  Water
-		processing begun of material:  Side
-		processing begun of material:  Drain
-		processing begun of material:  Jet_system
-		processing begun of material:  lighttan
-		processing begun of material:  glasstransparent
-		processing begun of material:  glassblutint
-		processing begun of material:  fusta_taula
-		processing begun of material:  glasstransparent_glass2_Cube_497
-		processing begun of material:  flltbrown
-		processing begun of material:  flbrown_dessus_512
-		processing begun of material:  588
-		processing begun of material:  sofa
-		processing begun of material:  negrepotes
-		processing begun of material:  metall.001
-		processing begun of material:  lighttan_step_598
-		processing begun of material:  Bois
-		processing begun of material:  NoirTissu
-		processing begun of material:  essai
-		processing begun of material:  MetaPlast
-		processing begun of material:  sweethome3d_window_mirror_708
-		processing begun of material:  Rod
-		processing begun of material:  Junction
-		processing begun of material:  Right
-		processing begun of material:  Left
-		processing begun of material:  Rod_Rod_717
-		processing begun of material:  Junction_Rod_14_719
-		processing begun of material:  Right_RightCurtain_721
-		processing begun of material:  Left_LeftCurtain_723
-		processing begun of material:  Frame_out
-		processing begun of material:  Cage_out
-		processing begun of material:  Lock
-		processing begun of material:  Glass.002
-		processing begun of material:  Frame_in
-		processing begun of material:  Cage_in
-		processing begun of material:  Threshold
-		processing begun of material:  metal.001
-		processing begun of material:  toalla_blanca
-		processing begun of material:  mirror
-		processing begun of material:  cabinet
-		processing begun of material:  light
-		processing begun of material:  mirror_edge
-		processing begun of material:  cupb
-		processing begun of material:  sink
-		processing begun of material:  chrome
-		processing begun of material:  silver.001
-		processing begun of material:  metal_783
-		processing begun of material:  784
-		processing begun of material:  785
-		processing begun of material:  786
-		processing begun of material:  787
-		processing begun of material:  glass.002
-		processing begun of material:  801
-		processing begun of material:  803
-		processing begun of material:  Cube_27_806
-		processing begun of material:  807
-		processing begun of material:  frame_door_Cube_856
-		processing begun of material:  sweethome3d_hinge_1_6_857
-		processing begun of material:  sweethome3d_opening_on_hinge_1_handle_859
-		processing begun of material:  sweethome3d_opening_on_hinge_1_door_860
-		processing begun of material:  doorlines.002
-		processing begun of material:  interior.002
-		processing begun of material:  sweethome3d_window_mirror.002
-		processing begun of material:  textured.002
-		processing begun of material:  firstcolor.002
-		processing begun of material:  tires.002
-		processing begun of material:  chromes.002
-		processing begun of material:  holes.002
-		processing begun of material:  glass_Plane_951_890
-		processing begun of material:  blackplastics.002
-		processing begun of material:  lowparts.002
-		processing begun of material:  tan.001
-		processing begun of material:  brown.001
-		processing begun of material:  bclair.001
-		processing begun of material:  archwhite2.001
-		processing begun of material:  lighttan_Desk_934
-		processing begun of material:  942
-		processing begun of material:  metal_943
-		processing begun of material:  _2BNX13D07_1_1.001
-		processing begun of material:  _2BNL13D03_4_4.001
-		processing begun of material:  OfficeChair3_1.001
-		processing begun of material:  OfficeChair3_2.001
-		processing begun of material:  monitor.001
-		processing begun of material:  screen.001
-		processing begun of material:  soport_apple.001
-		processing begun of material:  base_teclado.001
-		processing begun of material:  976
-		processing begun of material:  teclas.001
-		processing begun of material:  wood
-		processing begun of material:  alumain.001
-		processing begun of material:  glasstransparent_glass_Cube_980
-		processing begun of material:  981
-		processing begun of material:  libros_blancos.001
-		processing begun of material:  flwhite.001
-		processing begun of material:  fabric.001
-		processing begun of material:  mattress.001
-		processing begun of material:  legs.001
-		processing begun of material:  ruglegs.001
-		processing begun of material:  sheet.001
-		processing begun of material:  hetrenoir.001
-		processing begun of material:  verre.001
-		processing begun of material:  Gris.001
-		processing begun of material:  blondhair.001
-		processing begun of material:  lowbed.001
-		processing begun of material:  texturefabric.001
-		processing begun of material:  Upholstry.001
-		processing begun of material:  Chair.001
-		processing begun of material:  bone.001
-		processing begun of material:  metal_2_2_12_1122
-		processing begun of material:  Lid.001
-		processing begun of material:  Drain_3_3_8_1124
-		processing begun of material:  blue.001
-		processing begun of material:  glass_3_3_3_1129
-		processing begun of material:  frame.001
-		processing begun of material:  red.001
-		processing begun of material:  metal_12_12_1139
-		processing begun of material:  drain.001
-		processing begun of material:  cabinet_1_1_1145
-		processing begun of material:  sink_4_4_1146
-		processing begun of material:  front.001
-		processing begun of material:  top.001
-		processing begun of material:  Cloth1.001
-		processing begun of material:  Lining1.001
-		processing begun of material:  Hook.001
-		processing begun of material:  Hanger.001
-		processing begun of material:  Lining2.001
-		processing begun of material:  Cloth2.001
-		processing begun of material:  Rack.001
-		processing begun of material:  default.001
-		processing begun of material:  paintedwhite.002
-		processing begun of material:  white_PolyMesh_3_1218
-		processing begun of material:  1304
-		processing begun of material:  1307
-		processing begun of material:  Torus_1308
-		processing begun of material:  1310
-		processing begun of material:  1311
-		processing begun of material:  metall_sweethome3d_opening_on_rail_1_Plane_1312
-		processing begun of material:  sweethome3d_opening_on_rail_1_stones2_Icosphere_7680_1313
-		processing begun of material:  sweethome3d_opening_on_rail_1_stones2_Icosphere_1314
-		processing begun of material:  glass_1317
-		processing begun of material:  1323
-		processing begun of material:  1324
-		processing begun of material:  metal_1325
-		processing begun of material:  1326
-		processing begun of material:  1327
-		processing begun of material:  1328
-		processing begun of material:  Support
-		processing begun of material:  Light
-		processing begun of material:  Mirror
-		processing begun of material:  Glass_PolyMesh_2_1_1_1368
-		processing begun of material:  Alu_frame.002
-		processing begun of material:  Glass_13_13_1383
-		processing begun of material:  Flooring.002
-		processing begun of material:  Lamp.002
-		processing begun of material:  flpinegreen.002
-		processing begun of material:  grey.003
-		processing begun of material:  Rock.002
-		processing begun of material:  default_PolyMesh_1_None_None_1_1429
-		processing begun of material:  ltglass_1_1
-		processing begun of material:  ltgold_2_2
-		processing begun of material:  flltgrey_1447
-		processing begun of material:  ltgrey.001
-		processing begun of material:  Aluminum.001
-		processing begun of material:  1468
-		processing begun of material:  wire_000000000.001
-		processing begun of material:  wire_079079079.001
-		processing begun of material:  03___Default.001
-		processing begun of material:  wire_216102000.001
-		processing begun of material:  whiteExterior
-		processing begun of material:  holes_1576
-		processing begun of material:  greyArgent
-		processing begun of material:  Box46_1
-		processing begun of material:  matte_black
-		processing begun of material:  wood_1595
-		processing begun of material:  black_glossy
-		processing begun of material:  white_rought
-		processing begun of material:  leather
-		processing begun of material:  black_rought
-		processing begun of material:  vent_out
-		processing begun of material:  fan
-		processing begun of material:  vent_in
-		processing begun of material:  vent
-		processing begun of material:  metal_13_13_1615
-		processing begun of material:  wood_6_6_1616
-		processing begun of material:  sign
-		processing begun of material:  Gate
-		processing begun of material:  whiteplastic.004
-		processing begun of material:  eyetexture.004
-		processing begun of material:  base.004
-		processing begun of material:  baseMuro.004
-		processing begun of material:  LED.004
-		processing begun of material:  interno.004
-		processing begun of material:  camera.004
-			processing texture plan_wall_1_2
-			processing texture plan_wall_2_10
-			processing texture plan_wall_17_104
-			processing texture plan_wall_37_224
-			processing texture plan_wall_37_224
-			processing texture plan_wall_43_260
-			processing texture plan_wall_48_290
-			processing texture plan_room_55_312
-			processing texture plan_room_55_312
-			processing texture plan_room_59_316
-			processing texture plan_room_61_318
-			processing texture plan_wall_48_290
-			processing texture plan_Side
-			processing texture plan_sweethome3d_window_mirror_708
-			processing texture plan_787
-			processing texture plan_787
-			processing texture plan_807
-			processing texture plan_textured
-			processing texture plan_bclair
-			processing texture plan_wood
-			processing texture plan_981
-			processing texture plan_fabric
-			processing texture plan_sheet
-			processing texture plan_hetrenoir
-			processing texture plan_verre
-			processing texture plan_texturefabric
-			processing texture plan_Cloth1
-			processing texture plan_Cloth2
-			processing texture plan_paintedwhite
-			processing texture plan_paintedwhite
-			processing texture plan_1304
-			processing texture plan_1304
-			processing texture plan_Mirror
-			processing texture plan_Flooring
-			processing texture plan_Lamp
-			processing texture plan_Rock
-			processing texture plan_wall_48_290
-			processing texture plan_wood_1595
-			processing texture plan_sign
-			processing texture plan_eyetexture
-		processing begun of multimaterial:  plan.Multimaterial#0
-		Custom split normals with tangents being used
-		num positions      :  303779
-		num normals        :  303779
-		num tangents       :  1215116
-		num uvs            :  607558
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  407708
-		WARNING: # of 0 area faces found:  80
 	processing begun of mesh:  1 Этаж
 		processing begun of material:  ground_1.009
 		processing begun of material:  wall_1_2.004
@@ -406,7 +115,7 @@ Exporter version: 3.3.0, Blender version: 3.3.0
 			processing texture plan_571
 			processing texture plan_571
 			processing texture plan_591
-		processing begun of multimaterial:  plan.Multimaterial#1
+		processing begun of multimaterial:  plan.Multimaterial#0
 		Custom split normals with tangents being used
 		num positions      :  67961
 		num normals        :  67961
@@ -509,7 +218,7 @@ Exporter version: 3.3.0, Blender version: 3.3.0
 			processing texture plan_texturefabric
 			processing texture plan_Cloth1
 			processing texture plan_Cloth2
-		processing begun of multimaterial:  plan.Multimaterial#2
+		processing begun of multimaterial:  plan.Multimaterial#1
 		Custom split normals with tangents being used
 		num positions      :  125897
 		num normals        :  125897
@@ -519,6 +228,247 @@ Exporter version: 3.3.0, Blender version: 3.3.0
 		num colors         :  0
 		num triangles      :  100244
 		WARNING: # of 0 area faces found:  44
+	processing begun of mesh:  Участок
+		processing begun of material:  ground_1.018
+		processing begun of material:  wall_1_2.009
+		processing begun of material:  wall_1_3.009
+		processing begun of material:  wall_1_4.004
+		processing begun of material:  wall_1_7.003
+		processing begun of material:  wall_2_9.006
+		processing begun of material:  wall_2_10.004
+		processing begun of material:  wall_7_40.004
+		processing begun of material:  wall_12_74.004
+		processing begun of material:  wall_12_75.002
+		processing begun of material:  wall_13_80.002
+		processing begun of material:  wall_13_81.002
+		processing begun of material:  wall_16_98.002
+		processing begun of material:  wall_17_104.002
+		processing begun of material:  wall_17_105.002
+		processing begun of material:  wall_21_129.002
+		processing begun of material:  wall_37_224.002
+		processing begun of material:  wall_37_225.002
+		processing begun of material:  wall_37_228.002
+		processing begun of material:  wall_40_246.002
+		processing begun of material:  wall_41_248.002
+		processing begun of material:  wall_43_260.002
+		processing begun of material:  wall_48_290.002
+		processing begun of material:  room_51_308.002
+		processing begun of material:  room_52_309.002
+		processing begun of material:  room_53_310.002
+		processing begun of material:  room_54_311.002
+		processing begun of material:  room_55_312.002
+		processing begun of material:  room_56_313.002
+		processing begun of material:  room_59_316.002
+		processing begun of material:  room_61_318.002
+		processing begun of material:  room_71_329.002
+		processing begun of material:  iris.004
+		processing begun of material:  yellow_green.004
+		processing begun of material:  flbrown.004
+		processing begun of material:  amber.004
+		processing begun of material:  white.013
+		processing begun of material:  yellowbrt.004
+		processing begun of material:  flgrey.004
+		processing begun of material:  white_frame_373.002
+		processing begun of material:  yellowbrt_sweethome3d_opening_on_hinge_1_handle_7_381.002
+		processing begun of material:  white_Montant_384.002
+		processing begun of material:  flltgrey.006
+		processing begun of material:  white_frame_421.002
+		processing begun of material:  flltgrey_sweethome3d_window_pane_on_hinge_1_427.002
+		processing begun of material:  Tub.004
+		processing begun of material:  Legs.004
+		processing begun of material:  Water.004
+		processing begun of material:  Side.004
+		processing begun of material:  Drain.006
+		processing begun of material:  Jet_system.004
+		processing begun of material:  lighttan.006
+		processing begun of material:  glasstransparent.006
+		processing begun of material:  glassblutint.004
+		processing begun of material:  fusta_taula.004
+		processing begun of material:  glasstransparent_glass2_Cube_497.002
+		processing begun of material:  flltbrown.004
+		processing begun of material:  flbrown_dessus_512.002
+		processing begun of material:  588.002
+		processing begun of material:  sofa.004
+		processing begun of material:  negrepotes.004
+		processing begun of material:  metall.007
+		processing begun of material:  lighttan_step_598.002
+		processing begun of material:  Bois.004
+		processing begun of material:  NoirTissu.004
+		processing begun of material:  essai.004
+		processing begun of material:  MetaPlast.004
+		processing begun of material:  sweethome3d_window_mirror_708.002
+		processing begun of material:  Rod.004
+		processing begun of material:  Junction.004
+		processing begun of material:  Right.004
+		processing begun of material:  Left.004
+		processing begun of material:  Rod_Rod_717.002
+		processing begun of material:  Junction_Rod_14_719.002
+		processing begun of material:  Right_RightCurtain_721.002
+		processing begun of material:  Left_LeftCurtain_723.002
+		processing begun of material:  Frame_out.004
+		processing begun of material:  Cage_out.004
+		processing begun of material:  Lock.004
+		processing begun of material:  Glass.011
+		processing begun of material:  Frame_in.004
+		processing begun of material:  Cage_in.004
+		processing begun of material:  Threshold.004
+		processing begun of material:  metal.011
+		processing begun of material:  toalla_blanca.004
+		processing begun of material:  mirror.004
+		processing begun of material:  cabinet.006
+		processing begun of material:  light.004
+		processing begun of material:  mirror_edge.004
+		processing begun of material:  cupb.004
+		processing begun of material:  sink.006
+		processing begun of material:  chrome.004
+		processing begun of material:  silver.010
+		processing begun of material:  metal_783.002
+		processing begun of material:  784.002
+		processing begun of material:  785.002
+		processing begun of material:  786.002
+		processing begun of material:  787.002
+		processing begun of material:  glass.013
+		processing begun of material:  801.002
+		processing begun of material:  803.002
+		processing begun of material:  Cube_27_806.002
+		processing begun of material:  807.002
+		processing begun of material:  frame_door_Cube_856.002
+		processing begun of material:  sweethome3d_hinge_1_6_857.002
+		processing begun of material:  sweethome3d_opening_on_hinge_1_handle_859.002
+		processing begun of material:  sweethome3d_opening_on_hinge_1_door_860.002
+		processing begun of material:  doorlines.006
+		processing begun of material:  interior.006
+		processing begun of material:  sweethome3d_window_mirror.006
+		processing begun of material:  textured.006
+		processing begun of material:  firstcolor.006
+		processing begun of material:  tires.006
+		processing begun of material:  chromes.006
+		processing begun of material:  holes.006
+		processing begun of material:  glass_Plane_951_890.002
+		processing begun of material:  blackplastics.006
+		processing begun of material:  lowparts.006
+		processing begun of material:  tan.004
+		processing begun of material:  brown.004
+		processing begun of material:  bclair.004
+		processing begun of material:  archwhite2.004
+		processing begun of material:  lighttan_Desk_934.002
+		processing begun of material:  942.002
+		processing begun of material:  metal_943.002
+		processing begun of material:  _2BNX13D07_1_1.004
+		processing begun of material:  _2BNL13D03_4_4.004
+		processing begun of material:  OfficeChair3_1.004
+		processing begun of material:  OfficeChair3_2.004
+		processing begun of material:  monitor.004
+		processing begun of material:  screen.004
+		processing begun of material:  soport_apple.004
+		processing begun of material:  base_teclado.004
+		processing begun of material:  976.002
+		processing begun of material:  teclas.004
+		processing begun of material:  wood.006
+		processing begun of material:  alumain.004
+		processing begun of material:  glasstransparent_glass_Cube_980.002
+		processing begun of material:  981.002
+		processing begun of material:  libros_blancos.004
+		processing begun of material:  flwhite.004
+		processing begun of material:  fabric.004
+		processing begun of material:  mattress.004
+		processing begun of material:  legs.004
+		processing begun of material:  ruglegs.004
+		processing begun of material:  sheet.004
+		processing begun of material:  hetrenoir.004
+		processing begun of material:  verre.004
+		processing begun of material:  Gris.004
+		processing begun of material:  blondhair.004
+		processing begun of material:  lowbed.004
+		processing begun of material:  texturefabric.004
+		processing begun of material:  Upholstry.004
+		processing begun of material:  Chair.004
+		processing begun of material:  bone.004
+		processing begun of material:  metal_2_2_12_1122.002
+		processing begun of material:  Lid.004
+		processing begun of material:  Drain_3_3_8_1124.002
+		processing begun of material:  blue.004
+		processing begun of material:  glass_3_3_3_1129.002
+		processing begun of material:  frame.004
+		processing begun of material:  red.004
+		processing begun of material:  metal_12_12_1139.002
+		processing begun of material:  drain.004
+		processing begun of material:  cabinet_1_1_1145.002
+		processing begun of material:  sink_4_4_1146.002
+		processing begun of material:  front.004
+		processing begun of material:  top.004
+		processing begun of material:  Cloth1.004
+		processing begun of material:  Lining1.004
+		processing begun of material:  Hook.004
+		processing begun of material:  Hanger.004
+		processing begun of material:  Lining2.004
+		processing begun of material:  Cloth2.004
+		processing begun of material:  Rack.004
+		processing begun of material:  default.004
+		processing begun of material:  paintedwhite.006
+		processing begun of material:  white_PolyMesh_3_1218.002
+		processing begun of material:  1304.002
+		processing begun of material:  1307.002
+		processing begun of material:  Alu_frame.006
+		processing begun of material:  Glass_13_13_1322
+		processing begun of material:  Flooring.006
+		processing begun of material:  flpinegreen.006
+		processing begun of material:  grey.008
+		processing begun of material:  Rock.006
+		processing begun of material:  default_PolyMesh_1_None_None_1_1359
+		processing begun of material:  flltgrey_1373
+		processing begun of material:  ltgrey.004
+		processing begun of material:  Aluminum.004
+		processing begun of material:  1394
+		processing begun of material:  wire_000000000.004
+		processing begun of material:  wire_079079079.004
+		processing begun of material:  03___Default.004
+		processing begun of material:  wire_216102000.004
+			processing texture plan_wall_1_2
+			processing texture plan_wall_2_10
+			processing texture plan_wall_17_104
+			processing texture plan_wall_37_224
+			processing texture plan_wall_37_224
+			processing texture plan_wall_43_260
+			processing texture plan_wall_48_290
+			processing texture plan_room_55_312
+			processing texture plan_room_55_312
+			processing texture plan_room_59_316
+			processing texture plan_room_61_318
+			processing texture plan_wall_48_290
+			processing texture plan_Side
+			processing texture plan_sweethome3d_window_mirror_708
+			processing texture plan_787
+			processing texture plan_787
+			processing texture plan_807
+			processing texture plan_textured
+			processing texture plan_bclair
+			processing texture plan_wood
+			processing texture plan_981
+			processing texture plan_fabric
+			processing texture plan_sheet
+			processing texture plan_hetrenoir
+			processing texture plan_verre
+			processing texture plan_texturefabric
+			processing texture plan_Cloth1
+			processing texture plan_Cloth2
+			processing texture plan_paintedwhite
+			processing texture plan_paintedwhite
+			processing texture plan_1304
+			processing texture plan_1304
+			processing texture plan_Flooring
+			processing texture plan_Rock
+			processing texture plan_wall_48_290
+		processing begun of multimaterial:  plan.Multimaterial#2
+		Custom split normals with tangents being used
+		num positions      :  172633
+		num normals        :  172633
+		num tangents       :  690532
+		num uvs            :  345266
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  202714
+		WARNING: # of 0 area faces found:  80
 	processing begun of mesh:  CAM1
 		processing begun of material:  base.003
 		processing begun of material:  baseMuro.003
@@ -733,6 +683,17 @@ Exporter version: 3.3.0, Blender version: 3.3.0
 		num uvs2           :  0
 		num colors         :  0
 		num triangles      :  112
+	processing begun of mesh:  0-01L
+		processing begun of material:  Lamp.005
+			processing texture plan_Lamp
+		Custom split normals with tangents being used
+		num positions      :  12762
+		num normals        :  12762
+		num tangents       :  51048
+		num uvs            :  25524
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  5940
 	processing begun of mesh:  VV-1
 		processing begun of material:  vent_out.002
 		processing begun of material:  fan.002
@@ -771,9 +732,9 @@ Exporter version: 3.3.0, Blender version: 3.3.0
 		num colors         :  0
 		num triangles      :  3142
 ========= Writing of JSON file started =========
-	writing mesh:  Участок
 	writing mesh:  1 Этаж
 	writing mesh:  2 Этаж
+	writing mesh:  Участок
 	writing mesh:  CAM1
 	writing mesh:  CAM2
 	writing mesh:  CAM3
@@ -788,9 +749,10 @@ Exporter version: 3.3.0, Blender version: 3.3.0
 	writing mesh:  1-06L
 	writing mesh:  1-07L
 	writing mesh:  1-04L
+	writing mesh:  0-01L
 	writing mesh:  VV-1
 	writing mesh:  Vorota
 	writing mesh:  Door 1
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  1 min, 13.2104 secs
+elapsed time:  0 min, 47.4091 secs

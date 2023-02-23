@@ -39,9 +39,9 @@ const StyledCameraList = styled.ul`
 
   @media (max-width: 576px) {
     bottom: 0;
+    display: flex;
     width: 100%;
     height: 10%;
-    display: flex;
     flex-direction: row;
 
     & li {
