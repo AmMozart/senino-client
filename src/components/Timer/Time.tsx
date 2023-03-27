@@ -12,17 +12,19 @@ const StyledTime = styled.div`
 
   & input {
     padding: 0 10px;
-    background: #0000;
-    color: var(--btn-text-color);
     font: 2em italic sans-serif;
+    color: var(--btn-text-color);
+    background: #0000;
   }
 
   & input[type='time']::-webkit-calendar-picker-indicator {
     display: block;
+
     width: 60px;
     height: 60px;
-    border-width: thin;
+
     opacity: 1;
+    border-width: thin;
   }
 
   @media (max-width: 576px) {

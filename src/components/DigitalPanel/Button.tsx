@@ -2,17 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
+  cursor: pointer;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   width: 80px;
   height: 80px;
+
+  font-size: 1.2em;
+  color: #e1e1e1;
+
   background: #2e2e2e;
   border: 1px solid #676767;
   border-radius: 20px;
-  color: #e1e1e1;
-  font-size: 1.2em;
-  cursor: pointer;
 
   &:active {
     background: #fff;
@@ -22,8 +26,8 @@ const StyledButton = styled.button`
     & {
       width: 60px;
       height: 60px;
-      border-radius: 15px;
       font-size: 0.8em;
+      border-radius: 15px;
     }
   }
 `;

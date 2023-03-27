@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
 const StyledStatusButton = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--btn-text-color);
-  margin: 0 10px;
-  width: 75px;
-  background: var(--btn-back-color);
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 75px;
+  margin: 0 10px;
+
+  color: var(--btn-text-color);
+
+  background: var(--btn-back-color);
   border: var(--btn-border);
   border-radius: var(--btn-border-radius);
   box-shadow: var(--btn-shadow);

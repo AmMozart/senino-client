@@ -7,20 +7,23 @@ import { selectName } from './areaSlice';
 import AreaName from './AreaName';
 
 const StyledAreaPanel = styled.section`
-  height: 90%;
   position: fixed;
   right: 0;
   bottom: 0;
+
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-evenly;
+
+  height: 90%;
+
   background-color: var(--panel-background-color);
 
   @media (max-width: 576px) {
+    flex-direction: row;
     width: 100%;
     height: auto;
-    flex-direction: row;
   }
 `;
 

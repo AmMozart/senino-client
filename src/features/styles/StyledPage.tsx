@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 
 const StyledPage = styled.section`
+  z-index: 2;
+
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+
   width: 100%;
   height: 90%;
-  background: var(--panel-background-color);
+
   color: var(--h1-text-color);
-  z-index: 2;
+
+  background: var(--panel-background-color);
 `;
 
 export default StyledPage;

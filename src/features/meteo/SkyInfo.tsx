@@ -3,19 +3,19 @@ import styled from 'styled-components';
 
 const StyledSkyInfo = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
   & .icon {
     height: 80%;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
 
   & .description {
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-size: x-large;
   }
 

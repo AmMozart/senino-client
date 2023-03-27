@@ -6,30 +6,38 @@ import { Camera, cameras } from './cameras';
 import { changeCamera } from './cameraSlice';
 
 const StyledCameraList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   position: fixed;
-  align-items: center;
-  height: 90%;
   right: 0;
   bottom: 0;
-  background-color: var(--panel-background-color);
+
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: 90%;
+
+  background-color: var(--panel-background-color);
 
   & li {
+    cursor: pointer;
+
     display: flex;
-    width: 100px;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+
+    width: 100px;
     margin: 10px;
-    background: var(--btn-back-color);
-    color: var(--btn-text-color);
-    cursor: pointer;
+
     font-size: 12px;
     font-weight: bold;
+    color: var(--btn-text-color);
     text-align: center;
+
+    background: var(--btn-back-color);
+    border-radius: 50%;
+
     transition: all 0.5s linear;
   }
 
@@ -39,10 +47,12 @@ const StyledCameraList = styled.ul`
 
   @media (max-width: 576px) {
     bottom: 0;
+
     display: flex;
+    flex-direction: row;
+
     width: 100%;
     height: 10%;
-    flex-direction: row;
 
     & li {
       width: 70px;

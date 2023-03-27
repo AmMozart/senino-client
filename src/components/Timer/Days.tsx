@@ -7,11 +7,12 @@ import { useAppDispatch } from '../../app/hooks';
 import getID from '../../utils/getID';
 
 const StyledDays = styled.div`
+  z-index: 2;
+
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
   align-items: center;
-  z-index: 2;
+  justify-content: space-around;
 `;
 
 const StyledOneDays = styled.div`
@@ -19,17 +20,22 @@ const StyledOneDays = styled.div`
   padding: 3px;
 
   & label {
+    cursor: pointer;
+
     display: flex;
-    width: 60px;
-    height: 60px;
     align-items: center;
     justify-content: center;
+
+    width: 60px;
+    height: 60px;
     padding: 10px;
+
+    color: var(--metallic-color);
+
+    background: var(--btn-back-color);
     border: 1px solid #2b2b2b;
     border-radius: 50%;
-    background: var(--btn-back-color);
-    color: var(--metallic-color);
-    cursor: pointer;
+
     transition: all 0.3s linear;
   }
 
@@ -39,8 +45,8 @@ const StyledOneDays = styled.div`
   }
 
   & input:checked + label {
-    background: rgb(24 141 22);
     color: #fff;
+    background: rgb(24 141 22);
   }
 
   @media (max-width: 576px) {

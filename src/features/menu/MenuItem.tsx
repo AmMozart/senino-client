@@ -9,21 +9,26 @@ import { useNavigate } from 'react-router-dom';
 import MenuItemName from './MenuItemName';
 
 const StyledMenuList = styled.div`
+  cursor: pointer;
+
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  font-weight: bold;
-  font-size: 1.2em;
-  color: var(--btn-text-color);
-  margin: 10px;
-  padding: 10px;
+  justify-content: space-between;
+
   width: 95%;
   height: 100px;
+  margin: 10px;
+  padding: 10px;
+
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--btn-text-color);
+
   background: var(--menu-item-btn-background-color);
-  cursor: pointer;
   border-radius: 20px;
   box-shadow: var(--menu-item-box-shadow);
+
   transition: all 0.3s linear;
 
   & .icon {

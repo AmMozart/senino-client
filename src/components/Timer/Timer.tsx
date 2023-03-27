@@ -11,21 +11,25 @@ import Time from './Time';
 import Mode from './Mode';
 
 const StyledTimer = styled.div`
+  position: relative;
+
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
+
   width: 100%;
+  padding: 10px;
+
   background: var(--panel-background-color);
   border-radius: 15px;
-  padding: 10px;
+
   transition: all 0.3s linear;
 
   @media (max-width: 576px) {
     flex-flow: wrap-reverse;
-    justify-content: right;
     gap: 20px;
+    justify-content: right;
   }
 `;
 
@@ -36,12 +40,15 @@ const StyledClose = styled.div`
 
   &::before,
   &::after {
+    content: ' ';
+
     position: absolute;
     left: 20px;
+
     width: 3px;
     height: 40px;
+
     background-color: #a71616;
-    content: ' ';
   }
 
   &::before {

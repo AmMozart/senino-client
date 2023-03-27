@@ -3,17 +3,21 @@ import styled from 'styled-components';
 import PasswordState from './PasswordState';
 
 const StyledPassword = styled.input`
+  cursor: pointer;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   width: 260px;
   height: 80px;
+
+  font-size: 3em;
+  color: #565656;
+
   background: #bcbcbc;
   border: 1px solid #676767;
   border-radius: 20px;
-  color: #565656;
-  font-size: 3em;
-  cursor: pointer;
 
   @media (max-height: 500px) {
     & {
@@ -25,9 +29,9 @@ const StyledPassword = styled.input`
 `;
 
 const StyledSuccess = styled(StyledPassword)`
-  background: #287622;
-  color: #e1e1e1;
   font-size: 1.5em;
+  color: #e1e1e1;
+  background: #287622;
 
   @media (max-height: 500px) {
     & {
@@ -37,9 +41,9 @@ const StyledSuccess = styled(StyledPassword)`
 `;
 
 const StyledUnsuccess = styled(StyledPassword)`
-  background: #7e3131;
-  color: #e1e1e1;
   font-size: 1.5em;
+  color: #e1e1e1;
+  background: #7e3131;
 
   @media (max-height: 500px) {
     & {

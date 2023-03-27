@@ -14,12 +14,15 @@ import MenuItemName from './MenuItemName';
 import StyledPage from '../styles/StyledPage';
 
 const StyledMenuList = styled(StyledPage)`
-  justify-content: space-between;
-  transition: all 0.3s ease-in-out;
-  overflow-y: auto;
   position: relative;
   left: ${(props: { animate: boolean }) => (props.animate ? '0px' : '-100%')};
+
+  overflow-y: auto;
+  justify-content: space-between;
+
   height: 90%;
+
+  transition: all 0.3s ease-in-out;
 
   @media (max-width: 576px) {
     flex-direction: column;

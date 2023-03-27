@@ -8,14 +8,18 @@ import Menu from '../menu/Menu';
 import Home from './Home';
 
 const StyledHeader = styled.header`
-  height: 10%;
-  font-size: 1.8em;
-  background: var(--panel-background-color);
+  z-index: 1;
+
   display: grid;
   grid-template-columns: 1fr 6fr 1fr 4fr;
   grid-template-rows: 1fr;
   align-items: center;
-  z-index: 1;
+
+  height: 10%;
+
+  font-size: 1.8em;
+
+  background: var(--panel-background-color);
 
   @media (max-width: 576px) {
     font-size: 1.5em;

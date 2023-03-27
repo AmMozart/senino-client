@@ -7,14 +7,17 @@ import { useAppSelector } from '../../app/hooks';
 import { camera } from './cameraSlice';
 
 const StyledCamera = styled.div`
-  width: 90%;
-  height: 90%;
+  z-index: 2;
+
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  width: 90%;
+  height: 90%;
+
   background: #000;
   border-radius: 20px;
-  z-index: 2;
 
   & canvas {
     display: block;

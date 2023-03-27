@@ -7,8 +7,8 @@ import styled from 'styled-components';
 
 const StyledLeftPanel = styled.section`
   position: fixed;
-  left: 20px;
   bottom: 50px;
+  left: 20px;
 
   @media (max-width: 576px) {
     bottom: 100px;

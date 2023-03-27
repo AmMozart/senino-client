@@ -6,11 +6,14 @@ const StyledSlideButton = styled.section`
     --size: 80px;
 
     position: relative;
+
     width: calc(var(--size) * 2);
     height: var(--size);
-    border-radius: calc(var(--size) / 2);
+
     background: ${(props: { isActive: boolean }) =>
       props.isActive ? '#5591eb' : '#a1a1a1'};
+    border-radius: calc(var(--size) / 2);
+
     transition: all 0.5s linear;
   }
 
@@ -18,13 +21,17 @@ const StyledSlideButton = styled.section`
     position: absolute;
     left: ${(props: { isActive: boolean }) =>
       props.isActive ? 'var(--size)' : '0'};
+
     width: var(--size);
     height: var(--size);
+
+    font-size: 1.2em;
+    color: #505050;
+
+    background: radial-gradient(transparent, #fff);
     border: 2px solid var(--panel-background-color);
     border-radius: 50%;
-    background: radial-gradient(transparent, #fff);
-    color: #505050;
-    font-size: 1.2em;
+
     transition: all 0.5s ease-out;
   }
 

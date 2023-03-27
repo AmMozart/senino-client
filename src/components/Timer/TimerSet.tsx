@@ -6,12 +6,13 @@ import Timer from '../../components/Timer/Timer';
 import styled from 'styled-components';
 
 const StyledTimerSet = styled(React.Fragment)`
+  overflow-y: scroll;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
   height: 85%;
-  overflow-y: scroll;
 `;
 
 interface PropsTimerSet {

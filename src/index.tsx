@@ -13,18 +13,22 @@ const GlobalStyle = createGlobalStyle`
   *,
   *::before,
   *::after {
-    box-sizing: border-box;
-    padding: 0;
-    border: 0;
-    margin: 0;
     user-select: none;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
   }
 
   body,
   html {
     width: 100%;
     height: 100%;
+
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;

@@ -9,22 +9,27 @@ import { change } from './areaSlice';
 import AreaName from './AreaName';
 
 const StyledAreaButton = styled.button`
+  cursor: pointer;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+
   font-size: 16px;
   font-weight: bold;
   color: white;
-  padding: 10px;
-  margin: 10px;
-  width: 100px;
-  height: 100px;
-  background: var(--btn-back-color);
-  cursor: pointer;
-  box-shadow: var(--btn-shadow);
-  transition: color, opacity 0.3s linear;
+
   opacity: ${(props: { isActive: boolean }) => (props.isActive ? '1' : '0.3')};
+  background: var(--btn-back-color);
+  box-shadow: var(--btn-shadow);
+
+  transition: color, opacity 0.3s linear;
 
   & img {
     width: 100px;

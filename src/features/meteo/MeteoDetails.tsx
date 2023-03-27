@@ -7,9 +7,9 @@ import { selectMeteo } from './meteoSlice';
 import OneDayWeather from './OneDayWeather';
 
 const StyledMeteoDetails = styled(StyledPage)<{ animate: boolean }>`
-  flex-direction: row;
   position: relative;
   left: ${({ animate }) => (animate ? '0px' : '-100%')};
+  flex-direction: row;
   transition: all 0.3s ease-in-out;
 
   @media (max-width: 576px) {

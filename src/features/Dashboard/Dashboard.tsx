@@ -15,12 +15,13 @@ import Connect from '../Connect';
 import Sip from '../sip/Sip';
 
 const StyledDashboard = styled.section`
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 5px;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
 `;
 
 const Dashboard: React.FC = () => (

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const StyledIcon = styled.img`
-  padding-right: 5px;
   height: 1.2em;
+  padding-right: 5px;
 `;
 
 interface IconProps {

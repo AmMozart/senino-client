@@ -10,14 +10,15 @@ import StyledTitle from '../styles/StyledTitle';
 import styled from 'styled-components';
 
 const StyledMapContent = styled(StyledContent)<{ connect: boolean }>`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-size: 9em;
 
   --width-block: 500px;
   --color: ${(p) => (p.connect ? '#1f9d11' : '#d41f37')};
   --size: 70px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 9em;
 
   & div {
     position: relative;
@@ -26,20 +27,25 @@ const StyledMapContent = styled(StyledContent)<{ connect: boolean }>`
   }
 
   & div::before {
+    content: '${(p) => (p.connect ? 'ok' : 'error')}';
+
     position: absolute;
     top: calc(var(--size) / -2);
     left: calc((var(--width-block) - var(--size)) / 2);
+
     display: flex;
-    width: var(--size);
-    height: var(--size);
     align-items: center;
     justify-content: center;
+
+    width: var(--size);
+    height: var(--size);
+
+    font-size: 1rem;
+    color: #e4ff00;
+
     border: 2px solid var(--color);
     border-radius: 50%;
     box-shadow: inset 0 0 30px var(--color);
-    color: #e4ff00;
-    content: '${(p) => (p.connect ? 'ok' : 'error')}';
-    font-size: 1rem;
   }
 
   @media (max-width: 940px) {

@@ -9,36 +9,40 @@ const StyledOneDayWeather = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   width: 25%;
   height: 85%;
   margin: 0 auto;
 
   & .info {
     display: flex;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(to bottom, #414141 10%, rgb(0 0 0 / 0%) 100%);
     border: 1px solid #fff;
     border-radius: 30px;
-    background: linear-gradient(to bottom, #414141 10%, rgb(0 0 0 / 0%) 100%);
   }
 
   & .title {
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
 
   .shadow {
+    box-sizing: border-box;
     width: 100%;
     height: 6%;
-    box-sizing: border-box;
-    border-radius: 30px;
-    border-top: 3px solid var(--btn-border-color-active);
     margin: 8px 0;
+
     background: linear-gradient(to bottom, #2a2a2a 10%, rgb(0 0 0 / 0%) 60%);
+    border-top: 3px solid var(--btn-border-color-active);
+    border-radius: 30px;
   }
 
   @media (max-width: 576px) {
@@ -47,10 +51,12 @@ const StyledOneDayWeather = styled.div`
 
     & .info {
       display: flex;
-      height: 70%;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+
+      height: 70%;
+
       border: 1px solid rgb(117 117 117);
     }
 

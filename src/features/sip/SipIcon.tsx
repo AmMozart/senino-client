@@ -6,19 +6,24 @@ import { useNavigate } from 'react-router-dom';
 import ClickAnimation from '../styles/ClickAnimation';
 
 const StyledSipIcon = styled.div`
+  cursor: pointer;
+
+  z-index: 1;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 80px;
   height: 80px;
+
+  font-size: 1.5em;
   color: var(--btn-text-color);
+
+  background-color: rgb(64 143 57 / 50%);
   border: 1px solid #007e1f;
   border-radius: 50%;
-  background-color: rgb(64 143 57 / 50%);
-  font-size: 1.5em;
   box-shadow: inset 0 0 10px #207b46;
-  z-index: 1;
-  cursor: pointer;
 
   @media (max-width: 576px) {
     width: 50px;
