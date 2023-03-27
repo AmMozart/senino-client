@@ -23,3 +23,5 @@ jobs:
         run: npm run test
       - name: Run linters
         run: npm run stylelint
+      - name: Build
+        run: npm run build
