@@ -7,7 +7,7 @@ export class ModelImporter {
   ): Promise<ISceneLoaderAsyncResult> {
     const result = await BABYLON.SceneLoader.ImportMeshAsync(
       '',
-      `/models/`,
+      '/models/',
       'plan.babylon',
       scene
     );
