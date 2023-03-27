@@ -3,9 +3,9 @@ on: [push]
 jobs:
   init:
     runs-on: ubuntu-latest
-    strategy: 
+    strategy:
       matrix:
-        node-version: [ 17.x ]
+        node-version: [18.x]
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -13,10 +13,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
+      - name: Install modules
         run: npm install
-      - name: build project
+      - name: Build project
         run: npm run build
-        run: npm run test
       - name: Run all tests
         run: npm run test
