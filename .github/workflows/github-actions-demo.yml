@@ -3,8 +3,9 @@ on: [push]
 jobs:
   init:
     runs-on: ubuntu-latest
-    strategy: matrix
-      node-version: [ 17.x ]
+    strategy: 
+      matrix:
+        node-version: [ 17.x ]
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
