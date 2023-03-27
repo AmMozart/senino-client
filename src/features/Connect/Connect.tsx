@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHome } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,10 +8,8 @@ import { isConnect } from '../controller/controllerSlice';
 import StyledContent from '../styles/StyledContent';
 import StyledPage from '../styles/StyledPage';
 import StyledTitle from '../styles/StyledTitle';
-import styled from 'styled-components';
 
 const StyledMapContent = styled(StyledContent)<{ connect: boolean }>`
-
   --width-block: 500px;
   --color: ${(p) => (p.connect ? '#1f9d11' : '#d41f37')};
   --size: 70px;

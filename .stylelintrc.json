@@ -5,5 +5,8 @@
     "stylelint-config-standard",
     "stylelint-config-clean-order"
   ],
-  "plugins": ["stylelint-order"]
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "custom-property-empty-line-before": "never"
+  }
 }
