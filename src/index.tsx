@@ -24,9 +24,11 @@ const GlobalStyle = createGlobalStyle`
 
   body,
   html {
+    overflow: hidden;
+
     width: 100%;
     height: 100%;
-    overflow: hidden;
+
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     -webkit-font-smoothing: antialiased;

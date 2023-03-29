@@ -18,8 +18,8 @@ const StyledCameraButton = styled.li`
   height: 60px;
   font-size: 12px;
   transition: color 0.3s linear, background-image 0.3s linear;
-  box-shadow: rgb(57, 57, 57) 0px 1px;
-  border: 1px solid rgb(16, 16, 16);
+  box-shadow: rgb(57 57 57) 0 1px;
+  border: 1px solid rgb(16 16 16);
   border-radius: 20px;
   text-align: center;
 

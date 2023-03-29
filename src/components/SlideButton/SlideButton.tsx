@@ -8,24 +8,27 @@ const StyledSlideButton = styled.section`
   align-items: center;
 
   & button {
-    transition: all 0.5s ease-out;
-
     cursor: pointer;
-    margin: 0px 10px;
-    box-shadow: rgb(57, 57, 57) 0px 1px;
-    border: 1px solid rgb(16, 16, 16);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
     width: 180px;
     height: 60px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 20px;
+    margin: 0 10px;
+
+    color: rgb(208 208 208);
 
     background: ${({ isActive }: Pick<SlideButtonProps, 'isActive'>) =>
       isActive
         ? 'linear-gradient(0deg, black, rgb(0, 164, 49))'
         : 'linear-gradient(0deg, black, rgb(81, 81, 81))'};
-    color: rgb(208, 208, 208);
+    border: 1px solid rgb(16 16 16);
+    border-radius: 20px;
+    box-shadow: rgb(57 57 57) 0 1px;
+
+    transition: all 0.5s ease-out;
   }
 
   @media (max-height: 576px) {

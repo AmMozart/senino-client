@@ -13,14 +13,14 @@ const StyledButton = styled.button`
 
   border-radius: 20px;
 
-  box-shadow: rgb(57, 57, 57) 0px 1px;
-  border: 1px solid rgb(16, 16, 16);
+  box-shadow: rgb(57 57 57) 0 1px;
+  border: 1px solid rgb(16 16 16);
 
-  background: linear-gradient(0deg, black, rgb(81, 81, 81));
-  color: rgb(208, 208, 208);
+  background: linear-gradient(0deg, black, rgb(81 81 81));
+  color: rgb(208 208 208);
 
   &:active {
-    background: linear-gradient(0deg, black, rgb(0, 164, 49));
+    background: linear-gradient(0deg, black, rgb(0 164 49));
   }
 
   @media (max-height: 500px) {

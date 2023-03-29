@@ -22,6 +22,7 @@ const StyledButton = styled.span`
     props.isActive &&
     css`
       --color: rgb(24 141 22);
+
       color: var(--color);
       border: 1px solid var(--color);
     `}

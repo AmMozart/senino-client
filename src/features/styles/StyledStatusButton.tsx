@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const StyledStatusButton = styled.div`
   cursor: pointer;
-  margin: 0px 10px;
-  box-shadow: 0px 1px #393939;
+  margin: 0 10px;
+  box-shadow: 0 1px #393939;
   border: 1px solid rgb(16 16 16);
   width: 60px;
   height: 60px;

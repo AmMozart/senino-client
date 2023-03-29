@@ -20,9 +20,11 @@ const StyledAreaPanel = styled.section`
 
   @media (max-width: 576px) {
     flex-direction: row;
+
     width: 100%;
     height: auto;
-    background: linear-gradient(0deg, rgb(0, 0, 0), rgb(68, 68, 68));
+
+    background: linear-gradient(0deg, rgb(0 0 0), rgb(68 68 68));
     border-radius: 100px;
   }
 `;

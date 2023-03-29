@@ -27,9 +27,9 @@ const StyledMenuList = styled.div`
   padding: 10px 30px;
   transition: background-color 0.3s ease-in-out;
 
-  box-shadow: rgb(57, 57, 57) 0px 1px;
+  box-shadow: rgb(57 57 57) 0 1px;
   border: 1px solid rgb(0 0 0);
-  background-image: linear-gradient(rgb(65, 65, 65) 10%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(rgb(65 65 65) 10%, rgb(0 0 0 / 0%) 100%);
 
   & .icon {
     font-size: 40px;

@@ -13,14 +13,13 @@ const StyledCameraList = styled.ul`
 
   overflow: auto;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: space-evenly;
 
   height: 90%;
 
-  border-radius: 35px 0 35px 0;
+  border-radius: 35px 0;
   background: linear-gradient(180deg, #404040, rgb(0 0 0));
 
   @media (max-width: 576px) {
@@ -29,9 +28,10 @@ const StyledCameraList = styled.ul`
     display: flex;
     flex-direction: row;
 
-    border-radius: 35px;
     width: 100%;
     height: 20%;
+
+    border-radius: 35px;
   }
 `;
 

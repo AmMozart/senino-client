@@ -10,6 +10,7 @@ import AreaName from './AreaName';
 
 const StyledAreaButton = styled.button`
   --btn-size: 100px;
+
   cursor: pointer;
 
   display: flex;
@@ -31,12 +32,12 @@ const StyledAreaButton = styled.button`
           box-shadow: 0 0 3px #43a047;
           border: 1px solid #005904;
           transform: scale(1.1);
-          color: #ffffff;
+          color: #fff;
         `
       : css`
           background: linear-gradient(45deg, black, #707070);
-          box-shadow: 0 0 3px #000000;
-          border: 1px solid #000000;
+          box-shadow: 0 0 3px #000;
+          border: 1px solid #000;
           transform: scale(1);
           color: #dadada;
         `}

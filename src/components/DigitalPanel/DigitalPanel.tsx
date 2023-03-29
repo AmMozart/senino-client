@@ -36,11 +36,11 @@ const StyledDigitalPanel = styled.section`
   }
 
   & .close {
+    cursor: pointer;
+
     position: absolute;
     top: 10px;
     right: 10px;
-
-    cursor: pointer;
 
     display: flex;
     align-items: center;
@@ -48,14 +48,14 @@ const StyledDigitalPanel = styled.section`
 
     width: 80px;
     height: 80px;
+
     font-size: 2em;
+    color: rgb(208 208 208);
+
+    background: linear-gradient(0deg, black, rgb(81 81 81));
+    border: 1px solid rgb(16 16 16);
     border-radius: 20px;
-
-    box-shadow: rgb(57, 57, 57) 0px 1px;
-    border: 1px solid rgb(16, 16, 16);
-
-    background: linear-gradient(0deg, black, rgb(81, 81, 81));
-    color: rgb(208, 208, 208);
+    box-shadow: rgb(57 57 57) 0 1px;
   }
 
   & h3 {

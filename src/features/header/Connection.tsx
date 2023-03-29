@@ -15,10 +15,12 @@ const StyledConnection = styled(StyledStatusButton)`
   & div {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    font-size: 0.8em;
+    justify-content: space-evenly;
+
     height: 100%;
+
+    font-size: 0.8em;
   }
 
   & span {
