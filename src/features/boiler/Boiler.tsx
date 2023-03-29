@@ -2,11 +2,9 @@ import React from 'react';
 
 import { useAppDispatch } from '../../app/hooks';
 import SwitchButton from '../../components/SwitchButton';
-import getID from '../../utils/getID';
 import { addTimer } from '../timer/timerSlice';
 import TimerMode from '../timer/TimerMode';
 import StyledPage from '../styles/StyledPage';
-
 import TimerSet from '../../components/Timer/TimerSet';
 import StyledTitle from '../styles/StyledTitle';
 import StyledContent from '../styles/StyledContent';
@@ -19,7 +17,7 @@ const Boiler: React.FC = () => {
   const add = () => {
     dispatch(
       addTimer({
-        id: getID(),
+        id: 0,
         electricGroupName: groupName,
         mode: TimerMode.Off,
         time: { hour: 0, minute: 0 },

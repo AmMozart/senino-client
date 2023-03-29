@@ -35,7 +35,14 @@ const timerSlice = createSlice({
     },
 
     addTimer: (state, action: PayloadAction<Timer>) => {
-      state.currentTimersCommand = [...state.timers, action.payload];
+      const newID = state.timers
+        .map((t) => t.id)
+        .reduce((acc, val) => acc + val, 1);
+
+      state.currentTimersCommand = [
+        ...state.timers,
+        { ...action.payload, id: newID },
+      ];
     },
 
     deleteTimer: (state, action: PayloadAction<number>) => {

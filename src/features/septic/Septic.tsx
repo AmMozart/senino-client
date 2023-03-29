@@ -3,7 +3,6 @@ import React from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import SwitchButton from '../../components/SwitchButton';
 import { addTimer } from '../timer/timerSlice';
-import getID from '../../utils/getID';
 import TimerMode from '../timer/TimerMode';
 import StyledPage from '../styles/StyledPage';
 import StyledTitle from '../styles/StyledTitle';
@@ -18,7 +17,7 @@ const Septic: React.FC = () => {
   const add = () => {
     dispatch(
       addTimer({
-        id: getID(),
+        id: 0,
         electricGroupName: groupName,
         mode: TimerMode.Off,
         time: { hour: 0, minute: 0 },
