@@ -32,7 +32,7 @@ const Boiler: React.FC = () => {
     <StyledPage>
       <StyledTitle>Отопительный котел</StyledTitle>
       <StyledContent>
-        <SwitchButton electricGroupName={groupName} />
+        <SwitchButton title={'Котел'} electricGroupName={groupName} />
         <TimerSet groupName={groupName} />
       </StyledContent>
       <StyledButton onClick={add}>Добавить Таймер</StyledButton>

@@ -34,6 +34,7 @@ const StyledTimer = styled.div`
 `;
 
 const StyledClose = styled.div`
+  cursor: pointer;
   position: relative;
   width: 40px;
   height: 40px;

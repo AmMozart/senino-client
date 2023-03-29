@@ -20,6 +20,8 @@ const StyledHeader = styled.header`
   font-size: 1.8em;
 
   background: var(--panel-background-color);
+  background: linear-gradient(0deg, #000000, rgb(68 68 68));
+  border-radius: 100px;
 
   @media (max-width: 576px) {
     font-size: 1.5em;

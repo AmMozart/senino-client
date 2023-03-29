@@ -1,8 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
+
 import StyledStatusButton from '../styles/StyledStatusButton';
 import ClickAnimation from '../styles/ClickAnimation';
+
+const StyledMenuBurger = styled(StyledStatusButton)`
+  color: ${({ isOpen }: MenuProps) => (isOpen ? '#a40019' : '#00a431')};
+`;
 
 interface MenuProps {
   isOpen?: boolean;
@@ -17,11 +23,11 @@ const MenuBurger: React.FC<MenuProps> = ({ isOpen = false, onClick }) => {
   );
 
   return (
-    <StyledStatusButton>
-      <ClickAnimation>
-        <div onClick={onClick}>{component}</div>
-      </ClickAnimation>
-    </StyledStatusButton>
+    <ClickAnimation>
+      <StyledMenuBurger onClick={onClick} isOpen={isOpen}>
+        {component}
+      </StyledMenuBurger>
+    </ClickAnimation>
   );
 };
 

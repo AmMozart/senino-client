@@ -11,7 +11,7 @@ const StyledLeftPanel = styled.section`
   left: 20px;
 
   @media (max-width: 576px) {
-    bottom: 100px;
+    bottom: 110px;
   }
 `;
 

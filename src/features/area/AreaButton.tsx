@@ -1,5 +1,5 @@
 import React, { MouseEventHandler, useCallback } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import imageFloor1 from '../../img/1_floor.png';
 import imageFloor2 from '../../img/2_floor.png';
@@ -9,6 +9,7 @@ import { change } from './areaSlice';
 import AreaName from './AreaName';
 
 const StyledAreaButton = styled.button`
+  --btn-size: 100px;
   cursor: pointer;
 
   display: flex;
@@ -16,30 +17,42 @@ const StyledAreaButton = styled.button`
   align-items: center;
   justify-content: center;
 
-  width: 100px;
-  height: 100px;
+  width: var(--btn-size);
+  height: var(--btn-size);
   margin: 10px;
   padding: 10px;
 
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
+  font-size: 0.8em;
 
-  opacity: ${(props: { isActive: boolean }) => (props.isActive ? '1' : '0.3')};
-  background: var(--btn-back-color);
-  box-shadow: var(--btn-shadow);
-
-  transition: color, opacity 0.3s linear;
+  ${(props: { isActive: boolean }) =>
+    props.isActive
+      ? css`
+          background: linear-gradient(45deg, black, #43a047);
+          box-shadow: 0 0 3px #43a047;
+          border: 1px solid #005904;
+          transform: scale(1.1);
+          color: #ffffff;
+        `
+      : css`
+          background: linear-gradient(45deg, black, #707070);
+          box-shadow: 0 0 3px #000000;
+          border: 1px solid #000000;
+          transform: scale(1);
+          color: #dadada;
+        `}
+  border-radius: 50%;
+  transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
 
   & img {
-    width: 100px;
+    width: 60px;
   }
 
   @media (max-width: 576px) {
-    height: 60px;
+    width: calc(var(--btn-size) - 20px);
+    height: calc(var(--btn-size) - 20px);
 
     & img {
-      width: 50px;
+      width: 40px;
     }
   }
 `;

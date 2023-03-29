@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     width: 100%;
     height: 100%;
-
+    overflow: hidden;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     -webkit-font-smoothing: antialiased;
@@ -46,9 +46,7 @@ const GlobalStyle = createGlobalStyle`
   --panel-background-color: rgb(18 18 18 / 90%);
   --panel-border: 3px solid #1f1f1f;
   --metallic-color: #5f7286;
-}
-
-`;
+}`;
 
 enableMapSet();
 

@@ -40,22 +40,25 @@ const StyledDigitalPanel = styled.section`
     top: 10px;
     right: 10px;
 
+    cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
     width: 80px;
     height: 80px;
-
-    font-size: 2.5em;
-    color: #e1e1e1;
-
-    background-color: #2e2e2e;
-    border: 1px solid #676767;
+    font-size: 2em;
     border-radius: 20px;
+
+    box-shadow: rgb(57, 57, 57) 0px 1px;
+    border: 1px solid rgb(16, 16, 16);
+
+    background: linear-gradient(0deg, black, rgb(81, 81, 81));
+    color: rgb(208, 208, 208);
   }
 
-  & h1 {
+  & h3 {
     color: #e1e1e1;
   }
 
@@ -64,7 +67,7 @@ const StyledDigitalPanel = styled.section`
       grid-gap: 5px;
     }
 
-    & h1 {
+    & h3 {
       font-size: 0.8em;
     }
 
@@ -99,7 +102,7 @@ const DigitalPanel: React.FC<DigitalPanelProps> = ({
       <div className='close' onClick={onClickClose} data-testid='closeButton'>
         <FontAwesomeIcon icon={faTimes} />
       </div>
-      <h1>Введите пароль</h1>
+      <h3>Введите пароль</h3>
 
       <section>
         <Password text={text} state={state} />

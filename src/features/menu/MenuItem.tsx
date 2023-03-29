@@ -19,17 +19,17 @@ const StyledMenuList = styled.div`
   width: 95%;
   height: 100px;
   margin: 10px;
-  padding: 10px;
 
-  font-size: 1.2em;
-  font-weight: bold;
-  color: var(--btn-text-color);
+  font-size: 1em;
 
-  background: var(--menu-item-btn-background-color);
-  border-radius: 20px;
-  box-shadow: var(--menu-item-box-shadow);
+  border-radius: 25px;
+  color: #fff;
+  padding: 10px 30px;
+  transition: background-color 0.3s ease-in-out;
 
-  transition: all 0.3s linear;
+  box-shadow: rgb(57, 57, 57) 0px 1px;
+  border: 1px solid rgb(0 0 0);
+  background-image: linear-gradient(rgb(65, 65, 65) 10%, rgba(0, 0, 0, 0) 100%);
 
   & .icon {
     font-size: 40px;
@@ -57,7 +57,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, faIcon }) => {
   return (
     <StyledMenuList onClick={handleClick}>
       <FontAwesomeIcon className='icon' icon={faIcon} />
-      <label>{name}</label>
+      <span>{name}</span>
     </StyledMenuList>
   );
 };

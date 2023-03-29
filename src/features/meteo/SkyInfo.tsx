@@ -16,7 +16,6 @@ const StyledSkyInfo = styled.div`
   & .description {
     margin: 0;
     padding: 0;
-    font-size: x-large;
   }
 
   @media (max-width: 576px) {

@@ -25,7 +25,7 @@ const StyledOneDayWeather = styled.div`
     height: 100%;
 
     background: linear-gradient(to bottom, #414141 10%, rgb(0 0 0 / 0%) 100%);
-    border: 1px solid #fff;
+    border: 1px solid #000;
     border-radius: 30px;
   }
 

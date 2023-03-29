@@ -16,14 +16,14 @@ const StyledAreaPanel = styled.section`
   align-items: flex-end;
   justify-content: space-evenly;
 
-  height: 90%;
-
-  background-color: var(--panel-background-color);
+  height: 55%;
 
   @media (max-width: 576px) {
     flex-direction: row;
     width: 100%;
     height: auto;
+    background: linear-gradient(0deg, rgb(0, 0, 0), rgb(68, 68, 68));
+    border-radius: 100px;
   }
 `;
 

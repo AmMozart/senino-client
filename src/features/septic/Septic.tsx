@@ -31,7 +31,7 @@ const Septic: React.FC = () => {
     <StyledPage>
       <StyledTitle>Септик</StyledTitle>
       <StyledContent>
-        <SwitchButton electricGroupName='Septik' />
+        <SwitchButton title={'Насос'} electricGroupName='Septik' />
         <TimerSet groupName={groupName} />
       </StyledContent>
       <StyledButton onClick={add}>Добавить Таймер</StyledButton>

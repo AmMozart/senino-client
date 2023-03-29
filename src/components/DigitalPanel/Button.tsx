@@ -11,15 +11,16 @@ const StyledButton = styled.button`
   width: 80px;
   height: 80px;
 
-  font-size: 1.2em;
-  color: #e1e1e1;
-
-  background: #2e2e2e;
-  border: 1px solid #676767;
   border-radius: 20px;
 
+  box-shadow: rgb(57, 57, 57) 0px 1px;
+  border: 1px solid rgb(16, 16, 16);
+
+  background: linear-gradient(0deg, black, rgb(81, 81, 81));
+  color: rgb(208, 208, 208);
+
   &:active {
-    background: #fff;
+    background: linear-gradient(0deg, black, rgb(0, 164, 49));
   }
 
   @media (max-height: 500px) {

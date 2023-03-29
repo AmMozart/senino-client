@@ -15,6 +15,7 @@ const StyledMode = styled.div`
 `;
 
 const StyledButton = styled.span`
+  cursor: pointer;
   padding: 10px;
   border-radius: 10px;
   ${(props: { isActive: boolean }) =>

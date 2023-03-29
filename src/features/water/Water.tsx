@@ -31,7 +31,7 @@ const Water: React.FC = () => {
     <StyledPage>
       <StyledTitle>Вода</StyledTitle>
       <StyledContent>
-        <SwitchButton electricGroupName={groupName} />
+        <SwitchButton title={'Бойлер'} electricGroupName={groupName} />
         <TimerSet groupName={groupName} />
       </StyledContent>
       <StyledButton onClick={add}>Добавить Таймер</StyledButton>

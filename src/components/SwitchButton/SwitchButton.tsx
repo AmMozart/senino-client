@@ -8,10 +8,14 @@ import {
 } from '../../features/controller/controllerSlice';
 
 interface SwitchButtonProps {
+  title?: string;
   electricGroupName: string;
 }
 
-const SwitchButton: React.FC<SwitchButtonProps> = ({ electricGroupName }) => {
+const SwitchButton: React.FC<SwitchButtonProps> = ({
+  electricGroupName,
+  title,
+}) => {
   const groupsState = useAppSelector(electricGroupsState);
   const dispatch = useAppDispatch();
 
@@ -22,7 +26,9 @@ const SwitchButton: React.FC<SwitchButtonProps> = ({ electricGroupName }) => {
     dispatch(setToggleValue({ name: electricGroupName }));
   };
 
-  return <SlideButton isActive={isGroupActive} onClick={handleClick} />;
+  return (
+    <SlideButton title={title} isActive={isGroupActive} onClick={handleClick} />
+  );
 };
 
 export default SwitchButton;

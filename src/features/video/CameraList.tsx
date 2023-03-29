@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useAppDispatch } from '../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import CameraButton from './CameraButton';
 
 import { Camera, cameras } from './cameras';
-import { changeCamera } from './cameraSlice';
+import { camera, changeCamera } from './cameraSlice';
 
 const StyledCameraList = styled.ul`
   position: fixed;
@@ -13,37 +14,14 @@ const StyledCameraList = styled.ul`
   overflow: auto;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
 
   height: 90%;
 
-  background-color: var(--panel-background-color);
-
-  & li {
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100px;
-    margin: 10px;
-
-    font-size: 12px;
-    font-weight: bold;
-    color: var(--btn-text-color);
-    text-align: center;
-
-    background: var(--btn-back-color);
-    border-radius: 50%;
-
-    transition: all 0.5s linear;
-  }
-
-  & li:active {
-    color: rgb(52 110 187);
-  }
+  border-radius: 35px 0 35px 0;
+  background: linear-gradient(180deg, #404040, rgb(0 0 0));
 
   @media (max-width: 576px) {
     bottom: 0;
@@ -51,19 +29,15 @@ const StyledCameraList = styled.ul`
     display: flex;
     flex-direction: row;
 
+    border-radius: 35px;
     width: 100%;
-    height: 10%;
-
-    & li {
-      width: 70px;
-      height: 70px;
-      font-size: 0.8em;
-    }
+    height: 20%;
   }
 `;
 
 const CameraList: React.FC = () => {
   const dispatch = useAppDispatch();
+  const currentCamera = useAppSelector(camera);
 
   const handleClick = (camera: Camera) => {
     dispatch(changeCamera(camera));
@@ -72,9 +46,12 @@ const CameraList: React.FC = () => {
   return (
     <StyledCameraList>
       {cameras.map((camera) => (
-        <li key={camera.id} onClick={() => handleClick(camera)}>
-          {camera.name}
-        </li>
+        <CameraButton
+          key={camera.id}
+          name={camera.name}
+          isChecked={currentCamera.id === camera.id}
+          onClick={() => handleClick(camera)}
+        />
       ))}
     </StyledCameraList>
   );
