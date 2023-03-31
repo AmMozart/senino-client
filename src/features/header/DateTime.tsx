@@ -14,12 +14,11 @@ const StyledDateTime = styled.section`
   font-size: 12px;
   font-family: 'Times New Roman', Times, serif;
   color: #898989;
-  text-shadow: rgb(0 0 0) 0px 2px 0px;
+  text-shadow: rgb(0 0 0) 0 2px 0;
   letter-spacing: 1px;
 
   & .time {
     font-size: 20px;
-
     font-weight: 800;
     letter-spacing: 2px;
     word-spacing: 0.08em;
