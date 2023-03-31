@@ -27,13 +27,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject",
-    "watch": "npm-watch",
     "stylelint": "stylelint \"src/**/*.tsx\"",
     "stylelint:fix": "stylelint \"src/**/*.tsx\" --fix"
-  },
-  "watch": {
-    "build": "src/**"
   },
   "browserslist": {
     "production": [
