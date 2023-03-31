@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Controller } from '../controller/Controller';
+import Menu from '../menu/Menu';
+
 import WaterLeak from './WaterLeak';
 import { Meteo } from './Meteo';
-import Menu from '../menu/Menu';
 import Home from './Home';
+import DateTime from './DateTime';
 
 const StyledHeader = styled.header`
   z-index: 1;
@@ -31,7 +33,7 @@ const StyledHeader = styled.header`
 const LeftBar = styled.section`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
 `;
 
 const CenterBar = styled.section`
@@ -50,7 +52,9 @@ const Header: React.FunctionComponent = () => {
   return (
     <StyledHeader>
       <Home />
-      <LeftBar />
+      <LeftBar>
+        <DateTime />
+      </LeftBar>
       <CenterBar>
         <Controller />
         <Meteo />
