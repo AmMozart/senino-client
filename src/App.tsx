@@ -4,6 +4,7 @@ import Dashboard from './features/Dashboard';
 import Canvas3D from './features/Canvas3D';
 import Sleep from './features/Sleep';
 import Password from './features/password';
+import Ringtone from './features/sip/Ringtone';
 
 function App(): JSX.Element {
   return (
@@ -12,6 +13,7 @@ function App(): JSX.Element {
       <Dashboard />
       <Sleep />
       <Password />
+      <Ringtone />
     </>
   );
 }
