@@ -5,12 +5,14 @@ interface InitialState {
   isRing: boolean;
   callNumber: string;
   showContacts: boolean;
+  showMenu: boolean;
 }
 
 const initialState: InitialState = {
   isRing: false,
   callNumber: '',
   showContacts: false,
+  showMenu: false,
 };
 
 const sipSlice = createSlice({
@@ -47,11 +49,15 @@ const sipSlice = createSlice({
     hideContacts: (state) => {
       state.showContacts = false;
     },
+    toggleMenu: (state) => {
+      state.showMenu = !state.showMenu;
+    },
   },
 });
 
 export const isRing = (state: RootState): boolean => state.sip.isRing;
 export const callNumber = (state: RootState): string => state.sip.callNumber;
+export const showMenu = (state: RootState): boolean => state.sip.showMenu;
 
 export const {
   call,
@@ -64,6 +70,7 @@ export const {
   openDoor,
   showContacts,
   hideContacts,
+  toggleMenu,
 } = sipSlice.actions;
 
 export default sipSlice.reducer;

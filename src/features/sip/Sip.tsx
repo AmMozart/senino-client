@@ -4,7 +4,8 @@ import {
   faPhone,
   faPhoneSlash,
   faLockOpen,
-  faBars,
+  faXmark,
+  faGripVertical,
 } from '@fortawesome/free-solid-svg-icons';
 
 import StyledPage from '../styles/StyledPage';
@@ -12,8 +13,10 @@ import StyledTitle from '../styles/StyledTitle';
 
 import NumPad from './NumPad';
 import SipButton from './SipButton';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { showMenu, toggleMenu } from './sipSlice';
 
-const StyledPhonePage = styled(StyledPage)`
+const StyledSipPage = styled(StyledPage)<{ isShowPhone: boolean }>`
   display: grid;
   grid-template-rows: 0.7fr 6fr 1fr;
   grid-template-columns: 3fr 1fr;
@@ -80,7 +83,13 @@ const StyledPhonePage = styled(StyledPage)`
     }
 
     & .num-panel {
-      display: none;
+      position: absolute;
+      right: 0;
+
+      display: ${({ isShowPhone }) => (isShowPhone ? 'flex' : 'none')};
+
+      width: 220px;
+      height: 430px;
     }
   }
 
@@ -91,9 +100,18 @@ const StyledPhonePage = styled(StyledPage)`
   }
 `;
 
-const Phone = () => {
+const Sip = () => {
+  const isShowMenu = useAppSelector(showMenu);
+  const dispatch = useAppDispatch();
+
+  const showHideMenu = () => {
+    dispatch(toggleMenu());
+  };
+
+  const menuIcon = isShowMenu ? faXmark : faGripVertical;
+
   return (
-    <StyledPhonePage>
+    <StyledSipPage isShowPhone={isShowMenu}>
       <StyledTitle className={'title'}>Домофон</StyledTitle>
       <canvas className={'canvas'}>Error</canvas>
       <NumPad className={'num-panel'} />
@@ -104,9 +122,9 @@ const Phone = () => {
         <SipButton icon={faLockOpen} title={'Открыть Калитку'} color={'blue'} />
       </section>
 
-      <SipButton className={'menu'} icon={faBars} />
-    </StyledPhonePage>
+      <SipButton className={'menu'} icon={menuIcon} onClick={showHideMenu} />
+    </StyledSipPage>
   );
 };
 
-export default Phone;
+export default Sip;
