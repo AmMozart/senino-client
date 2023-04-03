@@ -8,6 +8,7 @@ import timers from '../features/timer/timerSlice';
 import settings from '../features/settings/settingsSlice';
 import password from '../features/password/passwordSlice';
 import camera from '../features/video/cameraSlice';
+import sip from '../features/sip/sipSlice';
 
 export const store = configureStore({
   reducer: {
@@ -19,6 +20,7 @@ export const store = configureStore({
     settings,
     password,
     camera,
+    sip,
   },
 });
 
