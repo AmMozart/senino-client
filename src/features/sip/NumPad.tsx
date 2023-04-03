@@ -10,7 +10,7 @@ import {
   call,
   addCallNumber,
   deleteCallNumberChar,
-  showContacts,
+  toggleContacts,
 } from './sipSlice';
 
 const StyledNumPad = styled.section`
@@ -52,7 +52,7 @@ const NumPad: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   const openContacts = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
-      dispatch(showContacts());
+      dispatch(toggleContacts());
     },
     [call]
   );

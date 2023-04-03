@@ -43,12 +43,10 @@ const sipSlice = createSlice({
     openDoor: () => {
       // TODO sip openDoor function
     },
-    showContacts: (state) => {
-      state.showContacts = true;
+    toggleContacts: (state) => {
+      state.showContacts = !state.showContacts;
     },
-    hideContacts: (state) => {
-      state.showContacts = false;
-    },
+
     toggleMenu: (state) => {
       state.showMenu = !state.showMenu;
     },
@@ -68,8 +66,7 @@ export const {
   answerCall,
   rejectCall,
   openDoor,
-  showContacts,
-  hideContacts,
+  toggleContacts,
   toggleMenu,
 } = sipSlice.actions;
 

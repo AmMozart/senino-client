@@ -14,7 +14,13 @@ import StyledTitle from '../styles/StyledTitle';
 import NumPad from './NumPad';
 import SipButton from './SipButton';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { showMenu, toggleMenu } from './sipSlice';
+import {
+  answerCall,
+  openDoor,
+  rejectCall,
+  showMenu,
+  toggleMenu,
+} from './sipSlice';
 
 const StyledSipPage = styled(StyledPage)<{ isShowPhone: boolean }>`
   display: grid;
@@ -108,6 +114,18 @@ const Sip = () => {
     dispatch(toggleMenu());
   };
 
+  const answer = () => {
+    dispatch(answerCall());
+  };
+
+  const reject = () => {
+    dispatch(rejectCall());
+  };
+
+  const open = () => {
+    dispatch(openDoor());
+  };
+
   const menuIcon = isShowMenu ? faXmark : faGripVertical;
 
   return (
@@ -117,9 +135,24 @@ const Sip = () => {
       <NumPad className={'num-panel'} />
 
       <section className={'control'}>
-        <SipButton icon={faPhone} title={'Ответить'} color={'green'} />
-        <SipButton icon={faPhoneSlash} title={'Завершить'} color={'red'} />
-        <SipButton icon={faLockOpen} title={'Открыть Калитку'} color={'blue'} />
+        <SipButton
+          icon={faPhone}
+          title={'Ответить'}
+          color={'green'}
+          onClick={answer}
+        />
+        <SipButton
+          icon={faPhoneSlash}
+          title={'Завершить'}
+          color={'red'}
+          onClick={reject}
+        />
+        <SipButton
+          icon={faLockOpen}
+          title={'Открыть Калитку'}
+          color={'blue'}
+          onClick={open}
+        />
       </section>
 
       <SipButton className={'menu'} icon={menuIcon} onClick={showHideMenu} />
