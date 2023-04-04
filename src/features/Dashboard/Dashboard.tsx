@@ -7,7 +7,7 @@ import MeteoDetails from '../meteo/MeteoDetails';
 import Settings from '../settings/Settings';
 import Header from '../Header';
 import MenuList from '../menu/MenuList';
-import Boiler from '../Boiler1';
+import Boiler from '../Boiler';
 import Septic from '../Septic';
 import Video from '../video/Video';
 import Water from '../Water';

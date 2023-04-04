@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Dashboard from './features/Dashboard';
-import Canvas3D from './features/Canvas3D1';
+import Canvas3D from './features/Canvas3D';
 import Sleep from './features/Sleep';
 import Password from './features/password';
 import Ringtone from './features/sip/Ringtone';
