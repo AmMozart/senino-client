@@ -1,7 +1,7 @@
-import { faContactCard, faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
+import { faContactCard, faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledNumField = styled.section`
   display: grid;
@@ -43,9 +43,9 @@ const StyledNumField = styled.section`
 `;
 
 interface NumFieldProps {
-  numberClick: (e: React.MouseEvent<HTMLDivElement>) => void;
-  callClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  contactsClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  numberClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  callClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  contactsClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const NumField: React.FC<NumFieldProps> = ({
@@ -54,7 +54,7 @@ const NumField: React.FC<NumFieldProps> = ({
   contactsClick,
 }) => {
   return (
-    <StyledNumField onClick={numberClick}>
+    <StyledNumField onClick={numberClick} data-testid={'num-pad'}>
       <button>1</button>
       <button>2</button>
       <button>3</button>
@@ -67,11 +67,15 @@ const NumField: React.FC<NumFieldProps> = ({
       <button>*</button>
       <button>0</button>
       <button>#</button>
-      <button className={'call'} onClick={callClick}>
+      <button className={'call'} onClick={callClick} data-testid={'call-btn'}>
         <FontAwesomeIcon icon={faPhoneFlip} />
       </button>
       <button>+</button>
-      <button className={'contacts'} onClick={contactsClick}>
+      <button
+        className={'contacts'}
+        onClick={contactsClick}
+        data-testid={'contacts-btn'}
+      >
         <FontAwesomeIcon icon={faContactCard} />
       </button>
     </StyledNumField>

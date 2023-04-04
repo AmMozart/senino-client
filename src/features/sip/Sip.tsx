@@ -8,12 +8,12 @@ import {
   faGripVertical,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import StyledPage from '../styles/StyledPage';
 import StyledTitle from '../styles/StyledTitle';
 
 import NumPad from './NumPad';
 import SipButton from './SipButton';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
   answerCall,
   openDoor,

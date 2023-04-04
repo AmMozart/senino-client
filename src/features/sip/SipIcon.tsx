@@ -4,8 +4,8 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { keyframes, css } from 'styled-components';
 
-import ClickAnimation from '../styles/ClickAnimation';
 import { useAppSelector } from '../../app/hooks';
+import ClickAnimation from '../styles/ClickAnimation';
 
 import { isRing } from './sipSlice';
 
