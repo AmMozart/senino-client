@@ -50,7 +50,7 @@ interface TextFieldProps {
 
 const TextField: React.FC<TextFieldProps> = ({ text, deleteChar }) => {
   return (
-    <StyledTextField>
+    <StyledTextField data-testid={'text-field'}>
       <input
         className={'input'}
         type={'text'}
@@ -62,6 +62,7 @@ const TextField: React.FC<TextFieldProps> = ({ text, deleteChar }) => {
         className={'delete'}
         icon={faDeleteLeft}
         onClick={deleteChar}
+        data-testid={'delete-button'}
       />
     </StyledTextField>
   );
