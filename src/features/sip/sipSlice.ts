@@ -2,14 +2,14 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { RootState } from '../../app/store';
 
-interface InitialState {
+export interface InitialState {
   isRing: boolean;
   callNumber: string;
   showContacts: boolean;
   showMenu: boolean;
 }
 
-const initialState: InitialState = {
+export const initialState: InitialState = {
   isRing: false,
   callNumber: '',
   showContacts: false,
@@ -57,6 +57,8 @@ const sipSlice = createSlice({
 export const isRing = (state: RootState): boolean => state.sip.isRing;
 export const callNumber = (state: RootState): string => state.sip.callNumber;
 export const showMenu = (state: RootState): boolean => state.sip.showMenu;
+export const showContacts = (state: RootState): boolean =>
+  state.sip.showContacts;
 
 export const {
   call,
