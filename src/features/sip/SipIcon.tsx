@@ -144,7 +144,11 @@ const SipIcon = () => {
 
   return (
     <ClickAnimation>
-      <StyledSipIcon isRing={stateRing} onClick={handleClick}>
+      <StyledSipIcon
+        isRing={stateRing}
+        onClick={handleClick}
+        data-testid={'sip-icon'}
+      >
         <FontAwesomeIcon icon={faPhone}></FontAwesomeIcon>
       </StyledSipIcon>
     </ClickAnimation>
