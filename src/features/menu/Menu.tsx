@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import MenuBurger from '../Header/MenuBurger';
+import MenuBurger from '../Header1/MenuBurger';
 
 const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
