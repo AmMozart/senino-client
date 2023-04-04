@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { ControlPanel } from '../controlPanel/ControlPanel';
 import MeteoDetails from '../meteo/MeteoDetails';
 import Settings from '../settings/Settings';
-import Header from '../Header1';
+import Header from '../Header';
 import MenuList from '../menu/MenuList';
 import Boiler from '../Boiler1';
 import Septic from '../Septic';

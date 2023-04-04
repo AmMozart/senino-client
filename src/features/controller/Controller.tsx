@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import ControllerCommand from './ControllerCommand';
-import { Connection } from '../Header1/Connection';
+import { Connection } from '../Header/Connection';
 import { currentTimerCommand, setAllTimers } from '../timer/timerSlice';
 import {
   isConnect,
