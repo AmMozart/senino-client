@@ -8,7 +8,7 @@ import { isRing } from './sipSlice';
 const Ringtone = () => {
   const stateRing = useAppSelector(isRing);
 
-  return stateRing ? <audio src={ring} autoPlay /> : null;
+  return stateRing ? <audio src={ring} autoPlay data-testid={'audio'} /> : null;
 };
 
 export default Ringtone;
