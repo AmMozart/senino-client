@@ -7,6 +7,7 @@ import StyledStatusButton from '../styles/StyledStatusButton';
 import ClickAnimation from '../styles/ClickAnimation';
 
 const StyledMenuBurger = styled(StyledStatusButton)`
+  font-size: 1.4em;
   color: ${({ isOpen }: MenuProps) => (isOpen ? '#a40019' : '#00a431')};
 `;
 

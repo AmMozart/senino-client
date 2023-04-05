@@ -19,8 +19,6 @@ const StyledConnection = styled(StyledStatusButton)`
     justify-content: space-evenly;
 
     height: 100%;
-
-    font-size: 0.8em;
   }
 
   & span {

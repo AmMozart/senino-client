@@ -12,7 +12,7 @@ const StyledHome = styled(StyledStatusButton)`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 0.8em;
+  font-size: 1.2em;
 
   & span {
     font-size: 10px;

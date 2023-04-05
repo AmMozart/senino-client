@@ -12,6 +12,7 @@ import Icon from '../meteo/Icon';
 
 const StyledMeteoStatusButton = styled(StyledStatusButton)`
   width: 150px;
+  font-size: 1.6em;
 
   @media (max-width: 576px) {
     display: none;

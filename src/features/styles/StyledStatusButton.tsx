@@ -8,15 +8,15 @@ const StyledStatusButton = styled.div`
   width: 60px;
   height: 60px;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: space-evenly;
-  -webkit-box-align: center;
   align-items: center;
   border-radius: 20px;
   background: linear-gradient(0deg, black, rgb(81 81 81));
   color: rgb(208 208 208);
+  font-size: 1.2em;
 
   @media (max-width: 576px) {
+    font-size: 1em;
     width: 55px;
     height: 55px;
   }
