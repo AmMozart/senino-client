@@ -1,14 +1,5 @@
 # '3D Web GUI for Smart Home'
-
-## smart board
-
-For test it use board ESP32.
-
-### 'default config'
-
-IP address: 192.168.1.200
-WebSocket: ON
-HTTPS: ON
+Link: https://courageous-melomakarona-4db5a5.netlify.app/
 
 
 ![Garden_1](https://user-images.githubusercontent.com/10536527/228568432-0c056270-20c3-4715-8a7b-f3182ba31f2d.jpg)
