@@ -5,11 +5,11 @@ import { faPersonWalking } from '@fortawesome/free-solid-svg-icons';
 import StyledStatusButton from '../styles/StyledStatusButton';
 import WarningAnimation from '../styles/WarningAnimation';
 
-interface SecurityProps {
+interface InvasionProps {
   isInvasion?: boolean;
 }
 
-const Security: React.FC<SecurityProps> = ({ isInvasion = false }) => {
+const Invasion: React.FC<InvasionProps> = ({ isInvasion = false }) => {
   return (
     <StyledStatusButton>
       <WarningAnimation isWarning={isInvasion}>
@@ -19,4 +19,4 @@ const Security: React.FC<SecurityProps> = ({ isInvasion = false }) => {
   );
 };
 
-export default React.memo(Security);
+export default React.memo(Invasion);
