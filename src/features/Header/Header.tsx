@@ -10,7 +10,7 @@ import DateTime from './DateTime';
 import Alarm from './Alarm';
 
 const StyledHeader = styled.header`
-  z-index: 1;
+  z-index: 3;
 
   display: grid;
   grid-template-columns: 1fr 6fr 1fr 4fr;
