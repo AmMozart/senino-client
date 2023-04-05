@@ -17,16 +17,12 @@ interface MenuProps {
 }
 
 const MenuBurger: React.FC<MenuProps> = ({ isOpen = false, onClick }) => {
-  const component = isOpen ? (
-    <FontAwesomeIcon icon={faTimes} />
-  ) : (
-    <FontAwesomeIcon icon={faBars} />
-  );
+  const icon = isOpen ? faTimes : faBars;
 
   return (
     <ClickAnimation>
       <StyledMenuBurger onClick={onClick} isOpen={isOpen}>
-        {component}
+        <FontAwesomeIcon icon={icon} />
       </StyledMenuBurger>
     </ClickAnimation>
   );

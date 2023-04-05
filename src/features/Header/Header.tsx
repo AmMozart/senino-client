@@ -4,13 +4,10 @@ import styled from 'styled-components';
 import { Controller } from '../controller/Controller';
 import Menu from '../menu/Menu';
 
-import WaterLeak from './WaterLeak';
 import { Meteo } from './Meteo';
 import Home from './Home';
 import DateTime from './DateTime';
-import FireAlarm from './FireAlarm';
-import Invasion from './Invasion';
-import GasLeak from './GasLeak';
+import Alarm from './Alarm';
 
 const StyledHeader = styled.header`
   z-index: 1;
@@ -57,10 +54,7 @@ const Header: React.FunctionComponent = () => {
         <Meteo />
       </CenterBar>
       <RightBar>
-        <GasLeak />
-        <Invasion />
-        <FireAlarm />
-        <WaterLeak />
+        <Alarm />
         <Menu />
       </RightBar>
     </StyledHeader>
