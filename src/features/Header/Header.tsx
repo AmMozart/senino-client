@@ -8,6 +8,7 @@ import WaterLeak from './WaterLeak';
 import { Meteo } from './Meteo';
 import Home from './Home';
 import DateTime from './DateTime';
+import FireAlarm from './FireAlarm';
 
 const StyledHeader = styled.header`
   z-index: 1;
@@ -60,6 +61,7 @@ const Header: React.FunctionComponent = () => {
         <Meteo />
       </CenterBar>
       <RightBar>
+        <FireAlarm />
         <WaterLeak />
         <Menu />
       </RightBar>
