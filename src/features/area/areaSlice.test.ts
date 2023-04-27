@@ -1,6 +1,7 @@
-import { store } from '../../app/store';
 import AreaName from './AreaName';
 import areaReducer, { change, selectName } from './areaSlice';
+
+import { store } from '../../app/store';
 
 describe('Area reducer', () => {
   it('should be change area name', () => {

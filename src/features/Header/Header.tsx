@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Alarm from './Alarm';
+import DateTime from './DateTime';
+import Home from './Home';
+import { Meteo } from './Meteo';
+
+import HomeScripts from './Scripts';
+
 import { Controller } from '../controller/Controller';
 import Menu from '../menu/Menu';
-
-import { Meteo } from './Meteo';
-import Home from './Home';
-import DateTime from './DateTime';
-import Alarm from './Alarm';
 
 const StyledHeader = styled.header`
   z-index: 3;
@@ -27,7 +29,7 @@ const StyledHeader = styled.header`
 const LeftBar = styled.section`
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
 
 const CenterBar = styled.section`
@@ -47,6 +49,7 @@ const Header: React.FunctionComponent = () => {
     <StyledHeader>
       <Home />
       <LeftBar>
+        <HomeScripts />
         <DateTime />
       </LeftBar>
       <CenterBar>

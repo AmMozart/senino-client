@@ -1,7 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
+
 import TimerMode from './TimerMode';
 import WeekDay from './WeekDay';
+
+import { RootState } from '../../app/store';
 
 export interface Time {
   hour: number;

@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Days from './Days';
+import Mode from './Mode';
+import Time from './Time';
+
+import { useAppDispatch } from '../../app/hooks';
 import {
   deleteTimer,
   Timer as TimerState,
 } from '../../features/timer/timerSlice';
-import { useAppDispatch } from '../../app/hooks';
-import Days from './Days';
-import Time from './Time';
-import Mode from './Mode';
 
 const StyledTimer = styled.div`
   position: relative;

@@ -2,22 +2,21 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 
+import Boiler from '../Boiler';
+import Connect from '../Connect';
 import { ControlPanel } from '../controlPanel/ControlPanel';
-import MeteoDetails from '../meteo/MeteoDetails';
-import Settings from '../settings/Settings';
 import Header from '../Header';
 import MenuList from '../menu/MenuList';
-import Boiler from '../Boiler';
+import MeteoDetails from '../meteo/MeteoDetails';
 import Septic from '../Septic';
+import Settings from '../settings/Settings';
+import Sip from '../sip/Sip';
 import Video from '../video/Video';
 import Water from '../Water';
-import Connect from '../Connect';
-import Sip from '../sip/Sip';
 
 const StyledDashboard = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 5px;
   align-items: center;
 
   width: 100%;

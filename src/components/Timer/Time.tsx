@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Time as TimeType, setTime } from '../../features/timer/timerSlice';
 import { useAppDispatch } from '../../app/hooks';
+import { Time as TimeType, setTime } from '../../features/timer/timerSlice';
 import getID from '../../utils/getID';
 
 const StyledTime = styled.div`

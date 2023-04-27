@@ -1,11 +1,12 @@
 import * as BABYLON from 'babylonjs';
 
-import { ElectricGroupsState } from '../../../features/controller/controllerSlice';
-import AreaName from '../../../features/area/AreaName';
-import pubSub from '../../../utils/pubSub';
-import EventName from '../../../utils/EventName';
-import { lightGroup } from '../../../config/config';
 import { Switch } from './Switch';
+
+import { lightGroup } from '../../../config/config';
+import AreaName from '../../../features/area/AreaName';
+import { ElectricGroupsState } from '../../../features/controller/controllerSlice';
+import EventName from '../../../utils/EventName';
+import pubSub from '../../../utils/pubSub';
 
 export class Light extends Switch {
   private standartMaterial?: BABYLON.Nullable<BABYLON.Material>;

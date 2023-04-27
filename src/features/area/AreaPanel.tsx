@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { useAppSelector } from '../../app/hooks';
 import AreaButton from './AreaButton';
-import { selectName } from './areaSlice';
 import AreaName from './AreaName';
+import { selectName } from './areaSlice';
+
+import { useAppSelector } from '../../app/hooks';
 
 const StyledAreaPanel = styled.section`
   position: fixed;

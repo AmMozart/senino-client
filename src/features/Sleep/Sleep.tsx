@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { TIME_SLEEP_MODE_MS } from '../../config/var';
+
 import { useNavigate } from 'react-router-dom';
+
+import { TIME_SLEEP_MODE_MS } from '../../config/var';
 
 const Sleep: React.FC = () => {
   const navigate = useNavigate();

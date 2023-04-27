@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { useAppDispatch } from '../../app/hooks';
 import { addWeekDay, deleteWeekDay } from '../../features/timer/timerSlice';
 import WeekDay from '../../features/timer/WeekDay';
-import { useAppDispatch } from '../../app/hooks';
 import getID from '../../utils/getID';
 
 const StyledDays = styled.div`

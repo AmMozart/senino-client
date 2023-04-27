@@ -1,10 +1,10 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 import styled from 'styled-components';
 
-import StyledStatusButton from '../styles/StyledStatusButton';
 import ClickAnimation from '../styles/ClickAnimation';
+import StyledStatusButton from '../styles/StyledStatusButton';
 
 const StyledMenuBurger = styled(StyledStatusButton)`
   font-size: 1.4em;

@@ -1,12 +1,12 @@
-import React, { MouseEventHandler } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { MouseEventHandler } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
+import ClickAnimation from '../styles/ClickAnimation';
 import StyledStatusButton from '../styles/StyledStatusButton';
 import WarningAnimation from '../styles/WarningAnimation';
-import { useNavigate } from 'react-router-dom';
-import ClickAnimation from '../styles/ClickAnimation';
 
 const StyledConnection = styled(StyledStatusButton)`
   color: ${({ isConnect }: ConnectionProps) =>

@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
 import { loadPlayer, Player } from 'rtsp-relay/browser';
+import styled from 'styled-components';
 
 import CameraList from './CameraList';
-import { useAppSelector } from '../../app/hooks';
+
 import { camera } from './cameraSlice';
+
+import { useAppSelector } from '../../app/hooks';
 
 const StyledCamera = styled.div`
   z-index: 2;

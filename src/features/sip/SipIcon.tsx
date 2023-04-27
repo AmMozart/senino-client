@@ -1,13 +1,13 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled, { keyframes, css } from 'styled-components';
+
+import { isRing } from './sipSlice';
 
 import { useAppSelector } from '../../app/hooks';
 import ClickAnimation from '../styles/ClickAnimation';
-
-import { isRing } from './sipSlice';
 
 const iconAnimation = keyframes`
   from {

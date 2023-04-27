@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import {
   faCamera,
   faFaucet,
@@ -8,9 +6,12 @@ import {
   faShower,
   faBatteryHalf,
 } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 import MenuItem from './MenuItem';
 import MenuItemName from './MenuItemName';
+
 import StyledPage from '../styles/StyledPage';
 
 const StyledMenuList = styled(StyledPage)`

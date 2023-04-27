@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 
-import pubSub from '../../utils/pubSub';
-import EventName from '../../utils/EventName';
 import Camera from './Camera';
+
+import EventName from '../../utils/EventName';
+import pubSub from '../../utils/pubSub';
 
 const Video: React.FC = () => {
   useEffect(() => {

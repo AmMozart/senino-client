@@ -1,5 +1,5 @@
-import MeteoData, { ReceiveData } from './MeteoData';
 import meteoConfig from './meteoConfig';
+import MeteoData, { ReceiveData } from './MeteoData';
 
 class MeteoStation {
   private meteoConfig;

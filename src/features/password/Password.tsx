@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+
 import {
   change,
   clear,
@@ -9,6 +9,8 @@ import {
   passwordState,
   verify,
 } from './passwordSlice';
+
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import DigitalPanel from '../../components/DigitalPanel';
 
 const Password: React.FC = () => {

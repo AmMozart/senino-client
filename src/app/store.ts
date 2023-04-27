@@ -1,14 +1,15 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
-import controller from '../features/controller/controllerSlice';
-import meteo from '../features/meteo/meteoSlice';
 import area from '../features/area/areaSlice';
+import controller from '../features/controller/controllerSlice';
 import menu from '../features/menu/menuSlice';
-import timers from '../features/timer/timerSlice';
-import settings from '../features/settings/settingsSlice';
+import meteo from '../features/meteo/meteoSlice';
 import password from '../features/password/passwordSlice';
-import camera from '../features/video/cameraSlice';
+import script from '../features/script/scriptSlice';
+import settings from '../features/settings/settingsSlice';
 import sip from '../features/sip/sipSlice';
+import timers from '../features/timer/timerSlice';
+import camera from '../features/video/cameraSlice';
 
 export const store = configureStore({
   reducer: {
@@ -21,6 +22,7 @@ export const store = configureStore({
     password,
     camera,
     sip,
+    script,
   },
 });
 

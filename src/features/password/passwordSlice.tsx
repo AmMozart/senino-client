@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import ActionRequest from './ActionRequest';
+
 import { RootState } from '../../app/store';
 import PasswordState from '../../components/DigitalPanel/PasswordState';
-import ActionRequest from './ActionRequest';
 
 const PASSWORD = '1111';
 const SLEEP_CLOSE_MS = 700;

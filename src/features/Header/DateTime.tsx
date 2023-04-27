@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { getTimeString } from '../../utils/getTimeString';
+
 import { getDateString } from '../../utils/getDateString';
 import { getDayString } from '../../utils/getDayString';
+import { getTimeString } from '../../utils/getTimeString';
 
 const StyledDateTime = styled.section`
   display: flex;
@@ -24,7 +25,7 @@ const StyledDateTime = styled.section`
     word-spacing: 0.08em;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 475px) {
     display: none;
   }
 `;

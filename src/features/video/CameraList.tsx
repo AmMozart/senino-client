@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+
 import CameraButton from './CameraButton';
 
 import { Camera, cameras } from './cameras';
 import { camera, changeCamera } from './cameraSlice';
+
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 const StyledCameraList = styled.ul`
   position: fixed;

@@ -1,11 +1,16 @@
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import Wrapper from '../../testUtils';
-import SipIcon from './SipIcon';
-import { MemoryRouter } from 'react-router-dom';
+import React from 'react';
+
 import * as router from 'react-router';
-import { store } from '../../app/store';
+import { MemoryRouter } from 'react-router-dom';
+
+import SipIcon from './SipIcon';
+
 import { incomingCall } from './sipSlice';
+
+import { store } from '../../app/store';
+
+import Wrapper from '../../testUtils';
 
 describe('SipIcon module', () => {
   it('should render component', () => {

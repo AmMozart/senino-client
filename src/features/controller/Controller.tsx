@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import ControllerCommand from './ControllerCommand';
-import { Connection } from '../Header/Connection';
-import { currentTimerCommand, setAllTimers } from '../timer/timerSlice';
+
 import {
   isConnect,
   setConnectionState,
@@ -11,8 +9,16 @@ import {
   ElectricGroupsState,
   currentElectricGroupCommand,
 } from './controllerSlice';
+
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { PORT, SERVER_IP } from '../../config/var';
+import { Connection } from '../Header/Connection';
+import {
+  currentActiveScriptsCommand,
+  setAllScripts,
+} from '../script/scriptSlice';
 import { clearLogCommand, setLog } from '../settings/settingsSlice';
+import { currentTimerCommand, setAllTimers } from '../timer/timerSlice';
 
 export const Controller: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -23,6 +29,9 @@ export const Controller: React.FC = () => {
   );
   const myCurrentTimerCommand = useAppSelector(currentTimerCommand);
   const myClearLogCommand = useAppSelector(clearLogCommand);
+  const myCurrentActiveScriptsCommand = useAppSelector(
+    currentActiveScriptsCommand
+  );
 
   const socket = useRef<WebSocket>();
   const ref = useRef<ElectricGroupsState>();
@@ -53,6 +62,10 @@ export const Controller: React.FC = () => {
             }
             case 'logs': {
               dispatch(setLog(receive[key]));
+              break;
+            }
+            case 'scripts': {
+              dispatch(setAllScripts(receive[key]));
               break;
             }
             default:
@@ -115,11 +128,6 @@ export const Controller: React.FC = () => {
     }
   }, [connect]);
 
-  // useEffect(() => {
-  //   if (socket.current?.readyState === 1)
-  //     socket.current.send(JSON.stringify({command: ControllerCommand.SetTimers, payload: allTimers}));
-  // }, [allTimers]);
-
   useEffect(() => {
     if (socket.current?.readyState === 1)
       socket.current.send(
@@ -129,6 +137,16 @@ export const Controller: React.FC = () => {
         })
       );
   }, [myCurrentTimerCommand]);
+
+  useEffect(() => {
+    if (socket.current?.readyState === 1)
+      socket.current.send(
+        JSON.stringify({
+          command: ControllerCommand.SetScripts,
+          payload: myCurrentActiveScriptsCommand,
+        })
+      );
+  }, [myCurrentActiveScriptsCommand]);
 
   useEffect(() => {
     if (socket.current?.readyState === 1)

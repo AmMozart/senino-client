@@ -1,5 +1,7 @@
-import { Camera, cameras } from './cameras';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { Camera, cameras } from './cameras';
+
 import { RootState } from '../../app/store';
 
 interface InitialState {

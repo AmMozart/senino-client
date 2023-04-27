@@ -1,9 +1,12 @@
-import React from 'react';
-import Ringtone from './Ringtone';
 import { render } from '@testing-library/react';
-import Wrapper from '../../testUtils';
-import { store } from '../../app/store';
+import React from 'react';
+
+import Ringtone from './Ringtone';
+
 import { incomingCall } from './sipSlice';
+
+import { store } from '../../app/store';
+import Wrapper from '../../testUtils';
 
 describe('Ringtone module', () => {
   it('should not render audio tag', () => {

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import { selectMeteo } from './meteoSlice';
+
+import OneDayWeather from './OneDayWeather';
+
 import { useAppSelector } from '../../app/hooks';
 import StyledPage from '../styles/StyledPage';
-import { selectMeteo } from './meteoSlice';
-import OneDayWeather from './OneDayWeather';
 
 const StyledMeteoDetails = styled(StyledPage)<{ animate: boolean }>`
   position: relative;

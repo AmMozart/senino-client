@@ -1,11 +1,11 @@
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
-import StyledStatusButton from '../styles/StyledStatusButton';
 import ClickAnimation from '../styles/ClickAnimation';
+import StyledStatusButton from '../styles/StyledStatusButton';
 
 const StyledHome = styled(StyledStatusButton)`
   display: flex;

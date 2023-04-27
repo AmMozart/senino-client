@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import tempIco from './img/temp.png';
 import humIco from './img/hum.png';
 import presIco from './img/pres.png';
+import tempIco from './img/temp.png';
 import windIco from './img/wind.png';
 
 const StyledInfo = styled.div`

@@ -1,11 +1,11 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
-
-import { getTimeString } from '../../utils/getTimeString';
-import { getDayString } from '../../utils/getDayString';
-import { getDateString } from '../../utils/getDateString';
+import * as React from 'react';
 
 import DateTime from './DateTime';
+
+import { getDateString } from '../../utils/getDateString';
+import { getDayString } from '../../utils/getDayString';
+import { getTimeString } from '../../utils/getTimeString';
 
 describe('DateTime module', () => {
   it('should render component', () => {

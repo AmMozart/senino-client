@@ -1,5 +1,3 @@
-import React from 'react';
-import styled from 'styled-components';
 import {
   faPhone,
   faPhoneSlash,
@@ -7,13 +5,13 @@ import {
   faXmark,
   faGripVertical,
 } from '@fortawesome/free-solid-svg-icons';
-
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import StyledPage from '../styles/StyledPage';
-import StyledTitle from '../styles/StyledTitle';
+import React from 'react';
+import styled from 'styled-components';
 
 import NumPad from './NumPad';
+
 import SipButton from './SipButton';
+
 import {
   answerCall,
   openDoor,
@@ -21,6 +19,10 @@ import {
   showMenu,
   toggleMenu,
 } from './sipSlice';
+
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import StyledPage from '../styles/StyledPage';
+import StyledTitle from '../styles/StyledTitle';
 
 const StyledSipPage = styled(StyledPage)<{ isShowPhone: boolean }>`
   display: grid;

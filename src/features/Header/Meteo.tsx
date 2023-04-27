@@ -4,17 +4,17 @@ import styled from 'styled-components';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { UPDATE_METEO_TIME } from '../../config/var';
-import StyledStatusButton from '../styles/StyledStatusButton';
-import ClickAnimation from '../styles/ClickAnimation';
+import Icon from '../meteo/Icon';
 import { selectMeteo, updateData } from '../meteo/meteoSlice';
 import Temp from '../meteo/Temp';
-import Icon from '../meteo/Icon';
+import ClickAnimation from '../styles/ClickAnimation';
+import StyledStatusButton from '../styles/StyledStatusButton';
 
 const StyledMeteoStatusButton = styled(StyledStatusButton)`
   width: 150px;
   font-size: 1.6em;
 
-  @media (max-width: 576px) {
+  @media (max-width: 650px) {
     display: none;
   }
 `;

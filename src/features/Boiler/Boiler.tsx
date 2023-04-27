@@ -2,13 +2,13 @@ import React from 'react';
 
 import { useAppDispatch } from '../../app/hooks';
 import SwitchButton from '../../components/SwitchButton';
-import { addTimer } from '../timer/timerSlice';
-import TimerMode from '../timer/TimerMode';
-import StyledPage from '../styles/StyledPage';
 import TimerSet from '../../components/Timer/TimerSet';
-import StyledTitle from '../styles/StyledTitle';
-import StyledContent from '../styles/StyledContent';
 import StyledButton from '../styles/StyledButton';
+import StyledContent from '../styles/StyledContent';
+import StyledPage from '../styles/StyledPage';
+import StyledTitle from '../styles/StyledTitle';
+import TimerMode from '../timer/TimerMode';
+import { addTimer } from '../timer/timerSlice';
 
 const Boiler: React.FC = () => {
   const groupName = 'Boiler';

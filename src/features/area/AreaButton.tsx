@@ -1,12 +1,13 @@
 import React, { MouseEventHandler, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 
+import AreaName from './AreaName';
+import { change } from './areaSlice';
+
+import { useAppDispatch } from '../../app/hooks';
 import imageFloor1 from '../../img/1_floor.png';
 import imageFloor2 from '../../img/2_floor.png';
 import imageGarden from '../../img/Garden.png';
-import { useAppDispatch } from '../../app/hooks';
-import { change } from './areaSlice';
-import AreaName from './AreaName';
 
 const StyledAreaButton = styled.button`
   --btn-size: 100px;

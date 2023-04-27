@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { timers } from '../../features/timer/timerSlice';
+import styled from 'styled-components';
+
 import { useAppSelector } from '../../app/hooks';
 import Timer from '../../components/Timer/Timer';
-import styled from 'styled-components';
+import { timers } from '../../features/timer/timerSlice';
 
 const StyledTimerSet = styled(React.Fragment)`
   overflow-y: scroll;

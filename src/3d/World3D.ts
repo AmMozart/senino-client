@@ -1,15 +1,16 @@
 import * as BABYLON from 'babylonjs';
 
-import pubSub from '../utils/pubSub';
-import EventName from '../utils/EventName';
-import AreaName from '../features/area/AreaName';
-import { blindGroup, lightGroup, videoCameraGroup } from '../config/config';
-import { Light } from './house/electricGroup/Light';
-import { ModelImporter } from './ModelImporter';
-import { Area } from './house/Area';
 import { Camera } from './Camera';
+import { Area } from './house/Area';
 import { Gate } from './house/electricGroup/Gate';
+import { Light } from './house/electricGroup/Light';
 import { VideoCamera } from './house/electricGroup/VideoCamera';
+import { ModelImporter } from './ModelImporter';
+
+import { blindGroup, lightGroup, videoCameraGroup } from '../config/config';
+import AreaName from '../features/area/AreaName';
+import EventName from '../utils/EventName';
+import pubSub from '../utils/pubSub';
 
 const TIME_FOR_OPEN_GATE_MS = 25_000;
 export class World3D {

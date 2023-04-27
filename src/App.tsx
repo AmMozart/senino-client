@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Dashboard from './features/Dashboard';
 import Canvas3D from './features/Canvas3D';
-import Sleep from './features/Sleep';
+import Dashboard from './features/Dashboard';
 import Password from './features/password';
 import Ringtone from './features/sip/Ringtone';
+import Sleep from './features/Sleep';
 
 function App(): JSX.Element {
   return (

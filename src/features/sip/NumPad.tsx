@@ -1,9 +1,6 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-
-import TextField from './TextField';
 import NumField from './NumField';
 import {
   callNumber,
@@ -12,6 +9,9 @@ import {
   deleteCallNumberChar,
   toggleContacts,
 } from './sipSlice';
+import TextField from './TextField';
+
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 const StyledNumPad = styled.section`
   display: flex;

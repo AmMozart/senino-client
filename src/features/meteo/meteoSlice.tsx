@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { RootState } from '../../app/store';
 import meteoStation from './meteoAPI/MeteoStation';
+
+import { RootState } from '../../app/store';
 
 export interface MeteoData {
   temp: number;

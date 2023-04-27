@@ -1,11 +1,12 @@
 import * as BABYLON from 'babylonjs';
 
-import { ElectricGroupsState } from '../../../features/controller/controllerSlice';
-import AreaName from '../../../features/area/AreaName';
-import pubSub from '../../../utils/pubSub';
-import EventName from '../../../utils/EventName';
-import { blindGroup } from '../../../config/config';
 import { Driver } from './Driver';
+
+import { blindGroup } from '../../../config/config';
+import AreaName from '../../../features/area/AreaName';
+import { ElectricGroupsState } from '../../../features/controller/controllerSlice';
+import EventName from '../../../utils/EventName';
+import pubSub from '../../../utils/pubSub';
 
 export class Gate extends Driver {
   private standartMaterial?: BABYLON.Nullable<BABYLON.Material>;

@@ -1,12 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
+import MenuItemName from './MenuItemName';
+import { changeMenuItem } from './menuSlice';
 
 import { useAppDispatch } from '../../app/hooks';
-import { changeMenuItem } from './menuSlice';
-import { useNavigate } from 'react-router-dom';
-import MenuItemName from './MenuItemName';
 
 const StyledMenuList = styled.div`
   cursor: pointer;

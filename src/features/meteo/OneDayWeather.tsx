@@ -1,9 +1,10 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+import Info from './Info';
 import { MeteoData } from './meteoSlice';
 import SkyInfo from './SkyInfo';
-import Info from './Info';
-import styled from 'styled-components';
 
 const StyledOneDayWeather = styled.div`
   display: flex;

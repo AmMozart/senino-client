@@ -1,12 +1,11 @@
+import { faBell, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faTimes } from '@fortawesome/free-solid-svg-icons';
 
+import AlarmIcons from '../alarmIcons/AlarmIcons';
 import StyledStatusButton from '../styles/StyledStatusButton';
 import WarningAnimation from '../styles/WarningAnimation';
-
-import AlarmIcons from './AlarmIcons';
 
 const StyledAlarm = styled.section<{ isOpen: boolean; isAlarm: boolean }>`
   display: flex;

@@ -1,9 +1,10 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
+import * as React from 'react';
+
+import AreaName from './AreaName';
+import AreaPanel from './AreaPanel';
 
 import Wrapper from '../../testUtils';
-import AreaPanel from './AreaPanel';
-import AreaName from './AreaName';
 
 describe('AreaPanel', () => {
   let areas: AreaName[];

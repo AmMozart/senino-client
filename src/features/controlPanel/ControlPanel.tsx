@@ -1,9 +1,10 @@
 import * as React from 'react';
 
-import AreaPanel from '../area/AreaPanel';
-import AreaName from '../area/AreaName';
-import SipIcon from '../sip/SipIcon';
 import styled from 'styled-components';
+
+import AreaName from '../area/AreaName';
+import AreaPanel from '../area/AreaPanel';
+import SipIcon from '../sip/SipIcon';
 
 const StyledLeftPanel = styled.section`
   position: fixed;

@@ -1,10 +1,11 @@
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
+
 import Button from './Button';
 import Password from './Password';
 import PasswordState from './PasswordState';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledDigitalPanel = styled.section`
   position: absolute;

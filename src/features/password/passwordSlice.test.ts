@@ -1,6 +1,5 @@
-import { store } from '../../app/store';
-import PasswordState from '../../components/DigitalPanel/PasswordState';
 import ActionRequest from './ActionRequest';
+
 import passwordReducer, {
   actionRequest,
   change,
@@ -11,6 +10,9 @@ import passwordReducer, {
   passwordState,
   show,
 } from './passwordSlice';
+
+import { store } from '../../app/store';
+import PasswordState from '../../components/DigitalPanel/PasswordState';
 
 describe('Password reducer', () => {
   it('should be clear password', () => {

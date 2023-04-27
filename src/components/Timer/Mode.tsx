@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import { useAppDispatch } from '../../app/hooks';
 import TimerMode from '../../features/timer/TimerMode';
 import { setMode } from '../../features/timer/timerSlice';
-import { useAppDispatch } from '../../app/hooks';
 
 const StyledMode = styled.div`
   font: 1.6em bold;

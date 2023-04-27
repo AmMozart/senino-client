@@ -2,13 +2,13 @@ import React from 'react';
 
 import { useAppDispatch } from '../../app/hooks';
 import SwitchButton from '../../components/SwitchButton';
-import { addTimer } from '../timer/timerSlice';
-import TimerMode from '../timer/TimerMode';
+import TimerSet from '../../components/Timer/TimerSet';
 import StyledButton from '../styles/StyledButton';
+import StyledContent from '../styles/StyledContent';
 import StyledPage from '../styles/StyledPage';
 import StyledTitle from '../styles/StyledTitle';
-import TimerSet from '../../components/Timer/TimerSet';
-import StyledContent from '../styles/StyledContent';
+import TimerMode from '../timer/TimerMode';
+import { addTimer } from '../timer/timerSlice';
 
 const Water: React.FC = () => {
   const groupName = 'HotWater';

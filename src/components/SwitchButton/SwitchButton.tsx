@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import SlideButton from '../SlideButton';
 import {
   electricGroupsState,
   setToggleValue,
 } from '../../features/controller/controllerSlice';
+import SlideButton from '../SlideButton';
 
 interface SwitchButtonProps {
   title?: string;

@@ -1,7 +1,8 @@
-import React from 'react';
 import { render } from '@testing-library/react';
+import React from 'react';
 
 import Connect from './Connect';
+
 import Wrapper from '../../testUtils';
 
 describe('Connect page', () => {

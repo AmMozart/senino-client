@@ -16,9 +16,12 @@ const StyledStatusButton = styled.div`
   font-size: 1.2em;
 
   @media (max-width: 576px) {
-    font-size: 1em;
-    width: 55px;
-    height: 55px;
+    /* font-size: 1em; */
+
+    /* width: 55px;
+    height: 55px; */
+
+    /* margin: 0; */
   }
 `;
 

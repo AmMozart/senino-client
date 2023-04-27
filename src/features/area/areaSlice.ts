@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { RootState } from '../../app/store';
 import AreaName from './AreaName';
+
+import { RootState } from '../../app/store';
 
 export interface AreaState {
   name: AreaName;
