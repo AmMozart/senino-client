@@ -1,4 +1,7 @@
 import * as BABYLON from 'babylonjs';
+
+import EventName from '../utils/EventName';
+import pubSub from '../utils/pubSub';
 export class Camera {
   private camera;
 
@@ -18,5 +21,10 @@ export class Camera {
     this.camera.upperRadiusLimit = 30;
     this.camera.lowerBetaLimit = 0;
     this.camera.upperBetaLimit = Math.PI / 2;
+
+    pubSub.subscribe(EventName.ChangeArea, (name: string) => {
+      const yPos = name === '2 Этаж' ? 5 : 0;
+      this.camera.setTarget(new BABYLON.Vector3(0, yPos, 0));
+    });
   }
 }

@@ -1,7 +1,16 @@
 {
-  "name": "senino-house-app",
-  "version": "0.1.0",
+  "name": "senino-client",
+  "version": "1.0.0",
   "private": true,
+  "author": "Sergey Belyaev",
+  "description": "Client application that manages all systems in smart home from browser",
+  "keywords": [
+    "smart",
+    "home",
+    "automatic",
+    "system"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@babylonjs/core": "^4.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",

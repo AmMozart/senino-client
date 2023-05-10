@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledStatusButton = styled.div`
   cursor: pointer;
   margin: 0 10px;
-  box-shadow: 0 1px #393939;
+  box-shadow: 0 0 6px rgb(16 16 16);
   border: 1px solid rgb(16 16 16);
   width: 60px;
   height: 60px;
@@ -16,12 +16,7 @@ const StyledStatusButton = styled.div`
   font-size: 1.2em;
 
   @media (max-width: 576px) {
-    /* font-size: 1em; */
-
-    /* width: 55px;
-    height: 55px; */
-
-    /* margin: 0; */
+    margin: 0 3px;
   }
 `;
 
