@@ -104,7 +104,7 @@ const SystemPanel: React.FC<SystemPanelProps> = ({ room }) => {
         size='3x'
         onClick={closeModal}
       />
-      <div className='scene'>Сцена 1</div>
+      <div className='scene'>{room}</div>
       <div className='climate'>
         <FontAwesomeIcon icon={faTemperatureLow} />
       </div>
