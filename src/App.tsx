@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SystemPanel from './components/SystemPanel';
 import Canvas3D from './features/Canvas3D';
 import Dashboard from './features/Dashboard';
 import Password from './features/password';
@@ -14,6 +15,7 @@ function App(): JSX.Element {
       <Sleep />
       <Password />
       <Ringtone />
+      <SystemPanel room={'1'} />
     </>
   );
 }

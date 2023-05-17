@@ -8,6 +8,7 @@ import password from '../features/password/passwordSlice';
 import script from '../features/script/scriptSlice';
 import settings from '../features/settings/settingsSlice';
 import sip from '../features/sip/sipSlice';
+import systemPanel from '../features/systemPanel/systemSlice';
 import timers from '../features/timer/timerSlice';
 import camera from '../features/video/cameraSlice';
 
@@ -23,6 +24,7 @@ export const store = configureStore({
     camera,
     sip,
     script,
+    systemPanel,
   },
 });
 
