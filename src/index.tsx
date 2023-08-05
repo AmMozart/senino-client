@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   *::before,
   *::after {
     user-select: none;
-
+    outline: none;
     box-sizing: border-box;
     margin: 0;
     padding: 0;

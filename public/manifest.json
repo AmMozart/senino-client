@@ -1,54 +1,50 @@
 {
   "name": "Мой Дом",
   "short_name": "Мой Дом",
+  "description": "Gui for smart home senino object",
   "theme_color": "#FFF",
   "background_color": "#FFF",
   "display": "fullscreen",
   "orientation": "any",
   "scope": ".",
   "start_url": ".",
+  "id": "/",
   "icons": [
-    {
-      "src": "logo.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
     {
       "src": "logo64.png",
       "type": "image/png",
       "sizes": "64x64",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "logo128.png",
       "type": "image/png",
       "sizes": "128x128",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "logo256.png",
       "type": "image/png",
       "sizes": "256x256",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "logo384.png",
       "type": "image/png",
       "sizes": "384x384",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
